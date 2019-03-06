@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <string-array name="daftar_praktikum">
+        <item>Semua Praktikum</item>
+        <item>Alfa</item>
+        <item>Beta</item>
+        <item>Carlie</item>
+        <item>Delta</item>
+    </string-array>
+    <string-array name="tahun_ajaran">
+        <item>Semua Tahun Ajaran</item>
+        <item>2016-2017</item>
+        <item>2017-2018</item>
+        <item>2018-2019</item>
+    </string-array>
+    <string-array name="kelas">
+        <item>Semua Kelas</item>
+        <item>A1</item>
+        <item>A2</item>
+        <item>A3</item>
+        <item>A4</item>
+    </string-array>
+    <string-array name="semester">
+        <item>Semua Semester</item>
+        <item>Ganjil</item>
+        <item>Genap</item>
+    </string-array>
+    <string-array name="laporan">
+        <item>Semua</item>
+        <item>Valid</item>
+        <item>Tidak Valid</item>
+    </string-array>
+    <string-array name="kondisi">
+        <item>Layak</item>
+        <item>Tidak Layak</item>
+        <item>Hancur</item>
+    </string-array>
+
+</resources>

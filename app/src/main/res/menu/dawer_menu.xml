@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:icon="@drawable/imagehome"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_login"
+            android:icon="@drawable/imagelogin"
+            android:title="Login"/>
+
+        <item android:id="@+id/nav_profil"
+            android:icon="@drawable/blackperson"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_struktur"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Struktur Organisasi"/>
+
+        <item android:id="@+id/nav_pengumuman"
+            android:icon="@drawable/imagepengumuman"
+            android:title="Pengumuman"/>
+
+        <item android:id="@+id/nav_unduhan"
+            android:icon="@drawable/imageunduhan"
+            android:title="Unduhan"/>
+
+        <item android:id="@+id/nav_galeri"
+            android:icon="@drawable/imagegaleri"
+            android:title="Galeri"/>
+    </group>
+</menu>

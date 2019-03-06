@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="untag.daskom.myapplication">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".activity.pengumuman_detail"></activity>
+        <activity android:name=".MHSHomeGaleri" />
+        <activity android:name=".MHSHomeUnduhan" />
+        <activity android:name=".MHSDetilPengumuman" />
+        <activity android:name=".MHSPengumuman" />
+        <activity android:name=".MHSStrukturOrganisasi" />
+        <activity android:name=".MHSHomeProfil" />
+        <activity android:name=".MHSHomeSuratMahasiswa" />
+        <activity android:name=".MHSEditProfilMahasiswa" />
+        <activity android:name=".MHSMasukkanTugasMahasiswa" />
+        <activity android:name=".MHSHomeTugasMahasiswa" />
+        <activity android:name=".DOSBIMHomeGaleri" />
+        <activity android:name=".DOSBIMHomeUnduhan" />
+        <activity android:name=".DOSBIMDetilPengumuman" />
+        <activity android:name=".DOSBIMPengumuman" />
+        <activity android:name=".DOSBIMStrukturOrganisasi" />
+        <activity android:name=".DOSBIMHomeProfil" />
+        <activity android:name=".DOSBIMAbsensiMahasiswa" />
+        <activity android:name=".DOSBIMEditNilaiMahasiswa" />
+        <activity android:name=".DOSBIMNilaiMahasiswa" />
+        <activity android:name=".DOSBIMDataLaboran" />
+        <activity android:name=".DOSBIMEditProfilDosbim" />
+        <activity android:name=".DOSBIMDataAslab" />
+        <activity android:name=".DOSBIMDataMahasiswa" />
+        <activity android:name=".HomeDosbim" />
+        <activity android:name=".LABORANStrukturOrganisasi" />
+        <activity android:name=".LABORANHomeProfil" />
+        <activity android:name=".LABORANHomeGaleri" />
+        <activity android:name=".LABORANMasukkanGaleri" />
+        <activity android:name=".LABORANMasukkanUnduhan" />
+        <activity android:name=".LABORANHomeUnduhan" />
+        <activity android:name=".LABORANDetilPengumuman" />
+        <activity android:name=".LABORANMasukkanPengumuman" />
+        <activity android:name=".LABORANPengumuman" />
+        <activity android:name=".LABORANHistory" />
+        <activity android:name=".LABORANEditProfilLaboran" />
+        <activity android:name=".LABORANMasukkanInventarisLab" />
+        <activity android:name=".LABORANInventaris" />
+        <activity android:name=".LABORANNilaiMahasiswa" />
+        <activity android:name=".LABORANEditDataAslab" />
+        <activity android:name=".LABORANMasukkanDataAslab" />
+        <activity android:name=".LABORANDataAslab" />
+        <activity android:name=".LABORANDataDosbim" />
+        <activity android:name=".LABORANEditDataMahasiswa" />
+        <activity android:name=".LABORANMasukkanDataMahasiswa" />
+        <activity android:name=".LABORANDataMahasiswa" />
+        <activity android:name=".HomeLaboran" />
+        <activity android:name=".ASLABStrukturOrganisasi" />
+        <activity android:name=".ASLABHomeProfil" />
+        <activity android:name=".ASLABMasukkanGaleri" />
+        <activity android:name=".ASLABHomeGaleri" />
+        <activity android:name=".ASLABMasukkanUnduhan" />
+        <activity android:name=".ASLABHomeUnduhan" />
+        <activity android:name=".ASLABDetilPengumuman" />
+        <activity android:name=".ASLABMasukkanPengumuman" />
+        <activity android:name=".ASLABPengumuman" />
+        <activity android:name=".ASLABHistory" />
+        <activity android:name=".ASLABMasukkanSurat" />
+        <activity android:name=".ASLABDataSurat" />
+        <activity android:name=".ASLABEditAbsensiMahasiswa" />
+        <activity android:name=".ASLABAbsensiMahasiswa" />
+        <activity android:name=".ASLABEditNilaiMahasiswa" />
+        <activity android:name=".ASLABNilaiMahasiswa" />
+        <activity android:name=".ASLABTugasMahasiswa" />
+        <activity android:name=".ASLABDataLaboran" />
+        <activity android:name=".ASLABDataDosbim" />
+        <activity android:name=".ASLABMasukkanDataMahasiswa" />
+        <activity android:name=".ASLABEditDataMahasiswa" />
+        <activity android:name=".ASLABDataMahasiswa" />
+        <activity android:name=".ASLABEditProfilAslab" />
+        <activity android:name=".HomeAslab" />
+        <activity android:name=".KALABAbsensiMahasiswa" />
+        <activity android:name=".KALABStrukturOrganisasi" />
+        <activity android:name=".KALABHomeProfil" />
+        <activity android:name=".KALABMasukkanGaleri" />
+        <activity android:name=".KALABHomeGaleri" />
+        <activity android:name=".KALABMasukkanUnduhan" />
+        <activity android:name=".KALABHomeUnduhan" />
+        <activity android:name=".KALABDetilPengumuman" />
+        <activity android:name=".KALABMasukkanPengumuman" />
+        <activity android:name=".KALABPengumuman" />
+        <activity android:name=".KALABEditProfilKalab" />
+        <activity android:name=".KALABDataSurat" />
+        <activity android:name=".KALABEditNilaiMahasiswa" />
+        <activity android:name=".KALABNilaiMahasiswa" />
+        <activity android:name=".KALABEditDataDosbim" />
+        <activity android:name=".KALABMasukkanDataDosbim" />
+        <activity android:name=".KALABDataDosbim" />
+        <activity android:name=".KALABMasukkanDataMahasiswa" />
+        <activity android:name=".KALABEditDataMahasiswa" />
+        <activity android:name=".KALABDataMahasiswa" />
+        <activity android:name=".KALABMasukkanDataAslab" />
+        <activity android:name=".KALABEditDataAslab" />
+        <activity android:name=".KALABDataAslab" />
+        <activity android:name=".KALABDataLaboran" />
+        <activity android:name=".KALABEditDataLaboran" />
+        <activity android:name=".KALABMasukkanDataLaboran" />
+        <activity android:name=".KALABHistory" />
+        <activity android:name=".HomeKalab" />
+        <activity android:name=".TerimaKasihEmail" />
+        <activity android:name=".TerimaKasihWA" />
+        <activity android:name=".LupaPassEmail" />
+        <activity android:name=".activity.Profile" />
+        <activity android:name=".LupaPassWA" />
+        <activity android:name=".LupaPassword" />
+        <activity android:name=".Login" />
+        <activity android:name=".Galeri" />
+        <activity android:name=".Unduhan" />
+        <activity android:name=".activity.Pengumuman" />
+        <activity android:name=".StrukturOrganisasi" />
+        <activity android:name=".HomeScreen" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#72FCE9</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorWhite">#E2E0CB</color>
+    <color name="colorRealWhite">#FFFFFF</color>
+    <color name="colorOrange">#FF9F43</color>
+    <color name="colorbgBlue">#0f2944</color>
+    <color name="colorbirumuda">#94C1EE</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorTulisanUniv">#E6E5DA</color>
+    <color name="colorAbuAbu">#C4C4C4</color>
+    <color name="colorSoklat">#8E7070</color>
+</resources>

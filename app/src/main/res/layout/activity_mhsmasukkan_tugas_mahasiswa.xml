@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorTulisanUniv"
+    tools:context=".MHSMasukkanTugasMahasiswa"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorOrange"
+            app:title="TUGAS PRAKTIKUM"
+            app:titleMarginStart="123dp"
+            android:textAlignment="center"
+            app:titleTextColor="@color/colorbgBlue"
+            android:id="@+id/toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:elevation="4dp"/>
+
+        <LinearLayout
+            android:layout_marginVertical="25dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Silahkan Upload\nTugas Anda Disini"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textColor="@color/colorbgBlue"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul Tugas"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:textColor="@color/colorbgBlue"
+                />
+            <EditText
+                android:textAlignment="textStart"
+                android:paddingVertical="10dp"
+                android:textColor="@color/colorRealWhite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorRealWhite"
+                />
+            <TextView
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kelas"
+                android:textSize="18dp"
+                android:textColor="@color/colorbgBlue"
+                />
+            <Spinner
+                android:paddingVertical="10dp"
+                android:entries="@array/kelas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></Spinner>
+
+            <TextView
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:layout_marginTop="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Upload File"
+                android:textSize="18dp"
+                android:textColor="@color/colorbgBlue"
+                />
+            <Button
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pilih File"
+                android:background="@color/colorOrange"
+                android:layout_marginHorizontal="130dp"
+                />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul File Akan Ditampilkan Disini"
+                android:textSize="18dp"
+                android:textColor="@color/colorbgBlue"
+                />
+            <Button
+                android:background="@color/colorOrange"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_mhs"
+        app:menu="@menu/dawer_menu_mhs"
+        />
+
+</android.support.v4.widget.DrawerLayout>

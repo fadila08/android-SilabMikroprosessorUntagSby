@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorbgBlue"
+    tools:context=".LABORANEditProfilLaboran"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorOrange"
+            app:title="SILAB MIKROPROSESSOR"
+            app:titleMarginStart="93dp"
+            android:textAlignment="center"
+            app:titleTextColor="@color/colorbgBlue"
+            android:id="@+id/toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:elevation="4dp"/>
+
+        <LinearLayout
+            android:layout_marginVertical="40dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nama"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NIP"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nomor Whatsapp"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alamat Email"
+                android:textSize="20sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+            <EditText
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorAbuAbu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <Button
+                android:layout_marginTop="25dp"
+                android:layout_marginHorizontal="25dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Simpan"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:background="@color/colorOrange"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_laboran"
+        app:menu="@menu/dawer_menu_laboran"
+        />
+
+</android.support.v4.widget.DrawerLayout>

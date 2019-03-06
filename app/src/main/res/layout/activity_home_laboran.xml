@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:background="@color/colorbgBlue"
+    tools:context=".HomeLaboran"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorOrange"
+            app:title="SILAB MIKROPROSESSOR"
+            app:titleMarginStart="93dp"
+            android:textAlignment="center"
+            app:titleTextColor="@color/colorbgBlue"
+            android:id="@+id/toolbar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:elevation="4dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/colorOrange"
+            >
+
+            <ImageView
+                android:layout_marginStart="25dp"
+                android:id="@+id/ivdosen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round"
+                />
+
+            <TextView
+                android:layout_marginStart="25dp"
+                android:layout_toRightOf="@+id/ivdosen"
+                android:id="@+id/tvslamatdatangdosen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Selamat Datang"
+                android:textStyle="bold"
+                android:textSize="27sp"
+                android:textColor="@color/colorTulisanUniv"
+                />
+
+            <TextView
+                android:layout_marginStart="25dp"
+                android:layout_toRightOf="@+id/ivdosen"
+                android:layout_below="@+id/tvslamatdatangdosen"
+                android:id="@+id/tvnamakalab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nama Laboran"
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="@color/colorbgBlue"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="70dp"
+            >
+            <Button
+                android:gravity="center_horizontal"
+                android:id="@+id/btdatamhslaboran"
+                android:paddingTop="20dp"
+                android:drawableTop="@drawable/imagestrukturorg"
+                android:background="@drawable/bgputihwaemail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Data\nMahasiswa"
+                android:textSize="12sp"
+                />
+            <Button
+                android:layout_marginStart="25dp"
+                android:gravity="center_horizontal"
+                android:layout_toRightOf="@+id/btdatamhslaboran"
+                android:id="@+id/btdatadosbimlaboran"
+                android:paddingTop="20dp"
+                android:drawableTop="@drawable/imagestrukturorg"
+                android:background="@drawable/bgputihwaemail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Data\nDosbim"
+                android:textSize="12sp"
+                />
+            <Button
+                android:layout_marginStart="25dp"
+                android:gravity="center_horizontal"
+                android:layout_toRightOf="@+id/btdatadosbimlaboran"
+                android:id="@+id/btdataaslablaboran"
+                android:paddingTop="20dp"
+                android:drawableTop="@drawable/imagestrukturorg"
+                android:background="@drawable/bgputihwaemail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Data\nAslab"
+                android:textSize="12sp"
+                />
+            <Button
+                android:layout_marginTop="25dp"
+                android:gravity="center_horizontal"
+                android:layout_below="@+id/btdatamhslaboran"
+                android:id="@+id/btnilaimhslaboran"
+                android:paddingTop="20dp"
+                android:drawableTop="@drawable/imagenilai"
+                android:background="@drawable/bgputihwaemail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Nilai\nMahasiswa"
+                android:textSize="12sp"
+                />
+            <Button
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="25dp"
+                android:gravity="center_horizontal"
+                android:layout_toRightOf="@+id/btnilaimhslaboran"
+                android:layout_below="@+id/btdatadosbimlaboran"
+                android:id="@+id/btinventarislaboran"
+                android:paddingTop="20dp"
+                android:drawableTop="@drawable/imageabsensi"
+                android:background="@drawable/bgputihwaemail"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Inventaris\nLaboratorium"
+                android:textSize="12sp"
+                />
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header_laboran"
+        app:menu="@menu/dawer_menu_laboran"
+        />
+
+</android.support.v4.widget.DrawerLayout>
