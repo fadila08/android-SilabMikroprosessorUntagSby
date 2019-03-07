@@ -10,6 +10,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.model.DataPengumumanDetailList;
 import untag.daskom.myapplication.model.PengumumanDetail;
 import untag.daskom.myapplication.model.PengumumanDetailList;
 import untag.daskom.myapplication.my_interface.PengumumanDetailDataService;
@@ -44,14 +45,15 @@ public class pengumuman_detail extends AppCompatActivity {
         call.enqueue(new Callback<PengumumanDetailList>() {
             @Override
             public void onResponse(Call<PengumumanDetailList> call, Response<PengumumanDetailList> response) {
+                Log.d("rspon", response.body().toString());
 //                List<PengumumanDetail> pengumumanDetails = response.body().getPengumumanDetails();
-                PengumumanDetail pengumumanDetail = response.body().getPengumumanDetail();
+                DataPengumumanDetailList dataPengumumanDetailList = response.body().getData();
 
                 //isi variabelnya
 //                loadData(pengumumanDetails);
-                txtJudul.setText(pengumumanDetail.getJudul());
-                txtIsi.setText(pengumumanDetail.getIsi());
-                txtCreatedat.setText(pengumumanDetail.getCreated_at());
+                txtJudul.setText(dataPengumumanDetailList.getJudul());
+                txtIsi.setText(dataPengumumanDetailList.getIsi());
+                txtCreatedat.setText(dataPengumumanDetailList.getDiupload_pada());
 
             }
 
