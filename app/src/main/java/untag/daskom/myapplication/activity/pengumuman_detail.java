@@ -2,6 +2,8 @@ package untag.daskom.myapplication.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,12 +13,9 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.DataPengumumanDetailList;
-import untag.daskom.myapplication.model.PengumumanDetail;
 import untag.daskom.myapplication.model.PengumumanDetailList;
 import untag.daskom.myapplication.my_interface.PengumumanDetailDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
-
-import java.util.List;
 
 public class pengumuman_detail extends AppCompatActivity {
 
@@ -24,6 +23,7 @@ public class pengumuman_detail extends AppCompatActivity {
     TextView txtJudul;
     TextView txtCreatedat;
     TextView txtIsi;
+    TextView txtFileLampiran;
 
 
     @Override
@@ -34,6 +34,7 @@ public class pengumuman_detail extends AppCompatActivity {
         txtJudul = findViewById(R.id.txt_judul_pengumuman);
         txtCreatedat = findViewById(R.id.txt_created_at_pengumuman);
         txtIsi = findViewById(R.id.txt_isi_pengumuman);
+        txtFileLampiran = findViewById(R.id.txt_file_lampiran);
 
         id = getIntent().getStringExtra("id");
         Log.d("id", id);
@@ -45,15 +46,18 @@ public class pengumuman_detail extends AppCompatActivity {
         call.enqueue(new Callback<PengumumanDetailList>() {
             @Override
             public void onResponse(Call<PengumumanDetailList> call, Response<PengumumanDetailList> response) {
-                Log.d("rspon", response.body().toString());
-//                List<PengumumanDetail> pengumumanDetails = response.body().getPengumumanDetails();
+//                Log.d("rspon", response.body().toString());
                 DataPengumumanDetailList dataPengumumanDetailList = response.body().getData();
 
                 //isi variabelnya
-//                loadData(pengumumanDetails);
+
                 txtJudul.setText(dataPengumumanDetailList.getJudul());
                 txtIsi.setText(dataPengumumanDetailList.getIsi());
                 txtCreatedat.setText(dataPengumumanDetailList.getDiupload_pada());
+                txtFileLampiran.setText(
+                        Html.fromHtml("<a href=\"http://www.google.com\">unduh file lampiran</a>")
+                );
+                txtFileLampiran.setMovementMethod(LinkMovementMethod.getInstance());
 
             }
 
@@ -70,13 +74,4 @@ public class pengumuman_detail extends AppCompatActivity {
 
     }
 
-
-
-//    private void loadData (List<PengumumanDetail> pengumumanDetails) {
-//        for (PengumumanDetail data : pengumumanDetails) {
-//            txtJudul.setText(data.getJudul());
-//            txtCreatedat.setText(data.getCreated_at());
-//            txtIsi.setText(data.getIsi());
-//        }
-//    }
 }

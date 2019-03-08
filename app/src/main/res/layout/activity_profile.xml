@@ -21,13 +21,22 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorOrange"
-            app:title="PROFIL"
-            app:titleMarginStart="173dp"
-            app:titleTextColor="@color/colorbgBlue"
             android:id="@+id/toolbar"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PROFIL"
+                android:textColor="@color/colorbgBlue"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="8pt"
+                android:id="@+id/txtToolbar"
+                android:gravity="center_horizontal"/>
+
+            </android.support.v7.widget.Toolbar>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -50,6 +59,8 @@
                     android:paddingVertical="15dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
                     android:text="PROFIL LABORATORIUM"
                     android:textAlignment="viewStart"
                     android:textSize="14sp" />
@@ -87,6 +98,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
                                 android:layout_below="@+id/ivprofillaborat"
                                 android:text="Android library for creating an expandable and collapsible to full screen view inside a viewgroup composition. Expandable Layout provides an easy way to create a view called header with an expandable view. Views are external layout to allow a maximum of customization."
                                 android:textAlignment="center" />
@@ -106,6 +118,8 @@
                     android:paddingVertical="15dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
                     android:text="PROFIL KEPALA LABORATORIUM"
                     android:textAlignment="viewStart"
                     android:textSize="14sp" />
@@ -149,6 +163,8 @@
                     android:layout_marginTop="15dp"
                     android:background="@color/colorTulisanUniv"
                     android:drawableRight="@drawable/down"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
                     android:onClick="PROFILLABORAN"
                     android:paddingVertical="15dp"
                     android:paddingLeft="25dp"
@@ -195,6 +211,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/ELprofillaboran"
                     android:layout_marginTop="15dp"
+                    android:textColor="@color/colorbgBlue"
+                    android:fontFamily="@font/roboto_medium"
                     android:background="@color/colorTulisanUniv"
                     android:drawableRight="@drawable/down"
                     android:onClick="PROFILASLAB"

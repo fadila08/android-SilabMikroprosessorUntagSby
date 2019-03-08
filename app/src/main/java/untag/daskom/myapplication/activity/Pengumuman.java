@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,12 +28,13 @@ public class Pengumuman extends AppCompatActivity {
 
     private PengumumanAdapter adapter;
     private RecyclerView recyclerView;
-
+//    TextView txtId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pengumuman);
+
 
         /** Create handle for the RetrofitInstance interface*/
         PengumumanDataService service = RetrofitInstance.getRetrofitInstance().create(PengumumanDataService.class);
@@ -60,21 +62,13 @@ public class Pengumuman extends AppCompatActivity {
 
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generatePengumumanList(ArrayList<PengumumanModel> pengumumanArrayList) {
+
         recyclerView = findViewById(R.id.rvpengumuman);
         adapter = new PengumumanAdapter(pengumumanArrayList);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Pengumuman.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
 
-
-
-
     }
-
-
-
-
-
-
 
 }

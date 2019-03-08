@@ -33,15 +33,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nama                          :"
-                android:textStyle="bold"
+                android:text="Nama                        :"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"/>
             <TextView
                 android:id="@+id/txt_nama"
                 android:textColor="#B30A0808"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:padding="3dp"/>
         </LinearLayout>
 
@@ -52,15 +52,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nomor Induk             :"
-                android:textStyle="bold"
+                android:text="Nomor Induk            :"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"/>
 
             <TextView
                 android:id="@+id/txt_nomor_induk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"
                 android:padding="3dp" />
         </LinearLayout>
@@ -73,13 +73,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Alamat Email            :"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"/>
             <TextView
                 android:id="@+id/txt_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"
                 android:padding="3dp"/>
         </LinearLayout>
@@ -92,13 +92,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Nomor Whatsapp    :"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"/>
             <TextView
                 android:id="@+id/txt_nomor_whatsapp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
+                android:fontFamily="@font/roboto_light"
                 android:textColor="#B30A0808"
                 android:padding="3dp"/>
         </LinearLayout>

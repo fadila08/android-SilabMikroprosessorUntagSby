@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,7 +35,7 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.Pe
         return new PengumumanViewHolder(view);
     }
 
-    int position;
+//    int position;
     @Override
     public void onBindViewHolder(PengumumanViewHolder holder, int position) {
 
@@ -42,8 +43,13 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.Pe
         holder.txtCreatedAt.setText(pengumumanList.get(position).getCreated_at());
         holder.txtBatasTanggalBerlaku.setText(pengumumanList.get(position).getBatas_tanggal_berlaku());
         id = pengumumanList.get(position).getId();
+        holder.txtId.setText(id);
+
+
+
 
     }
+
 
     @Override
     public int getItemCount() {
@@ -53,21 +59,29 @@ public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.Pe
 
     class PengumumanViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtJudul, txtCreatedAt, txtBatasTanggalBerlaku;
+        TextView txtJudul, txtCreatedAt, txtBatasTanggalBerlaku, txtId;
+//        String ini;
 
         PengumumanViewHolder(View itemView) {
             super(itemView);
             txtJudul = itemView.findViewById(R.id.txt_judul);
             txtCreatedAt = itemView.findViewById(R.id.txt_created_at);
             txtBatasTanggalBerlaku = itemView.findViewById(R.id.txt_batas_tanggal_berlaku);
+            txtId = itemView.findViewById(R.id.txt_id);
+
+//            ini = getText();
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), pengumuman_detail.class);
-                    int i = position;
-                    intent.putExtra("id",id);
+//                    int i = position;
+                    intent.putExtra("id",txtId.getText().toString());
                     v.getContext().startActivity(intent);
+
+//                    Toast.makeText(v.getContext(),"selected id : " + txtId.getText().toString(), Toast.LENGTH_SHORT
+//                    ).show();
+
                 }
             });
         }

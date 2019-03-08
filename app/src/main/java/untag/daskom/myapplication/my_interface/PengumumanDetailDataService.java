@@ -11,4 +11,6 @@ public interface PengumumanDetailDataService {
 
     @GET("api/pengumuman/{id}")
     Call<PengumumanDetailList> getPengumumanDetail(@Path("id") String id);
+
+
 }
