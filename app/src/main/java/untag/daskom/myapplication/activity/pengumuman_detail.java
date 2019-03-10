@@ -50,14 +50,19 @@ public class pengumuman_detail extends AppCompatActivity {
                 DataPengumumanDetailList dataPengumumanDetailList = response.body().getData();
 
                 //isi variabelnya
-
                 txtJudul.setText(dataPengumumanDetailList.getJudul());
                 txtIsi.setText(dataPengumumanDetailList.getIsi());
                 txtCreatedat.setText(dataPengumumanDetailList.getDiupload_pada());
-                txtFileLampiran.setText(
-                        Html.fromHtml("<a href=\"http://www.google.com\">unduh file lampiran</a>")
-                );
-                txtFileLampiran.setMovementMethod(LinkMovementMethod.getInstance());
+
+                String fileLampiran = dataPengumumanDetailList.getFile_lampiran();
+
+                //cek isi lampiran
+                if ( fileLampiran != null) {
+                    txtFileLampiran.setText(
+                            Html.fromHtml("<a href=\"http://www.google.com\">unduh file lampiran</a>")
+                    );
+                    txtFileLampiran.setMovementMethod(LinkMovementMethod.getInstance());
+                }
 
             }
 

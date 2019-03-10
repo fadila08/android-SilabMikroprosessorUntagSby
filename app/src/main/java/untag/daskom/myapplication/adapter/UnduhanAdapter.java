@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -37,6 +38,13 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
 
         id = unduhanList.get(position).getId();
         holder.txtId.setText(id);
+
+        holder.btnUnduh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //link ke api download
+            }
+        });
     }
 
     @Override
@@ -47,6 +55,7 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
     class UnduhanViewHolder extends RecyclerView.ViewHolder{
 
         TextView txtJudul, txtCreatedAt, txtKeterangan, txtId, txtBatasBerlaku;
+        Button btnUnduh;
 
         UnduhanViewHolder(View itemView) {
             super(itemView);
@@ -55,6 +64,7 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
             txtKeterangan = itemView.findViewById(R.id.txt_keterangan_unduhan);
             txtBatasBerlaku = itemView.findViewById(R.id.txt_batas_tanggal_berlaku_unduhan);
             txtId = itemView.findViewById(R.id.txt_id_unduhan);
+            btnUnduh = itemView.findViewById(R.id.btn_unduhan);
         }
 
     }

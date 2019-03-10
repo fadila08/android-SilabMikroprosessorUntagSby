@@ -117,8 +117,8 @@
         <activity android:name=".LupaPassWA" />
         <activity android:name=".LupaPassword" />
         <activity android:name=".Login" />
-        <activity android:name=".Galeri" />
-        <activity android:name=".Unduhan" />
+        <activity android:name=".activity.Galeri" />
+        <activity android:name=".activity.Unduhan" />
         <activity android:name=".activity.Pengumuman" />
         <activity android:name=".StrukturOrganisasi" />
         <activity android:name=".HomeScreen" />

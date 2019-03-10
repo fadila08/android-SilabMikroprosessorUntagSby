@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="475dp"
+    android:background="@color/colorSoklat"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+    <Button
+        android:layout_width="50px"
+        android:layout_height="50px"
+        android:background="@drawable/close_real_white"
+        android:layout_gravity="end"
+        android:id="@+id/btn_close"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:id="@+id/gambar_popup"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/txt_judul_gambar_popup"
+        android:background="@color/colorbgBlue"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/colorRealWhite"
+        android:layout_marginTop="5dp"/>
+
+</LinearLayout>

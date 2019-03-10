@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import untag.daskom.myapplication.activity.Galeri;
 import untag.daskom.myapplication.activity.Pengumuman;
 import untag.daskom.myapplication.activity.Profile;
+import untag.daskom.myapplication.activity.Unduhan;
 
 public class HomeScreen extends AppCompatActivity {
 
