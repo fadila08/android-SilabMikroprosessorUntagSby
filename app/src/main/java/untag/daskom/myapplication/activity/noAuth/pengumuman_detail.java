@@ -1,4 +1,4 @@
-package untag.daskom.myapplication.activity;
+package untag.daskom.myapplication.activity.noAuth;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

@@ -1,20 +1,16 @@
 package untag.daskom.myapplication.adapter;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
-import untag.daskom.myapplication.activity.Pengumuman;
-import untag.daskom.myapplication.activity.pengumuman_detail;
+import untag.daskom.myapplication.activity.noAuth.pengumuman_detail;
 import untag.daskom.myapplication.model.PengumumanModel;
 
 public class PengumumanAdapter extends RecyclerView.Adapter<PengumumanAdapter.PengumumanViewHolder> {

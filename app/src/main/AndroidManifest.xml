@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity.pengumuman_detail"></activity>
+        <activity android:name=".activity.noAuth.pengumuman_detail" />
         <activity android:name=".MHSHomeGaleri" />
         <activity android:name=".MHSHomeUnduhan" />
         <activity android:name=".MHSDetilPengumuman" />
@@ -113,17 +113,18 @@
         <activity android:name=".TerimaKasihEmail" />
         <activity android:name=".TerimaKasihWA" />
         <activity android:name=".LupaPassEmail" />
-        <activity android:name=".activity.Profile" />
         <activity android:name=".LupaPassWA" />
         <activity android:name=".LupaPassword" />
-        <activity android:name=".Login" />
-        <activity android:name=".activity.Galeri" />
-        <activity android:name=".activity.Unduhan" />
-        <activity android:name=".activity.Pengumuman" />
         <activity android:name=".StrukturOrganisasi" />
-        <activity android:name=".HomeScreen" />
+        <activity android:name=".activity.HomeScreen" />
+        <activity android:name=".activity.noAuth.MainActivityProfil" />
+        <activity android:name=".activity.noAuth.MainActivityStruktur" />
+        <activity android:name=".activity.noAuth.MainActivityUnduhan" />
+        <activity android:name=".activity.noAuth.MainActivityPengumuman" />
+        <activity android:name=".activity.noAuth.MainActivityGaleri"/>
+        <activity android:name=".activity.MainActivityLogin"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

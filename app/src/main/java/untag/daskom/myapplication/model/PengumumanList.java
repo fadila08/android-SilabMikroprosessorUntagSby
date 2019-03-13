@@ -4,8 +4,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 
-import untag.daskom.myapplication.activity.Pengumuman;
-
 public class PengumumanList {
 
     @SerializedName("data")

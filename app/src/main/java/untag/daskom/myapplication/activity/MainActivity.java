@@ -1,4 +1,4 @@
-package untag.daskom.myapplication;
+package untag.daskom.myapplication.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+
+import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.HomeScreen;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView iv;
@@ -22,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try{
-                    sleep(1000);
+                    sleep(4000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

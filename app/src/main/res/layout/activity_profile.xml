@@ -9,7 +9,8 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".activity.Profile"
+    tools:showIn="@layout/app_bar_profil"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
     <LinearLayout
@@ -17,26 +18,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp">
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="@color/colorOrange"-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+            <!--android:elevation="4dp">-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="PROFIL"
-                android:textColor="@color/colorbgBlue"
-                android:fontFamily="@font/roboto_medium"
-                android:textSize="8pt"
-                android:id="@+id/txtToolbar"
-                android:gravity="center_horizontal"/>
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="PROFIL"-->
+                <!--android:textColor="@color/colorbgBlue"-->
+                <!--android:fontFamily="@font/roboto_medium"-->
+                <!--android:textSize="8pt"-->
+                <!--android:id="@+id/txtToolbar"-->
+                <!--android:gravity="center_horizontal"/>-->
 
-            </android.support.v7.widget.Toolbar>
+            <!--</android.support.v7.widget.Toolbar>-->
 
         <ScrollView
             android:layout_width="match_parent"

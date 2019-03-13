@@ -10,7 +10,7 @@ public class UnduhanModel {
     @SerializedName("judul")
     private String judul;
 
-    @SerializedName("dipload pada")
+    @SerializedName("diupload pada")
     private String created_at;
 
     @SerializedName("keterangan")

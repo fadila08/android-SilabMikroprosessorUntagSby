@@ -5,9 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeScreen"
-    android:background="@drawable/pcbblur"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.HomeScreen"
+    android:background="@drawable/pcbblur">
 
     <LinearLayout
         android:layout_width="match_parent"
