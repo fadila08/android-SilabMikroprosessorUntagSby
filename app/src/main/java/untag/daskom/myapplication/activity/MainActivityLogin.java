@@ -8,11 +8,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.HomeKalab;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.noAuth.MainActivityGaleri;
@@ -20,11 +26,17 @@ import untag.daskom.myapplication.activity.noAuth.MainActivityPengumuman;
 import untag.daskom.myapplication.activity.noAuth.MainActivityProfil;
 import untag.daskom.myapplication.activity.noAuth.MainActivityStruktur;
 import untag.daskom.myapplication.activity.noAuth.MainActivityUnduhan;
+import untag.daskom.myapplication.model.DataLoginList;
+import untag.daskom.myapplication.model.LoginList;
+import untag.daskom.myapplication.my_interface.LoginDataService;
+import untag.daskom.myapplication.network.RetrofitInstance;
 
 public class MainActivityLogin extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
     Button btlogin;
+    EditText txtUsername, txtPassword;
+    String username, password;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
@@ -34,6 +46,8 @@ public class MainActivityLogin extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         btlogin = (Button)findViewById(R.id.btlogin);
+        txtUsername = (EditText) findViewById(R.id.txt_username);
+        txtPassword = (EditText) findViewById(R.id.txt_password);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_login);
 
@@ -45,14 +59,55 @@ public class MainActivityLogin extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_login);
         navigationView.setNavigationItemSelectedListener(this);
 
+
+
+        // aksi btn login
+
         btlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent btlogin = new Intent(MainActivityLogin.this, HomeKalab.class);
-                startActivity(btlogin);
+
+                LoginDataService service = RetrofitInstance.getRetrofitInstance().create(LoginDataService.class);
+
+                Call<LoginList> call = service.login(txtUsername.getText().toString(),txtPassword.getText().toString());
+
+                Log.wtf("URL Called", call.request().url() + "");
+
+
+                call.enqueue(new Callback<LoginList>() {
+                    @Override
+                    public void onResponse(Call<LoginList> call, Response<LoginList> response) {
+                        try{
+
+                            DataLoginList dataLoginList = (DataLoginList) response.body().getData();
+
+                            String dataToken = response.body().getAccess_token();
+
+                            String nama = dataLoginList.getNama();
+
+                            Toast.makeText(MainActivityLogin.this,nama,Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(MainActivityLogin.this, HomeKalab.class);
+                            startActivity(intent);
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<LoginList> call, Throwable t) {
+                        Toast.makeText(MainActivityLogin.this,"GAGAL : "+t.getMessage(),Toast.LENGTH_SHORT).show();
+
+                    }
+                });
 
             }
         });
+
+
+
     }
 
     @Override
