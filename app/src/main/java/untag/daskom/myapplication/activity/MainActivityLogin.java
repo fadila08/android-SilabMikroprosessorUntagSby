@@ -69,19 +69,56 @@ public class MainActivityLogin extends AppCompatActivity
 
                 LoginDataService service = RetrofitInstance.getRetrofitInstance().create(LoginDataService.class);
 
-                Call<LoginList> call = service.login(txtUsername.getText().toString(),txtPassword.getText().toString());
+//                Call<LoginList> call = service.login(txtUsername.getText().toString(),txtPassword.getText().toString());
+//
+//                Log.d("URL Called", call.request().url() + "");
+//
+//
+//                call.enqueue(new Callback<LoginList>() {
+//                    @Override
+//                    public void onResponse(Call<LoginList> call, Response<LoginList> response) {
+//                        try{
+//
+//                            DataLoginList dataLoginList = (DataLoginList) response.body().getData();
+//
+//                            String dataToken = response.body().getAccess_token();
+//
+//                            String nama = dataLoginList.getNama();
+//
+//                            Toast.makeText(MainActivityLogin.this,nama,Toast.LENGTH_SHORT).show();
+//
+//                            Intent intent = new Intent(MainActivityLogin.this, HomeKalab.class);
+//                            startActivity(intent);
+//
+//                        } catch (Exception e) {
+//                            Log.d("error", e.toString());
+//                            e.printStackTrace();
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Call<LoginList> call, Throwable t) {
+//                        Toast.makeText(MainActivityLogin.this,"GAGAL : "+t.getMessage(),Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
 
-                Log.wtf("URL Called", call.request().url() + "");
-
+                Call<LoginList> call = RetrofitInstance
+                        .getInstance()
+                        .getApiLogin()
+                        .login(txtUsername.getText().toString(),txtPassword.getText().toString());
 
                 call.enqueue(new Callback<LoginList>() {
                     @Override
                     public void onResponse(Call<LoginList> call, Response<LoginList> response) {
-                        try{
+                        Log.d("response", response.toString());
+                            try{
 
-                            DataLoginList dataLoginList = (DataLoginList) response.body().getData();
+                            DataLoginList dataLoginList = response.body().getUser();
 
                             String dataToken = response.body().getAccess_token();
+                            Log.d("token",dataToken.toString());
 
                             String nama = dataLoginList.getNama();
 
@@ -91,15 +128,19 @@ public class MainActivityLogin extends AppCompatActivity
                             startActivity(intent);
 
                         } catch (Exception e) {
+                            Log.d("error", e.toString());
                             e.printStackTrace();
                         }
+
+
+
 
                     }
 
                     @Override
                     public void onFailure(Call<LoginList> call, Throwable t) {
-                        Toast.makeText(MainActivityLogin.this,"GAGAL : "+t.getMessage(),Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(MainActivityLogin.this, "Failed, eror status : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.d("error", call.toString() + " "+t.getMessage());
                     }
                 });
 
