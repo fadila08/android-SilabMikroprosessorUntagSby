@@ -28,10 +28,10 @@ We al know mobile app now is on the rise. A [recent survey](http://google.com) t
 # 4. User Interaction and Design
 |No|Name|Image Mockup|Description|
 |:---:|:---:|:---:|:---:|
-|`1`|Home Screen|<img src="images/homescreen.jpeg">||
-|`2`|Login Screen|<img src="images/login.jpeg">||
-|`3`|Profil Screen|<img src="images/profil.jpeg">||
-|`4`|StrukturOrg Screen|<img src="images/strukturorg.jpeg">||
-|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg">||
-|`6`|Unduhan Screen|<img src="images/unduhan.jpg">||
-|`7`|Galeri Screen|<img src="images/galeri.jpg">||
+|`1`|Home Screen|<img src="images/homescreen.jpeg" width=235>||
+|`2`|Login Screen|<img src="images/login.jpeg" width=235>||
+|`3`|Profil Screen|<img src="images/profil.jpeg" width=235>||
+|`4`|StrukturOrg Screen|<img src="images/strukturorg.jpeg" width=235>||
+|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg" width=235>||
+|`6`|Unduhan Screen|<img src="images/unduhan.jpg" width=235>||
+|`7`|Galeri Screen|<img src="images/galeri.jpg" width=235>||
