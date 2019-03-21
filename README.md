@@ -1,15 +1,17 @@
-# 1. Mobile App Requirements
+# Information System of Laboratory of Microprosessor Untag Surabaya
 
-|Task|Description|
+|Task Name|Description|
 |:---|:---|
 |`Tables Release`|1.0 |
 |`Document Status`|DRAFT |
 |`Document Owner`|Nurul Fadhilah|
+|`Mockup Designer`|Nurul Fadhilah|
 |`Layout Designer`|[Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
 |`Developer`|Nurul Fadhilah & [Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
 
-# 2. Background and Strategic fit
-We al know mobile app now is on the rise. A [recent survey](http://google.com) to customers showed that 85% of users use their mobile on a daily basis. Most of our customers also use competitor apps, so this is something we need to have.
+# 2. Background
+We all know Android app now is on the rise. Nowadays almost everyone already uses a smartphone to help each of its activities. 
+No exception to get an information, they just turn the smartphone on and open an app that they want. Therefore we make an information system android platform that aims to make it easy for everyone in University of 17 Agustus 1945 environment, especially for lecturers supervisor, head of laboratory, laboratory officers, laboratory assistant, and students to make it easier to manage things relating to the activities of the laboratory course. So this is something we need to have.
 
 # Customer Research
 * [Customer Interview - Netflix](http://google.com)
