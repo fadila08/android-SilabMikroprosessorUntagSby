@@ -10,8 +10,10 @@
 |`Developer`|Nurul Fadhilah & [Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
 
 # 2. Background
+<p align="justify">
 We all know Android app now is on the rise. Nowadays almost everyone already uses a smartphone to help each of its activities. 
 No exception to get an information, they just turn the smartphone on and open an app that they want. Therefore we make an information system android platform that aims to make it easy for everyone in University of 17 Agustus 1945 environment, especially for lecturers supervisor, head of laboratory, laboratory officers, laboratory assistant, and students to make it easier to manage things relating to the activities of the laboratory course. So this is something we need to have.
+</p>
 
 # Customer Research
 * [Customer Interview - Netflix](http://google.com)
