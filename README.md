@@ -1,7 +1,7 @@
 # Information System of Laboratory of Microprosessor Untag Surabaya
 
 <p align="center">
-  <img width="250" src="images/labmikro.png" text="Logo of Laboratory of Microprosessor Untag Surabaya">
+  <img width="250" src="images/labmikro.png" title="Logo of Laboratory of Microprosessor Untag Surabaya">
 </p>
 
 |Task Name|Description|
