@@ -18,19 +18,18 @@ No exception to get an information, they just turn the smartphone on and open an
 # Requirements
 |No.|User Story Title|User Story Description|Priority|Notes|
 |:---|:---|:---|:---|:---|
-|`1`|Email Integration|When user forget the password for login, they can receive new pass via Email.|Optional|User need to input the correct Email address in app|
-|`2`|Whatsapp Integration|When user forget the password for login, they can receive new pass via Whatsapp.|Optional|User need to input the correct number of Whatsapp in app|
-|`3`|Post Update|User wants to be able to post status updates on the go|Must have| The key things we will need to support: <ul><li>Text status update</li><li>Mentions</li><li>Support for images</li><li>Smart embedding for Youtube videos</li></ul>|
-|`4`|Activity stream|User wants to view the latest updates via the mobile dashboard so that they can get a bette understanding of what is in place| Must Have| |
-|`5`|API|A developer wants to integrate with the mobile app so that they can embed the activity stream on their website|Should have|<ul><li>We should contact to our team as we did something similar</li></ul>
+|`1`|Registered Account|The participant is active as a student majoring in informatic engineering and signed up at the associated lab course|Must have|The registered account can be either Email addresses or number Whatsapp|
+|`2`|Email Integration|When user forget the password for login, they can receive new pass via Email.|Optional|User need to input the correct Email address in app|
+|`3`|Whatsapp Integration|When user forget the password for login, they can receive new pass via Whatsapp.|Optional|User need to input the correct number of Whatsapp in app|
+|`4`|API|A developer wants to integrate with the mobile app so that they can embed the activity stream on their website|Should have|<ul><li>We should contact to our team as we did something similar</li></ul>
 
 # User Interaction and Design
 |No|Name|Image Mockup|Description|
 |:---:|:---:|:---:|:---:|
-|`1`|Home Screen|<img src="images/homescreen.jpeg" width=235>|<p align="justify">Initial display after splashscreen. There is a menu option such as Login, Profile, Announcements, Downloads, and a Gallery.</p>|
-|`2`|Login Screen|<img src="images/login.jpeg" width=235>|<p align="justify">The user must enter a username and password to login to the next page. When user forget the password, then the user will be connected to a different page</p>|
-|`3`|Profil Screen|<img src="images/profil.jpeg" width=235>|<p align="justify">Contains the information of laboratory and each officer profile laboratories. Such as head of the laboratory, Laboratory Assistant, Laboran.</p>|
-|`4`|StrukturOrg Screen|<img src="images/strukturorg.jpeg" width=235>|<p align="justify">Showing organizational structure of Laboratory of Microprosessor Untag Surabaya</p>|
-|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg" width=235>|<p align="justify">Contains RecyclerView that contains the information about announcement. Laboratory Officer (Head of the laboratory and Lab assistant) who made the announcement and then upload it on the system</p>|
-|`6`|Unduhan Screen|<img src="images/unduhan.jpg" width=235>|<p align="justify">Contains RecyclerView that contains information about the downloadable things (such as practical task, schedule of implementing the practical, schedule of practical exam) by users of the application, specifically for student</p>|
-|`7`|Galeri Screen|<img src="images/galeri.jpg" width=235>|<p align="justify">Gallery containing photos of the ongoing practical activities and user can enjoy the pictures more clearly by clicking one of the photo, and then will appear a pop-up that displays the photo becomes larger.</p>|
+|`1`|Home Screen|<img src="images/homescreen.jpeg" width=250>|<p align="justify">Initial display after splashscreen. There is a menu option such as Login, Profile, Announcements, Downloads, and a Gallery.</p>|
+|`2`|Login Screen|<img src="images/login.jpeg" width=250>|<p align="justify">The user must enter a username and password to login to the next page. When user forget the password, then the user will be connected to a different page</p>|
+|`3`|Profil Screen|<img src="images/profil.jpeg" width=250>|<p align="justify">Contains the information of laboratory and each officer profile laboratories. Such as head of the laboratory, Laboratory Assistant, Laboran.</p>|
+|`4`|StrukturOrg Screen|<img src="images/strukturorg.jpeg" width=250>|<p align="justify">Showing organizational structure of Laboratory of Microprosessor Untag Surabaya</p>|
+|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg" width=250>|<p align="justify">Contains RecyclerView that contains the information about announcement. Laboratory Officer (Head of the laboratory and Lab assistant) who made the announcement and then upload it on the system</p>|
+|`6`|Unduhan Screen|<img src="images/unduhan.jpg" width=250>|<p align="justify">Contains RecyclerView that contains information about the downloadable things (such as practical task, schedule of implementing the practical, schedule of practical exam) by users of the application, specifically for student</p>|
+|`7`|Galeri Screen|<img src="images/galeri.jpg" width=250>|<p align="justify">Gallery containing photos of the ongoing practical activities and user can enjoy the pictures more clearly by clicking one of the photo, and then will appear a pop-up that displays the photo becomes larger.</p>|
