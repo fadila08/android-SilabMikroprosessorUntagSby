@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_history_kalab"
+            android:icon="@drawable/imagehistory"
+            android:title="History"/>
+
+        <item android:id="@+id/nav_home_kalab"
+            android:icon="@drawable/imagehome"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_datalaboran_kalab"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Laboran"/>
+
+        <item android:id="@+id/nav_dataaslab_kalab"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Aslab"/>
+
+        <item android:id="@+id/nav_datadosbim_kalab"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Dosbim"/>
+
+        <item android:id="@+id/nav_datamhs_kalab"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Mahasiswa"/>
+
+        <item android:id="@+id/nav_nilaimhs_kalab"
+            android:icon="@drawable/imagenilai"
+            android:title="Nilai Mahasiswa"/>
+
+        <item android:id="@+id/nav_absensi_kalab"
+            android:icon="@drawable/imageabsensi"
+            android:title="Absensi Praktikan"/>
+
+        <item android:id="@+id/nav_datasurat_kalab"
+            android:icon="@drawable/imagemail"
+            android:title="Data Surat"/>
+
+        <item android:id="@+id/nav_profil_kalab"
+            android:icon="@drawable/blackperson"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_struktur_kalab"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Struktur Organisasi"/>
+
+        <item android:id="@+id/nav_pengumuman_kalab"
+            android:icon="@drawable/imagepengumuman"
+            android:title="Pengumuman"/>
+
+        <item android:id="@+id/nav_unduhan_kalab"
+            android:icon="@drawable/imageunduhan"
+            android:title="Unduhan"/>
+
+        <item android:id="@+id/nav_galeri_kalab"
+            android:icon="@drawable/imagegaleri"
+            android:title="Galeri"/>
+
+        <item android:id="@+id/nav_logout_kalab"
+            android:icon="@drawable/iokecil"
+            android:title="Logout"/>
+    </group>
+
+</menu>

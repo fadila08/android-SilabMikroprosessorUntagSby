@@ -19,7 +19,11 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import untag.daskom.myapplication.HomeKalab;
+import untag.daskom.myapplication.HomeAslab;
+import untag.daskom.myapplication.HomeDosbim;
+import untag.daskom.myapplication.activity.kalab.HomeKalab;
+import untag.daskom.myapplication.HomeLaboran;
+import untag.daskom.myapplication.HomeMahasiswa;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.noAuth.MainActivityGaleri;
 import untag.daskom.myapplication.activity.noAuth.MainActivityPengumuman;
@@ -30,10 +34,12 @@ import untag.daskom.myapplication.model.DataLoginList;
 import untag.daskom.myapplication.model.LoginList;
 import untag.daskom.myapplication.my_interface.LoginDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class MainActivityLogin extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+    SessionManager sessionManager;
     Button btlogin;
     EditText txtUsername, txtPassword;
     String username, password;
@@ -49,6 +55,8 @@ public class MainActivityLogin extends AppCompatActivity
         txtUsername = (EditText) findViewById(R.id.txt_username);
         txtPassword = (EditText) findViewById(R.id.txt_password);
 
+        sessionManager = new SessionManager(this);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_login);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -59,8 +67,6 @@ public class MainActivityLogin extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_login);
         navigationView.setNavigationItemSelectedListener(this);
 
-
-
         // aksi btn login
 
         btlogin.setOnClickListener(new View.OnClickListener() {
@@ -68,41 +74,6 @@ public class MainActivityLogin extends AppCompatActivity
             public void onClick(View v) {
 
                 LoginDataService service = RetrofitInstance.getRetrofitInstance().create(LoginDataService.class);
-
-//                Call<LoginList> call = service.login(txtUsername.getText().toString(),txtPassword.getText().toString());
-//
-//                Log.d("URL Called", call.request().url() + "");
-//
-//
-//                call.enqueue(new Callback<LoginList>() {
-//                    @Override
-//                    public void onResponse(Call<LoginList> call, Response<LoginList> response) {
-//                        try{
-//
-//                            DataLoginList dataLoginList = (DataLoginList) response.body().getData();
-//
-//                            String dataToken = response.body().getAccess_token();
-//
-//                            String nama = dataLoginList.getNama();
-//
-//                            Toast.makeText(MainActivityLogin.this,nama,Toast.LENGTH_SHORT).show();
-//
-//                            Intent intent = new Intent(MainActivityLogin.this, HomeKalab.class);
-//                            startActivity(intent);
-//
-//                        } catch (Exception e) {
-//                            Log.d("error", e.toString());
-//                            e.printStackTrace();
-//                        }
-//
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<LoginList> call, Throwable t) {
-//                        Toast.makeText(MainActivityLogin.this,"GAGAL : "+t.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//                    }
-//                });
 
                 Call<LoginList> call = RetrofitInstance
                         .getInstance()
@@ -121,20 +92,52 @@ public class MainActivityLogin extends AppCompatActivity
                             Log.d("token",dataToken.toString());
 
                             String nama = dataLoginList.getNama();
+                            String id = dataLoginList.getId();
+                            String id_role = dataLoginList.getId_roles();
 
-                            Toast.makeText(MainActivityLogin.this,nama,Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivityLogin.this,"Login Berhasil",Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(MainActivityLogin.this, HomeKalab.class);
-                            startActivity(intent);
+                            switch (id_role) {
+                                case "1" :  sessionManager.createSession(dataToken);
+                                            Intent intent = new Intent(MainActivityLogin.this, HomeKalab.class);
+                                            intent.putExtra("id",id);
+                                            intent.putExtra("nama",nama);
+                                            startActivity(intent);
+                                            break;
+
+                                case "2" :  sessionManager.createSession(dataToken);
+                                            Intent intent2 = new Intent(MainActivityLogin.this, HomeLaboran.class);
+                                            intent2.putExtra("id",id);
+                                            intent2.putExtra("nama",nama);
+                                            startActivity(intent2);
+                                            break;
+
+                                case "3" :  sessionManager.createSession(dataToken);
+                                            Intent intent3 = new Intent(MainActivityLogin.this, HomeDosbim.class);
+                                            intent3.putExtra("id",id);
+                                            intent3.putExtra("nama",nama);
+                                            startActivity(intent3);
+                                            break;
+
+                                case "4" :  sessionManager.createSession(dataToken);
+                                            Intent intent4 = new Intent(MainActivityLogin.this, HomeAslab.class);
+                                            intent4.putExtra("id",id);
+                                            intent4.putExtra("nama",nama);
+                                            startActivity(intent4);
+                                            break;
+
+                                case "5" :  sessionManager.createSession(dataToken);
+                                            Intent intent5 = new Intent(MainActivityLogin.this, HomeMahasiswa.class);
+                                            intent5.putExtra("id",id);
+                                            intent5.putExtra("nama",nama);
+                                            startActivity(intent5);
+                                            break;
+                            }
 
                         } catch (Exception e) {
                             Log.d("error", e.toString());
                             e.printStackTrace();
                         }
-
-
-
-
                     }
 
                     @Override
@@ -146,9 +149,6 @@ public class MainActivityLogin extends AppCompatActivity
 
             }
         });
-
-
-
     }
 
     @Override

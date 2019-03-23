@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 
 import java.util.HashMap;
 
-import untag.daskom.myapplication.HomeKalab;
+import untag.daskom.myapplication.activity.kalab.HomeKalab;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 
 public class SessionManager {

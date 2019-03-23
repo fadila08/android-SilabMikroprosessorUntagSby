@@ -2,6 +2,8 @@ package untag.daskom.myapplication.my_interface;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.Query;
 import untag.daskom.myapplication.model.DataUserList;
 
 public interface GetUserDataService {
@@ -14,4 +16,7 @@ public interface GetUserDataService {
 
     @GET("api/dataaslab")
     Call<DataUserList> getAslabData();
+
+    @GET("api/datalaboran")
+    Call<DataUserList> getLaboranDataKalab(@Header("Authorization") String auth);
 }
