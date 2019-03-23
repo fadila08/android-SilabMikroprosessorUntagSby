@@ -1,5 +1,9 @@
 # Information System of Laboratory of Microprosessor Untag Surabaya
 
+<p align="center">
+  <img width="250" src="images/homescreen.jpeg">
+</p>
+
 |Task Name|Description|
 |:---|:---|
 |`Tables Release`|1.0 |
@@ -8,7 +12,7 @@
 |`Mockup Designer`|Nurul Fadhilah|
 |`Layout Designer`|[Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
 |`Developer`|Nurul Fadhilah & [Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
-
+  
 # Background
 <p align="justify">
 We all know Android app now is on the rise. Nowadays almost everyone already uses a smartphone to help each of its activities. 
