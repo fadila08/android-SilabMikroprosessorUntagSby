@@ -31,6 +31,6 @@ No exception to get an information, they just turn the smartphone on and open an
 |`2`|Login Screen|<img src="images/login.jpeg" width=235>|<p align="justify">The user must enter a username and password to login to the next page. When user forget the password, then the user will be connected to a different page</p>|
 |`3`|Profil Screen|<img src="images/profil.jpeg" width=235>|<p align="justify">Contains the information of laboratory and each officer profile laboratories. Such as head of the laboratory, Laboratory Assistant, Laboran.</p>|
 |`4`|StrukturOrg Screen|<img src="images/strukturorg.jpeg" width=235>|<p align="justify">Showing organizational structure of Laboratory of Microprosessor Untag Surabaya</p>|
-|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg" width=235>||
-|`6`|Unduhan Screen|<img src="images/unduhan.jpg" width=235>||
-|`7`|Galeri Screen|<img src="images/galeri.jpg" width=235>||
+|`5`|Pengumuman Screen|<img src="images/pengumuman.jpg" width=235>|<p align="justify">Contains RecyclerView that contains the information about announcement. Laboratory Officer (Head of the laboratory and Lab assistant) who made the announcement and then upload it on the system</p>|
+|`6`|Unduhan Screen|<img src="images/unduhan.jpg" width=235>|<p align="justify">Contains RecyclerView that contains information about the downloadable things (such as practical task, schedule of implementing the practical, schedule of practical exam) by users of the application, specifically for student</p>|
+|`7`|Galeri Screen|<img src="images/galeri.jpg" width=235>|<p align="justify">Gallery containing photos of the ongoing practical activities and user can enjoy the pictures more clearly by clicking one of the photo, and then will appear a pop-up that displays the photo becomes larger.</p>|
