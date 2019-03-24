@@ -120,14 +120,14 @@ public class MainActivityLogin extends AppCompatActivity
                                             break;
 
                                 case "3" :  sessionManager.createSession(dataToken);
-                                            Intent intent3 = new Intent(MainActivityLogin.this, HomeDosbim.class);
+                                            Intent intent3 = new Intent(MainActivityLogin.this, HomeAslab.class);
                                             intent3.putExtra("id",id);
                                             intent3.putExtra("nama",nama);
                                             startActivity(intent3);
                                             break;
 
                                 case "4" :  sessionManager.createSession(dataToken);
-                                            Intent intent4 = new Intent(MainActivityLogin.this, HomeAslab.class);
+                                            Intent intent4 = new Intent(MainActivityLogin.this, HomeDosbim.class);
                                             intent4.putExtra("id",id);
                                             intent4.putExtra("nama",nama);
                                             startActivity(intent4);
