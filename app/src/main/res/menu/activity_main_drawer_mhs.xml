@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_mhs"
+            android:icon="@drawable/imagehome"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_tugasmhs_mhs"
+            android:icon="@drawable/imagetugas"
+            android:title="Tugas Praktikum"/>
+
+        <item android:id="@+id/nav_datasurat_mhs"
+            android:icon="@drawable/imagemail"
+            android:title="Data Surat"/>
+
+        <item android:id="@+id/nav_nilaimhs_mhs"
+            android:icon="@drawable/imagenilai"
+            android:title="NilaiKu"/>
+
+        <item android:id="@+id/nav_profil_mhs"
+            android:icon="@drawable/blackperson"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_struktur_mhs"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Struktur Organisasi"/>
+
+        <item android:id="@+id/nav_pengumuman_mhs"
+            android:icon="@drawable/imagepengumuman"
+            android:title="Pengumuman"/>
+
+        <item android:id="@+id/nav_unduhan_mhs"
+            android:icon="@drawable/imageunduhan"
+            android:title="Unduhan"/>
+
+        <item android:id="@+id/nav_galeri_mhs"
+            android:icon="@drawable/imagegaleri"
+            android:title="Galeri"/>
+
+        <item android:id="@+id/nav_logout_mhs"
+            android:icon="@drawable/iokecil"
+            android:title="Logout"/>
+    </group>
+
+</menu>

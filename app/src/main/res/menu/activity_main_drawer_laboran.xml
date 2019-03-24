@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_history_laboran"
+            android:icon="@drawable/imagehistory"
+            android:title="History"/>
+
+        <item android:id="@+id/nav_home_laboran"
+            android:icon="@drawable/imagehome"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_datalmhs_laboran"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Mahasiswa"/>
+
+        <item android:id="@+id/nav_datadosbim_laboran"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Dosbim"/>
+
+        <item android:id="@+id/nav_dataaslab_laboran"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Aslab"/>
+
+        <item android:id="@+id/nav_nilaimhs_laboran"
+            android:icon="@drawable/imagenilai"
+            android:title="Nilai Mahasiswa"/>
+
+        <item android:id="@+id/nav_inventaris_laboran"
+            android:icon="@drawable/imageabsensi"
+            android:title="Inventaris Laboratorium"/>
+
+        <item android:id="@+id/nav_profil_laboran"
+            android:icon="@drawable/blackperson"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_struktur_laboran"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Struktur Organisasi"/>
+
+        <item android:id="@+id/nav_pengumuman_laboran"
+            android:icon="@drawable/imagepengumuman"
+            android:title="Pengumuman"/>
+
+        <item android:id="@+id/nav_unduhan_laboran"
+            android:icon="@drawable/imageunduhan"
+            android:title="Unduhan"/>
+
+        <item android:id="@+id/nav_galeri_laboran"
+            android:icon="@drawable/imagegaleri"
+            android:title="Galeri"/>
+
+        <item android:id="@+id/nav_logout_laboran"
+            android:icon="@drawable/iokecil"
+            android:title="Logout"/>
+    </group>
+</menu>

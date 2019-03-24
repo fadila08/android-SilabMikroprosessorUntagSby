@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home_dosbim"
+            android:icon="@drawable/imagehome"
+            android:title="Home"/>
+
+        <item android:id="@+id/nav_datamhs_dosbim"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Mahasiswa"/>
+
+        <item android:id="@+id/nav_datalaboran_dosbim"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Laboran"/>
+
+        <item android:id="@+id/nav_dataaslab_dosbim"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Data Aslab"/>
+
+        <item android:id="@+id/nav_nilaimhs_dosbim"
+            android:icon="@drawable/imagenilai"
+            android:title="Nilai Mahasiswa"/>
+
+        <item android:id="@+id/nav_absprt_dosbim"
+            android:icon="@drawable/imageabsensi"
+            android:title="Absensi Mahasiswa"/>
+
+        <item android:id="@+id/nav_profil_dosbim"
+            android:icon="@drawable/blackperson"
+            android:title="Profil"/>
+
+        <item android:id="@+id/nav_struktur_dosbim"
+            android:icon="@drawable/imagestrukturorg"
+            android:title="Struktur Organisasi"/>
+
+        <item android:id="@+id/nav_pengumuman_dosbim"
+            android:icon="@drawable/imagepengumuman"
+            android:title="Pengumuman"/>
+
+        <item android:id="@+id/nav_unduhan_dosbim"
+            android:icon="@drawable/imageunduhan"
+            android:title="Unduhan"/>
+
+        <item android:id="@+id/nav_galeri_dosbim"
+            android:icon="@drawable/imagegaleri"
+            android:title="Galeri"/>
+
+        <item android:id="@+id/nav_logout_dosbim"
+            android:icon="@drawable/iokecil"
+            android:title="Logout"/>
+    </group>
+
+</menu>

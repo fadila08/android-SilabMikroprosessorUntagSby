@@ -35,7 +35,7 @@
         <activity android:name=".DOSBIMEditProfilDosbim" />
         <activity android:name=".DOSBIMDataAslab" />
         <activity android:name=".DOSBIMDataMahasiswa" />
-        <activity android:name=".HomeDosbim" />
+        <activity android:name=".activity.dosbim.HomeDosbim" />
         <activity android:name=".LABORANStrukturOrganisasi" />
         <activity android:name=".LABORANHomeProfil" />
         <activity android:name=".LABORANHomeGaleri" />
@@ -56,8 +56,8 @@
         <activity android:name=".LABORANDataDosbim" />
         <activity android:name=".LABORANEditDataMahasiswa" />
         <activity android:name=".LABORANMasukkanDataMahasiswa" />
-        <activity android:name=".LABORANDataMahasiswa" />
-        <activity android:name=".HomeLaboran" />
+        <activity android:name=".activity.laboran.LABORANDataMahasiswa" />
+        <activity android:name=".activity.laboran.HomeLaboran" />
         <activity android:name=".ASLABStrukturOrganisasi" />
         <activity android:name=".ASLABHomeProfil" />
         <activity android:name=".ASLABMasukkanGaleri" />
@@ -81,7 +81,7 @@
         <activity android:name=".ASLABEditDataMahasiswa" />
         <activity android:name=".ASLABDataMahasiswa" />
         <activity android:name=".ASLABEditProfilAslab" />
-        <activity android:name=".HomeAslab" />
+        <activity android:name=".activity.aslab.HomeAslab" />
         <activity android:name=".KALABAbsensiMahasiswa" />
         <activity android:name=".KALABStrukturOrganisasi" />
         <activity android:name=".KALABHomeProfil" />

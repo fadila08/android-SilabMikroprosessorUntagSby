@@ -9,35 +9,37 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".HomeAslab"
-    >
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.aslab.HomeAslab"
+    tools:showIn="@layout/app_bar_home_aslab">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="SILAB MIKROPROSESSOR"
-            app:titleMarginStart="93dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="?attr/actionBarSize"-->
+            <!--android:background="@color/colorOrange"-->
+            <!--app:title="SILAB MIKROPROSESSOR"-->
+            <!--app:titleMarginStart="93dp"-->
+            <!--android:textAlignment="center"-->
+            <!--app:titleTextColor="@color/colorbgBlue"-->
+            <!--android:id="@+id/toolbar"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+            <!--android:elevation="4dp"/>-->
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="130dp"
             android:background="@color/colorOrange"
             >
 
             <ImageView
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
                 android:id="@+id/ivdosen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -46,11 +48,13 @@
 
             <TextView
                 android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
                 android:layout_toRightOf="@+id/ivdosen"
                 android:id="@+id/tvslamatdatangdosen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Selamat Datang"
+                android:fontFamily="@font/nunitosans_bold"
                 android:textStyle="bold"
                 android:textSize="27sp"
                 android:textColor="@color/colorTulisanUniv"
@@ -60,9 +64,10 @@
                 android:layout_marginStart="25dp"
                 android:layout_toRightOf="@+id/ivdosen"
                 android:layout_below="@+id/tvslamatdatangdosen"
-                android:id="@+id/tvnamakalab"
+                android:id="@+id/tvnamaaslabheader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/nunitosans_bold"
                 android:text="Nama Aslab"
                 android:textStyle="bold"
                 android:textSize="17sp"

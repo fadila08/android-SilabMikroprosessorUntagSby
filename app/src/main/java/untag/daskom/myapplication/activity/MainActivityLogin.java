@@ -19,12 +19,12 @@ import android.widget.Toast;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import untag.daskom.myapplication.HomeAslab;
-import untag.daskom.myapplication.HomeDosbim;
+import untag.daskom.myapplication.activity.aslab.HomeAslab;
+import untag.daskom.myapplication.activity.dosbim.HomeDosbim;
 import untag.daskom.myapplication.activity.kalab.HomeKalab;
-import untag.daskom.myapplication.HomeLaboran;
-import untag.daskom.myapplication.HomeMahasiswa;
+import untag.daskom.myapplication.activity.mahasiswa.HomeMahasiswa;
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.laboran.HomeLaboran;
 import untag.daskom.myapplication.activity.noAuth.MainActivityGaleri;
 import untag.daskom.myapplication.activity.noAuth.MainActivityPengumuman;
 import untag.daskom.myapplication.activity.noAuth.MainActivityProfil;
@@ -48,15 +48,20 @@ public class MainActivityLogin extends AppCompatActivity
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_main_login);
+
+        //pendefinisian toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_login);
         setSupportActionBar(toolbar);
 
+        //pendefinisian button dan textview
         btlogin = (Button)findViewById(R.id.btlogin);
         txtUsername = (EditText) findViewById(R.id.txt_username);
         txtPassword = (EditText) findViewById(R.id.txt_password);
 
+        //untuk memulai session
         sessionManager = new SessionManager(this);
 
+        //mulai dari sini untuk layout drawer
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_login);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -66,13 +71,15 @@ public class MainActivityLogin extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_login);
         navigationView.setNavigationItemSelectedListener(this);
+        //sampai sini
+
 
         // aksi btn login
-
         btlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                //untuk mengirim data ke API login dengan retrofit
                 LoginDataService service = RetrofitInstance.getRetrofitInstance().create(LoginDataService.class);
 
                 Call<LoginList> call = RetrofitInstance
@@ -151,6 +158,7 @@ public class MainActivityLogin extends AppCompatActivity
         });
     }
 
+    //untuk layout drawer
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_login);
@@ -161,6 +169,7 @@ public class MainActivityLogin extends AppCompatActivity
         }
     }
 
+    //untuk layout drawer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -168,6 +177,7 @@ public class MainActivityLogin extends AppCompatActivity
         return true;
     }
 
+    //untuk layout drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {

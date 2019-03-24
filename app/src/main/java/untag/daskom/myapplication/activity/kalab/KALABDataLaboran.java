@@ -47,6 +47,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_laboran_kalab);
 
+        //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_kalab);
         setSupportActionBar(toolbar);
 
@@ -59,11 +60,13 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_laboran_kalab);
         navigationView.setNavigationItemSelectedListener(this);
+        //sampai sini
 
+        //untuk mengambil data session
         sessionManager = new SessionManager(this);
-
         String session = sessionManager.getSessionData().get("ID");
 
+        //mulai dari sini untuk menangkap data dari API dengan retrofit
         /** Create handle for the RetrofitInstance interface*/
         GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
 
@@ -81,8 +84,11 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
                 Toast.makeText(KALABDataLaboran.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+        //sampai sini
     }
 
+
+    //untuk layout drawer
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_kalab);
@@ -93,6 +99,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
         }
     }
 
+    //untuk layout drawer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -100,6 +107,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
         return true;
     }
 
+    //untuk layout drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -175,6 +183,8 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
         return true;
     }
 
+
+    //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_laboran_kalab);

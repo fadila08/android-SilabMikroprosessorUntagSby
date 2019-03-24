@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANDataMahasiswa"
+    tools:context=".activity.laboran.LABORANDataMahasiswa"
     >
 
     <LinearLayout

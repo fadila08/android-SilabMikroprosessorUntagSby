@@ -39,8 +39,22 @@ public class HomeKalab extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_kalab);
 
+        //mendefinisikan text view dan button yang digunakan
+        tvNama = (TextView)findViewById(R.id.tvnamakalab);
+//        tvNamaDrawer = (TextView) findViewById(R.id.tv_namaKalab);
+
+        btdatalaboran = (Button)findViewById(R.id.btdatalaborankalab);
+        btdataaslab = (Button)findViewById(R.id.btdataaslabkalab);
+        btdatadosbim = (Button)findViewById(R.id.btdatadosbimkalab);
+        btdatamhs = (Button)findViewById(R.id.btdatamhskalab);
+        btnilaimhs = (Button)findViewById(R.id.btnilaimhskalab);
+        btabsmhs = (Button)findViewById(R.id.btabsmhskalab);
+        btdatasurat = (Button)findViewById(R.id.btdatasurat);
+
+        //menangkap data nama kalab dari login
         nama = getIntent().getStringExtra("nama");
 
+        //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_home_kalab);
         setSupportActionBar(toolbar);
 
@@ -53,24 +67,13 @@ public class HomeKalab extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_home_kalab);
         navigationView.setNavigationItemSelectedListener(this);
+        //sampai sini
 
-        tvNama = (TextView)findViewById(R.id.tvnamakalab);
-//        tvNamaDrawer = (TextView) findViewById(R.id.tv_namaKalab);
-
-        btdatalaboran = (Button)findViewById(R.id.btdatalaborankalab);
-        btdataaslab = (Button)findViewById(R.id.btdataaslabkalab);
-        btdatadosbim = (Button)findViewById(R.id.btdatadosbimkalab);
-        btdatamhs = (Button)findViewById(R.id.btdatamhskalab);
-        btnilaimhs = (Button)findViewById(R.id.btnilaimhskalab);
-        btabsmhs = (Button)findViewById(R.id.btabsmhskalab);
-        btdatasurat = (Button)findViewById(R.id.btdatasurat);
-
+        //untuk menggambil data session
         sessionManager = new SessionManager(this);
-
         String session = sessionManager.getSessionData().get("ID");
 
-
-
+        //mulai dari sini untuk set isi dari textview dan button yang digunakan
         tvNama.setText(nama);
 //        tvNamaDrawer.setText(nama);
 
@@ -129,8 +132,10 @@ public class HomeKalab extends AppCompatActivity
                 startActivity(btdatasurat);
             }
         });
+        //sampai sini
     }
 
+    //untuk layout drawer
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_home_kalab);
@@ -141,6 +146,7 @@ public class HomeKalab extends AppCompatActivity
         }
     }
 
+    //untuk layout drawer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -148,6 +154,7 @@ public class HomeKalab extends AppCompatActivity
         return true;
     }
 
+    //untuk layout drawer
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -155,7 +162,6 @@ public class HomeKalab extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_history_kalab) {
-            // Handle the camera action
 //            Intent intent = new Intent(MainActivityStruktur.this, HomeScreen.class);
 //            startActivity(intent);
 
@@ -224,4 +230,5 @@ public class HomeKalab extends AppCompatActivity
         return true;
 
     }
+
 }
