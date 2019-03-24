@@ -11,7 +11,8 @@
 |`Document Owner`|Nurul Fadhilah|
 |`Mockup Designer`|Nurul Fadhilah|
 |`Layout Designer`|[Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
-|`Developer`|Nurul Fadhilah & [Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)|
+|`Developer`|Nurul Fadhilah & [Resha Pratama Nugroho](https://web.facebook.com/reshapratama.nugroho)| 
+
   
 # Background
 <p align="justify">
