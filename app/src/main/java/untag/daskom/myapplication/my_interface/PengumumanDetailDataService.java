@@ -9,7 +9,7 @@ import untag.daskom.myapplication.model.PengumumanDetailList;
 
 public interface PengumumanDetailDataService {
 
-    @GET("api/pengumuman/{id}")
+    @GET("api/datapengumuman/{id}")
     Call<PengumumanDetailList> getPengumumanDetail(@Path("id") String id);
 
 

@@ -8,10 +8,10 @@ import untag.daskom.myapplication.model.GaleriList;
 
 public interface GaleriDataService {
 
-    @GET("api/galeri")
+    @GET("api/datagaleri")
     Call<GaleriList> getGaleri();
 
-    @GET("api/galeri/{id}")
+    @GET("api/datagaleri/{id}")
     Call<GaleriDetailList> getGaleriDetail(@Path("id") String id);
 
 }

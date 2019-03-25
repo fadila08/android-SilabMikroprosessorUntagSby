@@ -64,7 +64,7 @@
                 android:layout_marginStart="25dp"
                 android:layout_toRightOf="@+id/ivdosen"
                 android:layout_below="@+id/tvslamatdatangdosen"
-                android:id="@+id/tvnamadosbim"
+                android:id="@+id/tvnamamahasiswaheader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Nama Mahasiswa"

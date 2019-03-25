@@ -35,11 +35,11 @@ public class HomeMahasiswa extends AppCompatActivity
         setContentView(R.layout.activity_main_home_mhs);
 
         //mendefinisikan textview dan button yang digunakan
-        tvNama = (TextView)findViewById(R.id.tvnamamhs);
+        tvNama = (TextView)findViewById(R.id.tvnamamahasiswaheader);
 //        tvNamaDrawer = (TextView) findViewById(R.id.tv_namaKalab);
 
         bttugaspraktikummhs = (Button)findViewById(R.id.bttugaspraktikummhs);
-        btdatasuratmhs = (Button)findViewById(R.id.btdatasurat);
+        btdatasuratmhs = (Button)findViewById(R.id.btdatasuratmhs);
         btnilaimhsmhs = (Button)findViewById(R.id.btnilaimhsmhs);
 
         //menangkap data nama mhs dari login

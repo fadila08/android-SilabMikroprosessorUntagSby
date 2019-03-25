@@ -22,6 +22,7 @@
         <activity android:name=".MHSEditProfilMahasiswa" />
         <activity android:name=".MHSMasukkanTugasMahasiswa" />
         <activity android:name=".MHSHomeTugasMahasiswa" />
+        <activity android:name=".activity.mahasiswa.HomeMahasiswa"/>
         <activity android:name=".DOSBIMHomeGaleri" />
         <activity android:name=".DOSBIMHomeUnduhan" />
         <activity android:name=".DOSBIMDetilPengumuman" />

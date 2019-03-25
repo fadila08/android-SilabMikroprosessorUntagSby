@@ -6,7 +6,7 @@ import untag.daskom.myapplication.model.PengumumanList;
 
 public interface PengumumanDataService {
 
-    @GET("api/pengumuman")
+    @GET("api/datapengumuman")
     Call<PengumumanList> getPengumuman();
 
 }

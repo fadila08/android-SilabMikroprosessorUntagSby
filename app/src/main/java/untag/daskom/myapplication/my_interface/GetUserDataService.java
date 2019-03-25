@@ -8,15 +8,15 @@ import untag.daskom.myapplication.model.DataUserList;
 
 public interface GetUserDataService {
 
-    @GET("api/datakalab")
+    @GET("api/kalab")
     Call<DataUserList> getKalabData();
 
-    @GET("api/datalaboran")
+    @GET("api/laboran")
     Call<DataUserList> getLaboranData();
 
-    @GET("api/dataaslab")
+    @GET("api/aslab")
     Call<DataUserList> getAslabData();
 
-    @GET("api/datalaboran")
+    @GET("api/laboran")
     Call<DataUserList> getLaboranDataKalab(@Header("Authorization") String auth);
 }
