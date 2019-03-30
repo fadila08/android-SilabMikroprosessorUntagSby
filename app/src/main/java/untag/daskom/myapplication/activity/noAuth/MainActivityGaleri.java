@@ -7,6 +7,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -138,7 +139,7 @@ public class MainActivityGaleri extends AppCompatActivity
         recyclerView = findViewById(R.id.rvgaleri);
 
         adapter = new GaleriAdapter(galeriArrayList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivityGaleri.this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(MainActivityGaleri.this,2);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

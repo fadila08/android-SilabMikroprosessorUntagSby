@@ -19,4 +19,7 @@ public interface GetUserDataService {
 
     @GET("api/laboran")
     Call<DataUserList> getLaboranDataKalab(@Header("Authorization") String auth);
+
+    @GET("api/kalab")
+    Call<DataUserList> getAslabDataKalab(@Header("Authorization") String auth);
 }

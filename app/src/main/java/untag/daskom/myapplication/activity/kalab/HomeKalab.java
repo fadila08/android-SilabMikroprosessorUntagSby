@@ -15,7 +15,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import untag.daskom.myapplication.KALABAbsensiMahasiswa;
-import untag.daskom.myapplication.KALABDataAslab;
 import untag.daskom.myapplication.KALABDataDosbim;
 import untag.daskom.myapplication.KALABDataMahasiswa;
 import untag.daskom.myapplication.KALABDataSurat;
@@ -167,6 +166,7 @@ public class HomeKalab extends AppCompatActivity
 
         } else if (id == R.id.nav_home_kalab) {
             Intent intent = new Intent(HomeKalab.this, HomeKalab.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_kalab) {
