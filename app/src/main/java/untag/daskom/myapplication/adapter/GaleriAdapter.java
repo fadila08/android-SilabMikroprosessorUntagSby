@@ -20,6 +20,7 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.model.DataGaleriDetailList;
 import untag.daskom.myapplication.model.GaleriModel;
 
 public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriViewHolder> {
@@ -76,6 +77,7 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriView
                 public void onClick(View v) {
 
                     String selectId = txtId.getText().toString();
+                    String selectJudul = txtJudul.getText().toString();
 
                     popupDialog = new Dialog(v.getContext());
 
@@ -88,6 +90,8 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriView
                     btnClose = (Button) popupDialog.findViewById(R.id.btn_close);
                     txtJudulPopUp = (TextView) popupDialog.findViewById(R.id.txt_judul_gambar_popup);
                     gambarPopUp = (ImageView) popupDialog.findViewById(R.id.gambar_popup);
+
+                    txtJudulPopUp.setText(selectJudul);
 
                     //isi gambar dan judul by id
                     /*
