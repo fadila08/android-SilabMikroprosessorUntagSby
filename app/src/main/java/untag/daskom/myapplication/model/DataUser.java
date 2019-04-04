@@ -16,11 +16,14 @@ public class DataUser {
     @SerializedName("nomor_whatsapp")
     private String nomor_whatsapp;
 
-    public DataUser(String nama, String nomor_induk, String email, String nomor_whatsapp) {
+    private String id;
+
+    public DataUser(String nama, String nomor_induk, String email, String nomor_whatsapp, String id) {
         this.nama = nama;
         this.nomor_induk = nomor_induk;
         this.email = email;
         this.nomor_whatsapp = nomor_whatsapp;
+        this.id = id;
     }
 
     public String getNama() {
@@ -53,5 +56,13 @@ public class DataUser {
 
     public void setNomor_whatsapp(String nomor_whatsapp) {
         this.nomor_whatsapp = nomor_whatsapp;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -41,9 +41,9 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     SessionManager sessionManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_data_laboran_kalab);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main_data_laboran_kalab);
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_kalab);

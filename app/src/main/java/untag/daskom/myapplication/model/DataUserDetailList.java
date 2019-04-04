@@ -5,6 +5,7 @@ public class DataUserDetailList {
     private String nomor_induk;
     private String email;
     private String nomor_whatsapp;
+    private String id;
 
     public String getNama() {
         return nama;
@@ -38,4 +39,11 @@ public class DataUserDetailList {
         this.nomor_whatsapp = nomor_whatsapp;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 }
