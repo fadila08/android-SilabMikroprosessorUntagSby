@@ -186,7 +186,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_laboran_kalab);
-        adapter = new DataLaboranAdapter(dataUserArrayList);
+        adapter = new DataLaboranAdapter(dataUserArrayList, KALABDataLaboran.this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataLaboran.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

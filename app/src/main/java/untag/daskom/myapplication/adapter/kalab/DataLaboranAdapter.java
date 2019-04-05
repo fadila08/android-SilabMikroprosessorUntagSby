@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.adapter.kalab;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,14 +12,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.kalab.KALABDataLaboran;
 import untag.daskom.myapplication.activity.kalab.PopupKalabDataLaboran;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserDetailList;
+import untag.daskom.myapplication.model.DataUserList;
 import untag.daskom.myapplication.model.UserDetailList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
@@ -27,12 +33,14 @@ import untag.daskom.myapplication.session.SessionManager;
 public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.DataLaboranViewHolder> {
 
     private ArrayList<DataUser> dataList;
-    private ArrayList<DataUserDetailList> dataUserDetailLists;
     Dialog popupDialog;
     String id;
+    Context context;
+    SessionManager sessionManager;
 
-    public DataLaboranAdapter(ArrayList<DataUser> dataList) {
+    public DataLaboranAdapter(ArrayList<DataUser> dataList, Context context) {
         this.dataList = dataList;
+        this.context = context;
     }
 
     @Override
@@ -78,9 +86,34 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_laboran_kalab);
 
 //                    txtPopupNama.setText(dataUserDetailLists.get(selectId).getNama());
-                    txtNomorInduk.setText("123");
-                    txtPopupWa.setText("000");
-                    txtPopupEmail.setText("@gmail");
+                    //untuk mengambil data session
+                    sessionManager = new SessionManager(context);
+                    String session = sessionManager.getSessionData().get("ID");
+
+                    //mulai dari sini untuk menangkap data dari API dengan retrofit
+                    /** Create handle for the RetrofitInstance interface*/
+                    GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+
+                    /** Call the method with parameter in the interface to get the notice data*/
+                    Call<UserDetailList> call = service.getLaboranDetailDataKalab("Bearer "+session, id);
+
+                    call.enqueue(new Callback<UserDetailList>() {
+                        @Override
+                        public void onResponse(Call<UserDetailList> call, Response<UserDetailList> response) {
+                            //sampai sini
+                            Log.d("data id",response.body().getData().getId());
+                            txtPopupNama.setText(response.body().getData().getNama());
+                            txtNomorInduk.setText(response.body().getData().getNomor_induk());
+                            txtPopupWa.setText(response.body().getData().getNomor_whatsapp());
+                            txtPopupEmail.setText(response.body().getData().getEmail());
+                        }
+
+                        @Override
+                        public void onFailure(Call<UserDetailList> call, Throwable t) {
+                            Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
 
                     popupDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                     popupDialog.show();
