@@ -11,7 +11,8 @@
     android:background="@color/colorTulisanUniv"
     tools:context=".activity.kalab.KALABDataAslab"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/app_bar_data_aslab_kalab">
+    tools:showIn="@layout/app_bar_data_aslab_kalab"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,7 +43,6 @@
             android:background="@color/colorAbuAbu"
             android:orientation="vertical"
             >
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -52,7 +52,7 @@
                     android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Data Aslab"
+                    android:text="Data Asisten Laboratorium"
                     android:fontFamily="@font/nunitosans_bold"
                     android:textColor="@color/colorbgBlue"
                     android:textSize="16dp"
@@ -107,8 +107,8 @@
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
                 android:id="@+id/rv_data_aslab_kalab">
 
             </android.support.v7.widget.RecyclerView>

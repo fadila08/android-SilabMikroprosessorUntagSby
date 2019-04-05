@@ -11,23 +11,23 @@ import java.util.ArrayList;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.DataUser;
 
-public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.DataAslabViewHolder>  {
+public class DataMahasiswaAdapter extends RecyclerView.Adapter<DataMahasiswaAdapter.DataMahasiswaViewHolder>  {
 
     private ArrayList<DataUser> dataList;
 
-    public DataAslabAdapter(ArrayList<DataUser> dataList) {
+    public DataMahasiswaAdapter(ArrayList<DataUser> dataList) {
         this.dataList = dataList;
     }
 
     @Override
-    public DataAslabViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DataMahasiswaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.single_view_row_data_aslab_kalab, parent, false);
-        return new DataAslabViewHolder(view);
+        View view = layoutInflater.inflate(R.layout.single_view_row_data_mahasiswa_kalab, parent, false);
+        return new DataMahasiswaViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(DataAslabViewHolder holder, int position) {
+    public void onBindViewHolder(DataMahasiswaViewHolder holder, int position) {
         holder.txtNama.setText(dataList.get(position).getNama());
         holder.txtNomorInduk.setText(dataList.get(position).getNomor_induk());
     }
@@ -38,14 +38,14 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
         return dataList.size();
     }
 
-    class DataAslabViewHolder extends RecyclerView.ViewHolder {
+    class DataMahasiswaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNama, txtNomorInduk;
 
-        DataAslabViewHolder(View itemView) {
+        DataMahasiswaViewHolder(View itemView) {
             super(itemView);
-            txtNama = itemView.findViewById(R.id.txt_nama_aslab_kalab);
-            txtNomorInduk = itemView.findViewById(R.id.txt_nomor_induk_aslab_kalab);
+            txtNama = itemView.findViewById(R.id.txt_nama_mahasiswa_kalab);
+            txtNomorInduk = itemView.findViewById(R.id.txt_nomor_induk_mahasiswa_kalab);
         }
     }
 }

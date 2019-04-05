@@ -22,6 +22,7 @@ import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.kalab.DataLaboranAdapter;
+import untag.daskom.myapplication.adapter.kalab.DataMahasiswaAdapter;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
@@ -29,29 +30,29 @@ import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
 
-public class KALABDataLaboran extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class KALABDataMahasiswa extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DataLaboranAdapter adapter;
+    private DataMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_data_laboran_kalab);
+        setContentView(R.layout.activity_main_data_mahasiswa_kalab);
 
         //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_kalab);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_mahasiswa_kalab);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_mahasiswa_kalab);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_laboran_kalab);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_mahasiswa_kalab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
@@ -74,7 +75,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
 
             @Override
             public void onFailure(Call<DataUserList> call, Throwable t) {
-                Toast.makeText(KALABDataLaboran.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(KALABDataMahasiswa.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
         //sampai sini
@@ -84,7 +85,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_mahasiswa_kalab);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -113,35 +114,35 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
 //            startActivity(intent);
 
         } else if (id == R.id.nav_home_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, HomeKalab.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, HomeKalab.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABDataLaboran.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABDataLaboran.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABDataAslab.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABDataAslab.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABDataDosbim.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABDataDosbim.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABDataMahasiswa.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABDataMahasiswa.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABNilaiMahasiswa.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABNilaiMahasiswa.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_absensi_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABAbsensiMahasiswa.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABAbsensiMahasiswa.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_kalab) {
-            Intent intent = new Intent(KALABDataLaboran.this, KALABDataSurat.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABDataSurat.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_kalab) {
@@ -165,13 +166,13 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
 //            startActivity(intent);
 
         } else if (id == R.id.nav_logout_kalab) {
-            new LogOut(KALABDataLaboran.this);
+            new LogOut(KALABDataMahasiswa.this);
 
-            Intent intent = new Intent(KALABDataLaboran.this, MainActivityLogin.class);
+            Intent intent = new Intent(KALABDataMahasiswa.this, MainActivityLogin.class);
             startActivity(intent);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_mahasiswa_kalab);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -180,9 +181,9 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
-        recyclerView = findViewById(R.id.rv_data_laboran_kalab);
-        adapter = new DataLaboranAdapter(dataUserArrayList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataLaboran.this);
+        recyclerView = findViewById(R.id.rv_data_mahasiswa_kalab);
+        adapter = new DataMahasiswaAdapter(dataUserArrayList);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataMahasiswa.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
