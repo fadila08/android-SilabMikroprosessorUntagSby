@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350dp"
     android:layout_height="200dp"
     xmlns:tools="http://schemas.android.com/tools"
@@ -14,12 +15,12 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-         <Button
+        <Button
             android:layout_width="50px"
             android:layout_height="60px"
             android:background="@drawable/edit_icon"
-            android:id="@+id/btn_edit_data_laboran_kalab"
-             android:layout_marginLeft="400px"
+            android:id="@+id/btn_edit_data_aslab_kalab"
+            android:layout_marginLeft="400px"
             android:layout_weight="1"/>
 
         <Button
@@ -27,7 +28,7 @@
             android:layout_height="60px"
             android:background="@drawable/delete_icon"
             android:layout_gravity="end"
-            android:id="@+id/btn_delete_data_laboran_kalab"
+            android:id="@+id/btn_delete_data_aslab_kalab"
             android:layout_weight="1"/>
 
     </LinearLayout>
@@ -53,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50px"
             android:text=""
-            android:id="@+id/txt_detail_nama_laboran_kalab"
+            android:id="@+id/txt_detail_nama_aslab_kalab"
             android:textSize="14sp"
             android:fontFamily="@font/nunitosans_bold"
             android:textColor="#000000"
@@ -70,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50px"
-            android:text="NIP              "
+            android:text="NBI              "
             android:textSize="14sp"
             android:fontFamily="@font/nunitosans_bold"
             android:textColor="#000000"
@@ -81,7 +82,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50px"
             android:text=""
-            android:id="@+id/txt_detail_nip_laboran_kalab"
+            android:id="@+id/txt_detail_nip_aslab_kalab"
             android:textSize="14sp"
             android:fontFamily="@font/nunitosans_bold"
             android:textColor="#000000"
@@ -109,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50px"
             android:text=""
-            android:id="@+id/txt_detail_no_wa_laboran_kalab"
+            android:id="@+id/txt_detail_no_wa_aslab_kalab"
             android:textSize="14sp"
             android:fontFamily="@font/nunitosans_bold"
             android:textColor="#000000"
@@ -137,7 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="50px"
             android:text=""
-            android:id="@+id/txt_detail_email_laboran_kalab"
+            android:id="@+id/txt_detail_email_aslab_kalab"
             android:textSize="14sp"
             android:fontFamily="@font/nunitosans_bold"
             android:textColor="#000000"

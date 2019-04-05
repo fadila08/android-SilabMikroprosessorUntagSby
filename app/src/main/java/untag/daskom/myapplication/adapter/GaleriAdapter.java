@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.adapter;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -8,6 +9,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,8 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.io.File;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
@@ -26,13 +30,15 @@ import untag.daskom.myapplication.model.GaleriModel;
 public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriViewHolder> {
 
     private ArrayList<GaleriModel> galeriList;
+    Context context;
     String id;
     String imageString;
-    byte[] imageBytes;
+//    byte[] imageBytes;
     Dialog popupDialog;
 
-    public GaleriAdapter (ArrayList<GaleriModel> galeriList) {
+    public GaleriAdapter (ArrayList<GaleriModel> galeriList, Context context) {
         this.galeriList = galeriList;
+        this.context = context;
     }
 
     @Override
@@ -49,12 +55,45 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriView
         id = galeriList.get(position).getId();
         holder.txtId.setText(id);
 
-        //ambil data gambar
         imageString = galeriList.get(position).getGambar();
 
-        imageBytes = Base64.decode(imageString, Base64.DEFAULT);
-        Bitmap decodeImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
-        holder.gambar.setImageBitmap(decodeImage);
+        Log.wtf("imageString", imageString);
+
+        String object;
+
+//        if(object.has("profile_image")) {
+            // imageView should be declared in layout xml file with id `imageView`
+//            ImageView imageView = (ImageView) context.findViewById(R.id.imageView);
+            com.squareup.picasso.Picasso.with(context).
+                    load("http://silab.agus-hermanto.com/api/datagaleri/"+imageString).
+                    placeholder(R.mipmap.ic_launcher).
+                    into(holder.gambar);
+//        }
+
+
+//        int width, height;
+//        ImageView image = (ImageView) findViewById(R.id.imageViewId);
+//        Bitmap bMap = BitmapFactory.decodeFile(getExternalFilesDir(null) + File.separator + "AndroidTutorialPoint.jpg");
+//        width = 2*bMap.getWidth();
+//        height = 6*bMap.getHeight();
+//        Bitmap bMap2 = Bitmap.createScaledBitmap(bMap, width, height, false);
+//        image.setImageBitmap(bMap2);
+
+//        File imgFile = new  File(imageString.toString());
+//
+//        if(imgFile.exists()){
+//
+//            Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
+//
+//            holder.gambar.setImageBitmap(myBitmap);
+//
+//        }
+
+//        //ambil data gambar
+//        imageString = galeriList.get(position).getGambar();
+//        imageBytes = Base64.decode(imageString, Base64.DEFAULT);
+//        Bitmap decodeImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+//        holder.gambar.setImageBitmap(decodeImage);
     }
 
     @Override

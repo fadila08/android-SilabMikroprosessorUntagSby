@@ -138,7 +138,7 @@ public class MainActivityGaleri extends AppCompatActivity
     private void generateGaleriList(ArrayList<GaleriModel> galeriArrayList) {
         recyclerView = findViewById(R.id.rvgaleri);
 
-        adapter = new GaleriAdapter(galeriArrayList);
+        adapter = new GaleriAdapter(galeriArrayList,MainActivityGaleri.this);
         RecyclerView.LayoutManager layoutManager = new GridLayoutManager(MainActivityGaleri.this,2);
 
         recyclerView.setLayoutManager(layoutManager);

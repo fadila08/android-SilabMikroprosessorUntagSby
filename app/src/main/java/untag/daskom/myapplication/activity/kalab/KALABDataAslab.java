@@ -188,7 +188,7 @@ public class KALABDataAslab extends AppCompatActivity
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_aslab_kalab);
-        adapter = new DataAslabAdapter(dataUserArrayList);
+        adapter = new DataAslabAdapter(dataUserArrayList,KALABDataAslab.this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataAslab.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

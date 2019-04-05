@@ -103,7 +103,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                             //sampai sini
                             Log.d("data id",response.body().getData().getId());
                             txtPopupNama.setText(response.body().getData().getNama());
-                            txtNomorInduk.setText(response.body().getData().getNomor_induk());
+                            txtPopupNInduk.setText(response.body().getData().getNomor_induk());
                             txtPopupWa.setText(response.body().getData().getNomor_whatsapp());
                             txtPopupEmail.setText(response.body().getData().getEmail());
                         }
