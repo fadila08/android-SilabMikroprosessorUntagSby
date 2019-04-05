@@ -21,7 +21,7 @@
             android:textSize="28px"
             android:padding="3dp"
             android:fontFamily="@font/roboto_regular"
-            android:id="@+id/txt_nama_aslab_kalab"
+            android:id="@+id/txt_nama_dosbim_kalab"
             android:layout_weight="1"/>
 
         <TextView
@@ -31,7 +31,7 @@
             android:textSize="28px"
             android:padding="3dp"
             android:fontFamily="@font/roboto_regular"
-            android:id="@+id/txt_nomor_induk_aslab_kalab"
+            android:id="@+id/txt_nomor_induk_dosbim_kalab"
             android:layout_weight="1"
             />
     </LinearLayout>

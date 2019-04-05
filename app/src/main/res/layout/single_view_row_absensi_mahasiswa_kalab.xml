@@ -21,7 +21,7 @@
             android:textSize="28px"
             android:padding="3dp"
             android:fontFamily="@font/roboto_regular"
-            android:id="@+id/txt_nama_aslab_kalab"
+            android:id="@+id/txt_nama_mahasiswa_kalab"
             android:layout_weight="1"/>
 
         <TextView
@@ -31,7 +31,18 @@
             android:textSize="28px"
             android:padding="3dp"
             android:fontFamily="@font/roboto_regular"
-            android:id="@+id/txt_nomor_induk_aslab_kalab"
+            android:id="@+id/txt_nomor_induk_mahasiswa_kalab"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#62000000"
+            android:textSize="28px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/txt_kehadiran_mahasiswa_kalab"
             android:layout_weight="1"
             />
     </LinearLayout>
