@@ -1,30 +1,11 @@
 package untag.daskom.myapplication.model;
 
-import com.google.gson.annotations.SerializedName;
-
-public class DataUser {
-
-    @SerializedName("nama")
+public class DataUserDetailList {
     private String nama;
-
-    @SerializedName("nomor_induk")
     private String nomor_induk;
-
-    @SerializedName("email")
     private String email;
-
-    @SerializedName("nomor_whatsapp")
     private String nomor_whatsapp;
-
     private String id;
-
-    public DataUser(String nama, String nomor_induk, String email, String nomor_whatsapp, String id) {
-        this.nama = nama;
-        this.nomor_induk = nomor_induk;
-        this.email = email;
-        this.nomor_whatsapp = nomor_whatsapp;
-        this.id = id;
-    }
 
     public String getNama() {
         return nama;

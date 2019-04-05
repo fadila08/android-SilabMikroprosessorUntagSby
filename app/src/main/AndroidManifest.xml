@@ -124,6 +124,7 @@
         <activity android:name=".activity.noAuth.MainActivityPengumuman" />
         <activity android:name=".activity.noAuth.MainActivityGaleri"/>
         <activity android:name=".activity.MainActivityLogin"/>
+        <activity android:name=".activity.kalab.PopupKalabDataLaboran"/>
         <activity
             android:name=".activity.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

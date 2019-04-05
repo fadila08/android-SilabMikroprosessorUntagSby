@@ -36,9 +36,9 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     SessionManager sessionManager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_data_laboran_kalab);
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main_data_laboran_kalab);
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_kalab);
@@ -181,7 +181,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     /** Method to generate List of notice using RecyclerView with custom adapter*/
     private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_laboran_kalab);
-        adapter = new DataLaboranAdapter(dataUserArrayList);
+        adapter = new DataLaboranAdapter(dataUserArrayList, KALABDataLaboran.this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataLaboran.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
