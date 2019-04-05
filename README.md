@@ -26,7 +26,7 @@ No exception to get an information, they just turn the smartphone on and open an
 |`1`|Registered Account|<p align="justify">The participant is active as a student majoring in informatic engineering and signed up at the associated lab course</p>|Must have|The registered account can be either Email addresses or number Whatsapp|
 |`2`|Email Integration|<p align="justify">When user forget the password for login, they can receive new pass via Email.</p>|Optional|User need to input the correct Email address in app|
 |`3`|Whatsapp Integration|<p align="justify">When user forget the password for login, they can receive new pass via Whatsapp.</p>|Optional|User need to input the correct number of Whatsapp in app|
-|`4`|API|<p align="justify">A developer wants to integrate with the mobile app so that they can embed the activity stream on their website</p>|Should have|<ul><li>We should contact to our team as we did something similar</li></ul>
+|`4`|API|<p align="justify">We as developer wants to integrate the mobile app with API (Laravel) so that we can embed every activities in mobile app stream on our website</p>|Should have|We should contact to our team as we did something similar
 
 # User Interaction and Design
 |No|Name|Image Mockup|Description|
