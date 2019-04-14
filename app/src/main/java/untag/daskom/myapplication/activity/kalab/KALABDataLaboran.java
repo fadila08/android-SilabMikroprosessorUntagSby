@@ -12,6 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -34,6 +36,7 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
     private DataLaboranAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    TextView tambahDataLaboran;
 
     @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,9 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_laboran_kalab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
+
+        //pendefinisian tambah data laboran
+        tambahDataLaboran = (TextView) findViewById(R.id.add_data_laboran);
 
         //untuk mengambil data session
         sessionManager = new SessionManager(this);
@@ -78,6 +84,17 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
             }
         });
         //sampai sini
+
+        //ke halaman tambah data laboran
+        tambahDataLaboran.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //intent
+                Intent intent = new Intent(KALABDataLaboran.this, KALABMasukkanDataLaboran.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
 

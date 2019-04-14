@@ -52,6 +52,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/nunitosans_bold"
                     android:text="+"
+                    android:id="@+id/add_data_laboran"
                     android:textColor="@color/colorbgBlue"
                     android:textSize="30dp" />
             </LinearLayout>

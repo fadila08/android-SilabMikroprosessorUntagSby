@@ -111,7 +111,7 @@
         <activity android:name=".activity.kalab.KALABDataAslab" />
         <activity android:name=".activity.kalab.KALABDataLaboran" />
         <activity android:name=".KALABEditDataLaboran" />
-        <activity android:name=".KALABMasukkanDataLaboran" />
+        <activity android:name=".activity.kalab.KALABMasukkanDataLaboran" />
         <activity android:name=".KALABHistory" />
         <activity android:name=".activity.kalab.HomeKalab" />
         <activity android:name=".TerimaKasihEmail" />
