@@ -10,25 +10,22 @@
     tools:context=".activity.kalab.PopupKalabDataLaboran">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:orientation="horizontal">
 
          <Button
             android:layout_width="50px"
             android:layout_height="60px"
             android:background="@drawable/edit_icon"
-            android:id="@+id/btn_edit_data_laboran_kalab"
-             android:layout_marginLeft="400px"
-            android:layout_weight="1"/>
+            android:id="@+id/btn_edit_data_laboran_kalab" />
 
         <Button
             android:layout_width="50px"
             android:layout_height="60px"
             android:background="@drawable/delete_icon"
-            android:layout_gravity="end"
-            android:id="@+id/btn_delete_data_laboran_kalab"
-            android:layout_weight="1"/>
+            android:id="@+id/btn_delete_data_laboran_kalab"/>
 
     </LinearLayout>
 
@@ -144,5 +141,13 @@
             android:layout_weight="2"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_detail_id_laboran_kalab"
+        android:textSize="1pt"
+        android:textColor="#FAFAFA"/>
+
 </LinearLayout>
 

@@ -1,7 +1,9 @@
 package untag.daskom.myapplication.adapter.kalab;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -19,14 +21,18 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import untag.daskom.myapplication.KALABEditDataLaboran;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.kalab.KALABDataLaboran;
 import untag.daskom.myapplication.activity.kalab.PopupKalabDataLaboran;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserDetailList;
 import untag.daskom.myapplication.model.DataUserList;
+import untag.daskom.myapplication.model.DeleteValue;
 import untag.daskom.myapplication.model.UserDetailList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
+import untag.daskom.myapplication.my_interface.LaboranDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.SessionManager;
 
@@ -64,7 +70,10 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
     }
 
     class DataLaboranViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNama, txtNomorInduk, txtId, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail;
+
+        TextView txtNama, txtNomorInduk, txtId, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail, txtPopupId;
+        Button btnEdit, btnHapus;
+
         DataLaboranViewHolder(View itemView) {
             super(itemView);
             txtNama = itemView.findViewById(R.id.txt_nama_laboran_kalab);
@@ -75,7 +84,6 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                 @Override
                 public void onClick(View v) {
 
-//                    int selectId = Integer.parseInt(id);
                     String selectId = txtId.getText().toString();
                     Log.d("id", selectId);
 
@@ -87,11 +95,13 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     txtPopupNInduk = popupDialog.findViewById(R.id.txt_detail_nip_laboran_kalab);
                     txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_laboran_kalab);
                     txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_laboran_kalab);
+                    txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_laboran_kalab);
+                    btnEdit = popupDialog.findViewById(R.id.btn_edit_data_laboran_kalab);
+                    btnHapus = popupDialog.findViewById(R.id.btn_delete_data_laboran_kalab);
 
-//                    txtPopupNama.setText(dataUserDetailLists.get(selectId).getNama());
                     //untuk mengambil data session
                     sessionManager = new SessionManager(context);
-                    String session = sessionManager.getSessionData().get("ID");
+                    final String session = sessionManager.getSessionData().get("ID");
 
                     //mulai dari sini untuk menangkap data dari API dengan retrofit
                     /** Create handle for the RetrofitInstance interface*/
@@ -109,6 +119,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                             txtPopupNInduk.setText(response.body().getData().getNomor_induk());
                             txtPopupWa.setText(response.body().getData().getNomor_whatsapp());
                             txtPopupEmail.setText(response.body().getData().getEmail());
+                            txtPopupId.setText(response.body().getData().getId());
                         }
 
                         @Override
@@ -118,6 +129,65 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     });
 
 
+                    //aksi btn edit
+                    btnEdit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(v.getContext(), KALABEditDataLaboran.class);
+                            v.getContext().startActivity(intent);
+                        }
+                    });
+
+                    //aksi btn  hapus
+                    btnHapus.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(final View v) { //kalo ada masalah, coba hapus final di View v
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
+                            alertDialogBuilder.setTitle("Peringatan");
+                            alertDialogBuilder
+                                    .setMessage("Apakah Anda yakin ingin menghapus data ini ?")
+                                    .setCancelable(false)
+                                    .setPositiveButton("HAPUS", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                            String selectIdHapus = txtPopupId.getText().toString();
+
+                                            /** Create handle for the RetrofitInstance interface*/
+                                            LaboranDataService service = RetrofitInstance.getRetrofitInstance().create(LaboranDataService.class);
+
+                                            /** Call the method with parameter in the interface to get the notice data*/
+                                            Call<DeleteValue> call = service.deleteLaboran("Bearer "+session, selectIdHapus);
+
+                                            call.enqueue(new Callback<DeleteValue>() {
+                                                @Override
+                                                public void onResponse(Call<DeleteValue> call, Response<DeleteValue> response) {
+
+                                                    String message = response.body().getData().getMessage();
+
+                                                    Toast.makeText(v.getContext(), message, Toast.LENGTH_SHORT).show();
+
+                                                }
+
+                                                @Override
+                                                public void onFailure(Call<DeleteValue> call, Throwable t) {
+                                                    Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+                                        }
+                                    })
+                                    .setNegativeButton("BATAL", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                            AlertDialog alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
+                        }
+                    });
+
                     popupDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                     popupDialog.show();
                 }
@@ -125,15 +195,3 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
         }
     }
 }
-
-////                    String selectNomorInduk = txtNomorInduk.getText().toString();
-//                    Intent intent = new Intent(v.getContext(), PopupKalabDataLaboran.class);
-////                    int i = position;
-//                    intent.putExtra("id",selectId);
-//                    v.getContext().startActivity(intent);
-//
-//                    //untuk mengambil data session
-
-//                    GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
-//                    Call<DataUserDetailList> call = service.getLaboranDetailDataKalab(id);
-
