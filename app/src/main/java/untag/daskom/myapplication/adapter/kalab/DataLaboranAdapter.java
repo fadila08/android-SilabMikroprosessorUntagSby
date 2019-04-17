@@ -34,7 +34,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
 
     private ArrayList<DataUser> dataList;
     Dialog popupDialog;
-    String id;
+//    String id;
     Context context;
     SessionManager sessionManager;
 
@@ -54,7 +54,8 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
     public void onBindViewHolder(DataLaboranViewHolder holder, int position) {
         holder.txtNama.setText(dataList.get(position).getNama());
         holder.txtNomorInduk.setText(dataList.get(position).getNomor_induk());
-        id = dataList.get(position).getId();
+        holder.txtId.setText(dataList.get(position).getId());
+//        id = dataList.get(position).getId();
     }
 
     @Override
@@ -63,18 +64,20 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
     }
 
     class DataLaboranViewHolder extends RecyclerView.ViewHolder {
-        TextView txtNama, txtNomorInduk, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail;
+        TextView txtNama, txtNomorInduk, txtId, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail;
         DataLaboranViewHolder(View itemView) {
             super(itemView);
             txtNama = itemView.findViewById(R.id.txt_nama_laboran_kalab);
             txtNomorInduk = itemView.findViewById(R.id.txt_nomor_induk_laboran_kalab);
+            txtId = itemView.findViewById(R.id.txt_id_laboran_kalab);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    int selectId = Integer.parseInt(id);
-                    Log.d("id", String.valueOf(selectId));
+//                    int selectId = Integer.parseInt(id);
+                    String selectId = txtId.getText().toString();
+                    Log.d("id", selectId);
 
                     popupDialog = new Dialog(v.getContext());
 
@@ -95,7 +98,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
 
                     /** Call the method with parameter in the interface to get the notice data*/
-                    Call<UserDetailList> call = service.getLaboranDetailDataKalab("Bearer "+session, id);
+                    Call<UserDetailList> call = service.getLaboranDetailDataKalab("Bearer "+session, selectId);
 
                     call.enqueue(new Callback<UserDetailList>() {
                         @Override
