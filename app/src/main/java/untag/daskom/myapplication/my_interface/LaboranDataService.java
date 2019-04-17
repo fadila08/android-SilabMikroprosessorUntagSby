@@ -6,6 +6,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import untag.daskom.myapplication.model.DeleteValue;
 import untag.daskom.myapplication.model.UserDetailList;
@@ -25,4 +26,12 @@ public interface LaboranDataService {
     Call<DeleteValue> deleteLaboran(@Header("Authorization") String auth,
                                     @Path("id") String id);
 
+    @FormUrlEncoded
+    @PUT("api/datalaboran/{id}")
+    Call<UserDetailList> editLaboran(@Header("Authorization") String auth,
+                                     @Path("id") String id,
+                                     @Field("nama") String nama,
+                                     @Field("nomor_induk") String nomor_induk,
+                                     @Field("nomor_whatsapp") String nomor_whatsapp,
+                                     @Field("email") String email);
 }

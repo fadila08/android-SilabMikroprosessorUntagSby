@@ -21,14 +21,9 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import untag.daskom.myapplication.KALABEditDataLaboran;
+import untag.daskom.myapplication.activity.kalab.KALABEditDataLaboran;
 import untag.daskom.myapplication.R;
-import untag.daskom.myapplication.activity.kalab.KALABDataLaboran;
-import untag.daskom.myapplication.activity.kalab.PopupKalabDataLaboran;
 import untag.daskom.myapplication.model.DataUser;
-import untag.daskom.myapplication.model.DataUserDetailList;
-import untag.daskom.myapplication.model.DataUserList;
 import untag.daskom.myapplication.model.DeleteValue;
 import untag.daskom.myapplication.model.UserDetailList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
@@ -113,7 +108,6 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     call.enqueue(new Callback<UserDetailList>() {
                         @Override
                         public void onResponse(Call<UserDetailList> call, Response<UserDetailList> response) {
-                            //sampai sini
                             Log.d("data id",response.body().getData().getId());
                             txtPopupNama.setText(response.body().getData().getNama());
                             txtPopupNInduk.setText(response.body().getData().getNomor_induk());
@@ -133,7 +127,19 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     btnEdit.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
+                            String idDetail = txtPopupId.getText().toString();
+                            String namaDetail = txtPopupNama.getText().toString();
+                            String nipDetail = txtNomorInduk.getText().toString();
+                            String waDetail = txtPopupWa.getText().toString();
+                            String emailDetail = txtPopupEmail.getText().toString();
+
                             Intent intent = new Intent(v.getContext(), KALABEditDataLaboran.class);
+                            intent.putExtra("id", idDetail);
+                            intent.putExtra("nama", namaDetail);
+                            intent.putExtra("nip", nipDetail);
+                            intent.putExtra("wa", waDetail);
+                            intent.putExtra("email", emailDetail);
                             v.getContext().startActivity(intent);
                         }
                     });
@@ -141,7 +147,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                     //aksi btn  hapus
                     btnHapus.setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(final View v) { //kalo ada masalah, coba hapus final di View v
+                        public void onClick(View v) { //kalo ada masalah, coba tambah final di View v
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
                             alertDialogBuilder.setTitle("Peringatan");
                             alertDialogBuilder
@@ -165,7 +171,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
 
                                                     String message = response.body().getData().getMessage();
 
-                                                    Toast.makeText(v.getContext(), message, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
 
                                                 }
 
