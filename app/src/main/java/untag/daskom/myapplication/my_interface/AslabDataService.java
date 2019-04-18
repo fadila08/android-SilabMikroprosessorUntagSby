@@ -1,12 +1,14 @@
 package untag.daskom.myapplication.my_interface;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import untag.daskom.myapplication.model.DeleteValue;
 import untag.daskom.myapplication.model.UserDetailList;
 
 public interface AslabDataService {
@@ -27,6 +29,11 @@ public interface AslabDataService {
                                      @Field("nomor_induk") String nomor_induk,
                                      @Field("nomor_whatsapp") String nomor_whatsapp,
                                      @Field("email") String email);
+
+    @DELETE("api/dataaslab/{id}")
+    Call<DeleteValue> deleteAslab(@Header("Authorization") String auth,
+                                    @Path("id") String id);
+
 
 
 
