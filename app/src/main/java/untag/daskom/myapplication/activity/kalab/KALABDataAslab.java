@@ -12,6 +12,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,6 +37,7 @@ public class KALABDataAslab extends AppCompatActivity
     private DataAslabAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    TextView tambahDataAslab;
     String nama_kalab;
 
     @Override
@@ -59,6 +62,9 @@ public class KALABDataAslab extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
+        //pendefinisian tambah data laboran
+        tambahDataAslab = (TextView) findViewById(R.id.add_data_aslab);
+
         //untuk mengambil data session
         sessionManager = new SessionManager(this);
         String session = sessionManager.getSessionData().get("ID");
@@ -82,6 +88,16 @@ public class KALABDataAslab extends AppCompatActivity
             }
         });
         //sampai sini
+
+        //ke halaman tambah data laboran
+        tambahDataAslab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //intent
+                Intent intent = new Intent(KALABDataAslab.this, KALABMasukkanDataAslab.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

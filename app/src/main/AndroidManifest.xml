@@ -106,7 +106,7 @@
         <activity android:name=".KALABMasukkanDataMahasiswa" />
         <activity android:name=".KALABEditDataMahasiswa" />
         <activity android:name=".activity.kalab.KALABDataMahasiswa" />
-        <activity android:name=".KALABMasukkanDataAslab" />
+        <activity android:name=".activity.kalab.KALABMasukkanDataAslab" />
         <activity android:name=".KALABEditDataAslab" />
         <activity android:name=".activity.kalab.KALABDataAslab" />
         <activity android:name=".activity.kalab.KALABDataLaboran" />
