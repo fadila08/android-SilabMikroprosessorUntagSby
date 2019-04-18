@@ -28,7 +28,7 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
 
     private ArrayList<DataUser> dataList;
     Dialog popupDialog;
-    String id;
+//    String id;
     Context context;
     SessionManager sessionManager;
 
@@ -49,7 +49,8 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
     public void onBindViewHolder(DataAslabViewHolder holder, int position) {
         holder.txtNama.setText(dataList.get(position).getNama());
         holder.txtNomorInduk.setText(dataList.get(position).getNomor_induk());
-        id = dataList.get(position).getId();
+        holder.txtId.setText(dataList.get(position).getId());
+//        id = dataList.get(position).getId();
     }
 
 
@@ -60,18 +61,20 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
 
     class DataAslabViewHolder extends RecyclerView.ViewHolder {
 
-        TextView txtNama, txtNomorInduk, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail;
+        TextView txtNama, txtNomorInduk, txtId, txtPopupNama, txtPopupNInduk, txtPopupWa, txtPopupEmail;
 
         DataAslabViewHolder(View itemView) {
             super(itemView);
             txtNama = itemView.findViewById(R.id.txt_nama_aslab_kalab);
             txtNomorInduk = itemView.findViewById(R.id.txt_nomor_induk_aslab_kalab);
+            txtId = itemView.findViewById(R.id.txt_id_aslab_kalab);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    int selectId = Integer.parseInt(id);
-                    Log.d("id", String.valueOf(selectId));
+
+                    String selectId = txtId.getText().toString();
+                    Log.d("id", selectId);
 
                     popupDialog = new Dialog(v.getContext());
 
@@ -89,7 +92,7 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
                     GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
 
                     /** Call the method with parameter in the interface to get the notice data*/
-                    Call<UserDetailList> call = service.getAslabDetailDataKalab("Bearer "+session, id);
+                    Call<UserDetailList> call = service.getAslabDetailDataKalab("Bearer "+session, selectId);
 
                     call.enqueue(new Callback<UserDetailList>() {
                         @Override
