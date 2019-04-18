@@ -75,6 +75,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatalaboran = new Intent(HomeKalab.this, KALABDataLaboran.class);
+                btdatalaboran.putExtra("nama",nama);
                 startActivity(btdatalaboran);
             }
         });
@@ -83,6 +84,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdataaslab = new Intent(HomeKalab.this, KALABDataAslab.class);
+                btdataaslab.putExtra("nama",nama);
                 startActivity(btdataaslab);
             }
         });
@@ -91,6 +93,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatadosbim = new Intent(HomeKalab.this, KALABDataDosbim.class);
+                btdatadosbim.putExtra("nama",nama);
                 startActivity(btdatadosbim);
             }
         });
@@ -99,6 +102,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatamhs = new Intent(HomeKalab.this, KALABDataMahasiswa.class);
+                btdatamhs.putExtra("nama",nama);
                 startActivity(btdatamhs);
             }
         });
@@ -107,6 +111,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btnilaimhs = new Intent(HomeKalab.this, KALABNilaiMahasiswa.class);
+                btnilaimhs.putExtra("nama",nama);
                 startActivity(btnilaimhs);
             }
         });
@@ -115,6 +120,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btabsmhs = new Intent(HomeKalab.this, KALABAbsensiMahasiswa.class);
+                btabsmhs.putExtra("nama",nama);
                 startActivity(btabsmhs);
             }
         });
@@ -123,6 +129,7 @@ public class HomeKalab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatasurat = new Intent(HomeKalab.this, KALABDataSurat.class);
+                btdatasurat.putExtra("nama",nama);
                 startActivity(btdatasurat);
             }
         });
@@ -166,30 +173,37 @@ public class HomeKalab extends AppCompatActivity
 
         } else if (id == R.id.nav_datalaboran_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABDataLaboran.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABDataAslab.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABDataDosbim.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABDataMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABNilaiMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_absensi_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABAbsensiMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_kalab) {
             Intent intent = new Intent(HomeKalab.this, KALABDataSurat.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_kalab) {

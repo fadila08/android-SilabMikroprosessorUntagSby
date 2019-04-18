@@ -35,11 +35,14 @@ public class KALABDataSurat extends AppCompatActivity implements NavigationView.
     private DataSuratAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    String nama_kalab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_surat_kalab);
+
+        nama_kalab = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_surat_kalab);
@@ -115,34 +118,42 @@ public class KALABDataSurat extends AppCompatActivity implements NavigationView.
 
         } else if (id == R.id.nav_home_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, HomeKalab.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABDataLaboran.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABDataAslab.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABDataDosbim.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABDataMahasiswa.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABNilaiMahasiswa.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_absensi_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABAbsensiMahasiswa.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_kalab) {
             Intent intent = new Intent(KALABDataSurat.this, KALABDataSurat.class);
+            intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_kalab) {
