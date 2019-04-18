@@ -1,5 +1,7 @@
 package untag.daskom.myapplication.model;
 
+import com.google.gson.annotations.SerializedName;
+
 public class DataDeleteValue {
 
     private String message;

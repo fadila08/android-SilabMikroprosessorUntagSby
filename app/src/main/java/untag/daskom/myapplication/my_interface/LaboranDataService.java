@@ -21,7 +21,6 @@ public interface LaboranDataService {
                                     @Field("nomor_whatsapp") String nomor_whatsapp,
                                     @Field("email") String email);
 
-    @FormUrlEncoded
     @DELETE("api/datalaboran/{id}")
     Call<DeleteValue> deleteLaboran(@Header("Authorization") String auth,
                                     @Path("id") String id);

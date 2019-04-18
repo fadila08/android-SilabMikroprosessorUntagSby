@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import untag.daskom.myapplication.activity.kalab.KALABDataLaboran;
 import untag.daskom.myapplication.activity.kalab.KALABEditDataLaboran;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.DataUser;
@@ -158,6 +159,7 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                                         public void onClick(DialogInterface dialog, int which) {
 
                                             String selectIdHapus = txtPopupId.getText().toString();
+                                            Log.d("select id hapus",selectIdHapus);
 
                                             /** Create handle for the RetrofitInstance interface*/
                                             LaboranDataService service = RetrofitInstance.getRetrofitInstance().create(LaboranDataService.class);
@@ -169,9 +171,12 @@ public class DataLaboranAdapter extends RecyclerView.Adapter<DataLaboranAdapter.
                                                 @Override
                                                 public void onResponse(Call<DeleteValue> call, Response<DeleteValue> response) {
 
-                                                    String message = response.body().getData().getMessage();
+//                                                    String message = response.body().getData().getMessage();
+//                                                    Log.d("message",message);
 
-                                                    Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(context,"Data berhasil dihapus", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(context, KALABDataLaboran.class);
+                                                    context.startActivity(intent);
 
                                                 }
 
