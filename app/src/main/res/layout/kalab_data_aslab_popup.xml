@@ -142,5 +142,13 @@
             android:layout_weight="2"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_detail_id_aslab_kalab"
+        android:textSize="1pt"
+        android:textColor="#FAFAFA"/>
+
 </LinearLayout>
 

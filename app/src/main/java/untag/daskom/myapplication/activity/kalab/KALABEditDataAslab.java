@@ -19,37 +19,46 @@ import untag.daskom.myapplication.my_interface.AslabDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.SessionManager;
 
-public class KALABMasukkanDataAslab extends AppCompatActivity {
+public class KALABEditDataAslab extends AppCompatActivity {
 
     EditText etNama, etNomorInduk, etWa, etEmail;
-    Button btTambah;
+    Button btEdit;
     SessionManager sessionManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kalabmasukkan_data_aslab);
+        setContentView(R.layout.activity_kalabedit_data_aslab);
 
-        //pendefinisian edit text dan button
-        etNama = findViewById(R.id.etnamaaslabkalab);
-        etNomorInduk = findViewById(R.id.etnipaslabkalab);
-        etWa = findViewById(R.id.etwaaslabkalab);
-        etEmail = findViewById(R.id.etemailaslabkalab);
-        btTambah = findViewById(R.id.bttambahaslabkalab);
+        etNama = findViewById(R.id.etnama_edit_aslab_kalab);
+        etNomorInduk = findViewById(R.id.etnip_edit_aslab_kalab);
+        etWa = findViewById(R.id.etwa_edit_aslab_kalab);
+        etEmail = findViewById(R.id.etemail_edit_aslab_kalab);
+        btEdit = findViewById(R.id.bteditaslab_kalab);
 
         //untuk mengambil data session
         sessionManager = new SessionManager(this);
         final String session = sessionManager.getSessionData().get("ID");
 
-        //aksi btn simpan
-        btTambah.setOnClickListener(new View.OnClickListener() {
+        Intent intent = getIntent();
+        final String id = intent.getStringExtra("id");
+        String nama = intent.getStringExtra("nama");
+        String nomorInduk = intent.getStringExtra("nip");
+        String wa = intent.getStringExtra("wa");
+        String email = intent.getStringExtra("email");
+
+        etNama.setText(nama);
+        etNomorInduk.setText(nomorInduk);
+        etWa.setText(wa);
+        etEmail.setText(email);
+
+        btEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //untuk mengirim data ke API dengan retrofit
                 AslabDataService service = RetrofitInstance.getRetrofitInstance().create(AslabDataService.class);
 
-                Call<UserDetailList> call = service.addAslab("Bearer"+session,
+                Call<UserDetailList> call = service.editAslab("Bearer"+session,id,
                         etNama.getText().toString(),
                         etNomorInduk.getText().toString(),
                         etWa.getText().toString(),
@@ -64,10 +73,9 @@ public class KALABMasukkanDataAslab extends AppCompatActivity {
 
                             DataUserDetailList dataUserDetailList = response.body().getData();
 
-                            Toast.makeText(KALABMasukkanDataAslab.this,"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
-
+                            Toast.makeText(KALABEditDataAslab.this,"Data Berhasil Diedit",Toast.LENGTH_SHORT).show();
                             //intent
-                            Intent intent = new Intent(KALABMasukkanDataAslab.this, KALABDataAslab.class);
+                            Intent intent = new Intent(KALABEditDataAslab.this, KALABDataAslab.class);
                             startActivity(intent);
 
                         }  catch (Exception e) {
@@ -78,11 +86,12 @@ public class KALABMasukkanDataAslab extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<UserDetailList> call, Throwable t) {
-                        Toast.makeText(KALABMasukkanDataAslab.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(KALABEditDataAslab.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
             }
         });
+
     }
 }
