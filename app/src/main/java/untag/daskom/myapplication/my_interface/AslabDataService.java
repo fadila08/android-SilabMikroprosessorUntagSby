@@ -33,8 +33,4 @@ public interface AslabDataService {
     @DELETE("api/dataaslab/{id}")
     Call<DeleteValue> deleteAslab(@Header("Authorization") String auth,
                                     @Path("id") String id);
-
-
-
-
 }

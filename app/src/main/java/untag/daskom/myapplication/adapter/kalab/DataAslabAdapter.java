@@ -115,6 +115,7 @@ public class DataAslabAdapter extends RecyclerView.Adapter<DataAslabAdapter.Data
                             txtPopupNInduk.setText(response.body().getData().getNomor_induk());
                             txtPopupWa.setText(response.body().getData().getNomor_whatsapp());
                             txtPopupEmail.setText(response.body().getData().getEmail());
+                            txtPopupId.setText(response.body().getData().getId());
                         }
 
                         @Override
