@@ -35,4 +35,10 @@ public interface GetUserDataService {
     @GET("api/dataaslab")
     Call<DataUserList> getAslabDataLaboran(@Header("Authorization") String auth);
 
+    @GET("api/datalaboran")
+    Call<DataUserList> getLaboranDataAslab(@Header("Authorization") String auth);
+
+    @GET("api/datalaboran/{id}")
+    Call<UserDetailList> getLaboranDetailDataAslab(@Header("Authorization") String auth, @Path("id") String id);
+
 }

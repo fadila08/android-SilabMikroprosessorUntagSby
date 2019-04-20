@@ -79,7 +79,7 @@
         <activity android:name=".ASLABEditNilaiMahasiswa" />
         <activity android:name=".ASLABNilaiMahasiswa" />
         <activity android:name=".ASLABTugasMahasiswa" />
-        <activity android:name=".ASLABDataLaboran" />
+        <activity android:name=".activity.aslab.ASLABDataLaboran" />
         <activity android:name=".ASLABDataDosbim" />
         <activity android:name=".ASLABMasukkanDataMahasiswa" />
         <activity android:name=".ASLABEditDataMahasiswa" />

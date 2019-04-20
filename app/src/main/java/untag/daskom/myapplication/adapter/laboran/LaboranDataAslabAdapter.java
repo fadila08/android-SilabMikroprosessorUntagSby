@@ -82,15 +82,15 @@ public class LaboranDataAslabAdapter extends RecyclerView.Adapter<LaboranDataAsl
 
                     popupDialog = new Dialog(v.getContext());
 
-                    popupDialog.setContentView(R.layout.kalab_data_aslab_popup);
+                    popupDialog.setContentView(R.layout.laboran_data_aslab_popup);
 
-                    txtPopupNama = popupDialog.findViewById(R.id.txt_detail_nama_aslab_kalab);
-                    txtPopupNInduk = popupDialog.findViewById(R.id.txt_detail_nip_aslab_kalab);
-                    txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_aslab_kalab);
-                    txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_aslab_kalab);
-                    txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_aslab_kalab);
-                    btEdit = popupDialog.findViewById(R.id.btn_edit_data_aslab_kalab);
-                    btDelete = popupDialog.findViewById(R.id.btn_delete_data_aslab_kalab);
+                    txtPopupNama = popupDialog.findViewById(R.id.txt_detail_nama_aslab_laboran);
+                    txtPopupNInduk = popupDialog.findViewById(R.id.txt_detail_nip_aslab_laboran);
+                    txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_aslab_laboran);
+                    txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_aslab_laboran);
+                    txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_aslab_laboran);
+                    btEdit = popupDialog.findViewById(R.id.btn_edit_data_aslab_laboran);
+                    btDelete = popupDialog.findViewById(R.id.btn_delete_data_aslab_laboran);
 
                     sessionManager = new SessionManager(context);
                     final String session = sessionManager.getSessionData().get("ID");

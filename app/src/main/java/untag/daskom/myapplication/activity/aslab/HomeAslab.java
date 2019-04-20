@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import untag.daskom.myapplication.ASLABAbsensiMahasiswa;
 import untag.daskom.myapplication.ASLABDataDosbim;
-import untag.daskom.myapplication.ASLABDataLaboran;
 import untag.daskom.myapplication.ASLABDataMahasiswa;
 import untag.daskom.myapplication.ASLABDataSurat;
 import untag.daskom.myapplication.ASLABNilaiMahasiswa;
