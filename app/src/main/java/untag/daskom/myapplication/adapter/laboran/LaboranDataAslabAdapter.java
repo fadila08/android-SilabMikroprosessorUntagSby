@@ -1,7 +1,10 @@
 package untag.daskom.myapplication.adapter.laboran;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
@@ -19,8 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.laboran.LABORANDataAslab;
+import untag.daskom.myapplication.activity.laboran.LABORANEditDataAslab;
 import untag.daskom.myapplication.model.DataUser;
+import untag.daskom.myapplication.model.DeleteValue;
 import untag.daskom.myapplication.model.UserDetailList;
+import untag.daskom.myapplication.my_interface.AslabDataService;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.SessionManager;
@@ -111,6 +118,83 @@ public class LaboranDataAslabAdapter extends RecyclerView.Adapter<LaboranDataAsl
                             Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
+
+                    //aksi btn edit
+                    btEdit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String idDetail = txtPopupId.getText().toString();
+                            String namaDetail = txtPopupNama.getText().toString();
+                            String nipDetail = txtNomorInduk.getText().toString();
+                            String waDetail = txtPopupWa.getText().toString();
+                            String emailDetail = txtPopupEmail.getText().toString();
+
+                            Intent intent = new Intent(v.getContext(), LABORANEditDataAslab.class);
+                            intent.putExtra("id", idDetail);
+                            intent.putExtra("nama", namaDetail);
+                            intent.putExtra("nip", nipDetail);
+                            intent.putExtra("wa", waDetail);
+                            intent.putExtra("email", emailDetail);
+                            v.getContext().startActivity(intent);
+
+                        }
+                    });
+
+                    //aksi btn  hapus
+                    btDelete.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
+                            alertDialogBuilder.setTitle("Peringatan");
+                            alertDialogBuilder
+                                    .setMessage("Apakah Anda yakin ingin menghapus data ini ?")
+                                    .setCancelable(false)
+                                    .setPositiveButton("HAPUS", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                            String selectIdHapus = txtPopupId.getText().toString();
+                                            Log.d("select id hapus",selectIdHapus);
+
+                                            /** Create handle for the RetrofitInstance interface*/
+                                            AslabDataService service = RetrofitInstance.getRetrofitInstance().create(AslabDataService.class);
+
+                                            /** Call the method with parameter in the interface to get the notice data*/
+                                            Call<DeleteValue> call = service.deleteAslab("Bearer "+session, selectIdHapus);
+
+                                            call.enqueue(new Callback<DeleteValue>() {
+                                                @Override
+                                                public void onResponse(Call<DeleteValue> call, Response<DeleteValue> response) {
+
+//                                                    String message = response.body().getData().getMessage();
+//                                                    Log.d("message",message);
+
+                                                    Toast.makeText(context,"Data berhasil dihapus", Toast.LENGTH_SHORT).show();
+                                                    Intent intent = new Intent(context, LABORANDataAslab.class);
+                                                    context.startActivity(intent);
+
+                                                }
+
+                                                @Override
+                                                public void onFailure(Call<DeleteValue> call, Throwable t) {
+                                                    Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+                                        }
+                                    })
+                                    .setNegativeButton("BATAL", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            dialog.cancel();
+                                        }
+                                    });
+                            AlertDialog alertDialog = alertDialogBuilder.create();
+                            alertDialog.show();
+
+                        }
+                    });
+
                     popupDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                     popupDialog.show();
 

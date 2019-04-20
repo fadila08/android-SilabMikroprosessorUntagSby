@@ -1,10 +1,12 @@
 package untag.daskom.myapplication.activity.laboran;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +68,16 @@ public class LABORANDataAslab extends AppCompatActivity {
             }
         });
         //sampai sini
+
+        //ke halaman tambah data laboran
+        tambahDataAslab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //intent
+                Intent intent = new Intent(LABORANDataAslab.this, LABORANMasukkanDataAslab.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

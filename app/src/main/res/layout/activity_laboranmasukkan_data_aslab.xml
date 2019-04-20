@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANMasukkanDataAslab"
+    tools:context=".activity.laboran.LABORANMasukkanDataAslab"
     >
 
     <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etnama"
+                android:id="@+id/etnamaaslablaboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama"
@@ -66,8 +66,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etnip"
-                android:layout_below="@+id/etnama"
+                android:id="@+id/etnipaslablaboran"
+                android:layout_below="@+id/etnamaaslablaboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="NIP"
@@ -76,8 +76,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_below="@+id/etnip"
-                android:id="@+id/etwa"
+                android:layout_below="@+id/etnipaslablaboran"
+                android:id="@+id/etwaaslablaboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nomor Whatsapp"
@@ -86,8 +86,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etemail"
-                android:layout_below="@+id/etwa"
+                android:id="@+id/etemailaslablaboran"
+                android:layout_below="@+id/etwaaslablaboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Alamat Email"
@@ -98,8 +98,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:id="@+id/bttambah"
-                android:layout_below="@+id/etemail"
+                android:id="@+id/bttambahaslablaboran"
+                android:layout_below="@+id/etemailaslablaboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Tambahkan"

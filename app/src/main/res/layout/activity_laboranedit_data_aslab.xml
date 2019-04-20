@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANEditDataAslab"
+    tools:context=".activity.laboran.LABORANEditDataAslab"
     >
 
     <LinearLayout
@@ -57,7 +57,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etnama"
+                android:id="@+id/etnama_edit_aslab_laboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nama"
@@ -66,8 +66,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etnip"
-                android:layout_below="@+id/etnama"
+                android:id="@+id/etnip_edit_aslab_laboran"
+                android:layout_below="@+id/etnama_edit_aslab_laboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="NBI"
@@ -76,8 +76,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:layout_below="@+id/etnip"
-                android:id="@+id/etwa"
+                android:layout_below="@+id/etnip_edit_aslab_laboran"
+                android:id="@+id/etwa_edit_aslab_laboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nomor Whatsapp"
@@ -86,8 +86,8 @@
             <EditText
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:id="@+id/etemail"
-                android:layout_below="@+id/etwa"
+                android:id="@+id/etemail_edit_aslab_laboran"
+                android:layout_below="@+id/etwa_edit_aslab_laboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Alamat Email"
@@ -98,8 +98,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:id="@+id/bttambah"
-                android:layout_below="@+id/etemail"
+                android:id="@+id/bteditaslab_laboran"
+                android:layout_below="@+id/etemail_edit_aslab_laboran"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Simpan"
