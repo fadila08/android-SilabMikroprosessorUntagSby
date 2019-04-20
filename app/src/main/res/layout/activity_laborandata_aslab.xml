@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANDataAslab"
+    tools:context=".activity.laboran.LABORANDataAslab"
     >
 
     <LinearLayout
@@ -30,87 +30,89 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:elevation="4dp"/>
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_marginTop="80dp"
             android:layout_gravity="center"
             android:gravity="fill_vertical"
-            android:layout_width="360dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAbuAbu"
-            android:paddingBottom="30dp"
+            android:orientation="vertical"
             >
-
-            <TextView
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="20dp"
-                android:gravity="right"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="+"
-                android:textSize="30dp"
-                android:textColor="@color/colorBlack"
-                />
+                android:orientation="horizontal">
 
-            <TextView
-                android:layout_marginTop="25dp"
-                android:id="@+id/tvdatalaboran"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Data\nAslab"
-                android:textColor="@color/colorBlack"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                />
-            <RelativeLayout
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="80dp"
-                android:layout_below="@+id/tvdatalaboran"
-                android:id="@+id/rvnama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                 <TextView
+                     android:layout_marginLeft="20dp"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                    android:text="Data Asisten Laboratorium"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="@color/colorbgBlue"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                     android:layout_weight="9"
+                    />
+
                 <TextView
-                    android:id="@+id/tvnamaaslab"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="+"
+                    android:id="@+id/add_data_aslab_laboran"
+                    android:textSize="30dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@color/colorbgBlue"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:text="Nama"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textSize="16dp"
+                    android:textColor="#90000000"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
                     />
                 <TextView
-                    android:id="@+id/tvaslab"
-                    android:layout_below="@+id/tvnamaaslab"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Mir'atul Fikroh"
-                    />
-            </RelativeLayout>
-            <RelativeLayout
-                android:gravity="right"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="80dp"
-                android:layout_below="@+id/tvdatalaboran"
-                android:layout_toRightOf="@+id/rvnama"
-                android:id="@+id/rvnip"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/tvnbi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="NBI"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorBlack"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="#90000000"
+                    android:textSize="16dp"
+                    android:layout_marginRight="20dp"
+                    android:textStyle="bold"
                     />
-                <TextView
-                    android:layout_below="@+id/tvnbi"
-                    android:id="@+id/tvniplaboran"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="123456789"
-                    />
-            </RelativeLayout>
-        </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/rv_data_aslab_laboran">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
 
 
         <FrameLayout

@@ -56,7 +56,7 @@
         <activity android:name=".LABORANNilaiMahasiswa" />
         <activity android:name=".LABORANEditDataAslab" />
         <activity android:name=".LABORANMasukkanDataAslab" />
-        <activity android:name=".LABORANDataAslab" />
+        <activity android:name=".activity.laboran.LABORANDataAslab" />
         <activity android:name=".LABORANDataDosbim" />
         <activity android:name=".LABORANEditDataMahasiswa" />
         <activity android:name=".LABORANMasukkanDataMahasiswa" />

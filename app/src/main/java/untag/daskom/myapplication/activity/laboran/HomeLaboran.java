@@ -14,7 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import untag.daskom.myapplication.LABORANDataAslab;
 import untag.daskom.myapplication.LABORANDataDosbim;
 import untag.daskom.myapplication.LABORANInventaris;
 import untag.daskom.myapplication.LABORANNilaiMahasiswa;
@@ -76,6 +75,7 @@ public class HomeLaboran extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatamhslaboran = new Intent(HomeLaboran.this, LABORANDataMahasiswa.class);
+                btdatamhslaboran.putExtra("nama",nama);
                 startActivity(btdatamhslaboran);
             }
         });
@@ -84,6 +84,7 @@ public class HomeLaboran extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatadosbimlaboran = new Intent(HomeLaboran.this, LABORANDataDosbim.class);
+                btdatadosbimlaboran.putExtra("nama",nama);
                 startActivity(btdatadosbimlaboran);
             }
         });
@@ -92,6 +93,7 @@ public class HomeLaboran extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdataaslablaboran = new Intent(HomeLaboran.this, LABORANDataAslab.class);
+                btdataaslablaboran.putExtra("nama",nama);
                 startActivity(btdataaslablaboran);
             }
         });
@@ -100,6 +102,7 @@ public class HomeLaboran extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btnilaimhslaboran = new Intent(HomeLaboran.this, LABORANNilaiMahasiswa.class);
+                btnilaimhslaboran.putExtra("nama",nama);
                 startActivity(btnilaimhslaboran);
             }
         });
@@ -108,6 +111,7 @@ public class HomeLaboran extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btinventarislaboran = new Intent(HomeLaboran.this, LABORANInventaris.class);
+                btinventarislaboran.putExtra("nama",nama);
                 startActivity(btinventarislaboran);
             }
         });
