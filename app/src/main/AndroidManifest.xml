@@ -37,7 +37,7 @@
         <activity android:name=".DOSBIMNilaiMahasiswa" />
         <activity android:name=".activity.dosbim.DOSBIMDataLaboran" />
         <activity android:name=".DOSBIMEditProfilDosbim" />
-        <activity android:name=".DOSBIMDataAslab" />
+        <activity android:name=".activity.dosbim.DOSBIMDataAslab" />
         <activity android:name=".DOSBIMDataMahasiswa" />
         <activity android:name=".activity.dosbim.HomeDosbim" />
         <activity android:name=".LABORANStrukturOrganisasi" />
