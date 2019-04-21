@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import untag.daskom.myapplication.LABORANDataDosbim;
-import untag.daskom.myapplication.LABORANNilaiMahasiswa;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.session.LogOut;

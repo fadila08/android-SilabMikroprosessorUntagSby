@@ -1,7 +1,9 @@
-package untag.daskom.myapplication;
+package untag.daskom.myapplication.activity.dosbim;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import untag.daskom.myapplication.R;
 
 public class DOSBIMAbsensiMahasiswa extends AppCompatActivity {
 

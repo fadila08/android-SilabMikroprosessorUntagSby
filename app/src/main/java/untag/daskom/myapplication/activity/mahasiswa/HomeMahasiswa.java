@@ -14,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import untag.daskom.myapplication.MHSHomeSuratMahasiswa;
-import untag.daskom.myapplication.MHSHomeTugasMahasiswa;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.session.LogOut;
@@ -71,7 +69,7 @@ public class HomeMahasiswa extends AppCompatActivity
         bttugaspraktikummhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent bttugaspraktikum = new Intent(HomeMahasiswa.this, MHSHomeTugasMahasiswa.class);
+                Intent bttugaspraktikum = new Intent(HomeMahasiswa.this, MHSTugasPraktikum.class);
                 startActivity(bttugaspraktikum);
             }
         });
@@ -79,7 +77,7 @@ public class HomeMahasiswa extends AppCompatActivity
         btdatasuratmhs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent btdatasuratmhs = new Intent(HomeMahasiswa.this, MHSHomeSuratMahasiswa.class);
+                Intent btdatasuratmhs = new Intent(HomeMahasiswa.this, MHSSuratMahasiswa.class);
                 startActivity(btdatasuratmhs);
             }
         });
@@ -125,11 +123,11 @@ public class HomeMahasiswa extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_tugasmhs_mhs) {
-            Intent intent = new Intent(HomeMahasiswa.this, MHSHomeTugasMahasiswa.class);
+            Intent intent = new Intent(HomeMahasiswa.this, MHSTugasPraktikum.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_kalab) {
-            Intent intent = new Intent(HomeMahasiswa.this, MHSHomeSuratMahasiswa.class);
+            Intent intent = new Intent(HomeMahasiswa.this, MHSSuratMahasiswa.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_mhs) {
