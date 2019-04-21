@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANInventaris"
+    tools:context=".activity.laboran.LABORANInventaris"
     >
 
     <LinearLayout
@@ -29,6 +29,7 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:elevation="4dp"/>
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_gravity="center"
@@ -47,10 +48,12 @@
                 />
             <EditText
                 android:layout_marginTop="5dp"
+                android:id="@+id/et_nama_barang"
                 android:paddingVertical="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"/>
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
@@ -64,9 +67,11 @@
                 android:layout_marginTop="5dp"
                 android:paddingHorizontal="50dp"
                 android:paddingVertical="10dp"
-                android:layout_width="wrap_content"
+                android:id="@+id/et_jumlah_barang"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"/>
+
             <TextView
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
@@ -76,13 +81,15 @@
                 android:textSize="16sp"
                 android:textColor="@color/colorbgBlue"
                 />
-            <Spinner
+            <EditText
                 android:layout_marginTop="5dp"
+                android:paddingHorizontal="50dp"
                 android:paddingVertical="10dp"
-                android:entries="@array/kondisi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-            </Spinner>
+                android:id="@+id/et_kondisi_barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorRealWhite"/>
+
             <Button
                 android:layout_marginTop="100dp"
                 android:background="@color/colorOrange"
@@ -90,6 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Simpan"
+                android:id="@+id/bt_simpan_inventaris"
                 android:textSize="18dp"
                 android:textStyle="bold"
                 />

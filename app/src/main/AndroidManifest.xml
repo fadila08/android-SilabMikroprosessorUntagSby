@@ -51,8 +51,8 @@
         <activity android:name=".LABORANPengumuman" />
         <activity android:name=".LABORANHistory" />
         <activity android:name=".LABORANEditProfilLaboran" />
-        <activity android:name=".LABORANMasukkanInventarisLab" />
-        <activity android:name=".LABORANInventaris" />
+        <activity android:name=".activity.laboran.LABORANMasukkanInventarisLab" />
+        <activity android:name=".activity.laboran.LABORANInventaris" />
         <activity android:name=".LABORANNilaiMahasiswa" />
         <activity android:name=".activity.laboran.LABORANEditDataAslab" />
         <activity android:name=".activity.laboran.LABORANMasukkanDataAslab" />
