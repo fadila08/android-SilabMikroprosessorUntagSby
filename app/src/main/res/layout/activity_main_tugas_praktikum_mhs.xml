@@ -3,90 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/drawer_layout_tugas_praktikum_mhs"
     android:fitsSystemWindows="true"
-    android:background="@color/colorTulisanUniv"
-    tools:context=".activity.mahasiswa.MHSTugasPraktikum"
-    >
+    tools:openDrawer="start">
 
-    <LinearLayout
+    <include
+        layout="@layout/app_bar_tugas_praktikum_mhs"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="TUGAS PRAKTIKUM"
-            app:titleMarginStart="113dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
-
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:gravity="fill_vertical"
-            android:layout_width="360dp"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAbuAbu"
-            android:paddingBottom="30dp"
-            >
-            <TextView
-                android:layout_marginTop="5dp"
-                android:id="@+id/tvtpmhs"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tugas\nPraktikum Mahasiswa"
-                android:textColor="@color/colorBlack"
-                android:textSize="16dp"
-                android:textStyle="bold"
-                />
-
-            <LinearLayout
-                android:layout_marginTop="20dp"
-                android:layout_marginHorizontal="25dp"
-                android:gravity="center"
-                android:layout_below="@+id/tvtpmhs"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <View
-                    android:backgroundTint="@color/colorOrange"
-                    android:id="@+id/divider"
-                    android:layout_width="10dp"
-                    android:layout_height="match_parent"
-                    android:background="?android:attr/listDivider" />
-                <TextView
-                    android:layout_marginTop="5dp"
-                    android:drawableRight="@drawable/imagetrash"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Laporan Aorkom"
-                    />
-            </LinearLayout>
-
-
-        </RelativeLayout>
-
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.NavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/nav_view_tugas_praktikum_mhs"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_mhs"
-        app:menu="@menu/dawer_menu_mhs"
-        />
-
+        app:menu="@menu/activity_main_drawer_mhs" />
 </android.support.v4.widget.DrawerLayout>

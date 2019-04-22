@@ -10,6 +10,8 @@
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
     tools:context=".activity.aslab.ASLABDataSurat"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_data_surat_aslab"
     >
 
     <LinearLayout
@@ -17,81 +19,73 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="DATA SURAT"
-            app:titleMarginStart="143dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+        <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorOrange"-->
+        <!--app:title="DATA SURAT"-->
+        <!--app:titleMarginStart="143dp"-->
+        <!--android:textAlignment="center"-->
+        <!--app:titleTextColor="@color/colorbgBlue"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--android:elevation="4dp"/>-->
 
-        <RelativeLayout
-            android:layout_marginTop="20dp"
+        <LinearLayout
+            android:layout_marginTop="80dp"
             android:layout_gravity="center"
             android:gravity="fill_vertical"
-            android:layout_width="360dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAbuAbu"
-            android:paddingBottom="30dp"
+            android:orientation="vertical"
             >
 
-            <RelativeLayout
-                android:layout_marginTop="30dp"
-                android:layout_marginStart="40dp"
-                android:layout_below="@+id/tvdatamhs"
-                android:id="@+id/rvnama"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/tvjudulsurat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Judul Surat"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorBlack"
-                    />
-                <TextView
-                    android:id="@+id/tvmhs"
-                    android:layout_below="@+id/tvjudulsurat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Judul Surat 1"
-                    android:layout_centerVertical="true"
-                    />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginStart="30dp"
-                android:gravity="left"
-                android:layout_marginTop="30dp"
-                android:layout_marginEnd="80dp"
-                android:layout_below="@+id/tvdatamhs"
-                android:layout_toRightOf="@+id/rvnama"
-                android:id="@+id/rvnip"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
                 <TextView
-                    android:id="@+id/tvstatusapproval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="Judul Surat"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="#90000000"
+                    android:textSize="16dp"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_weight="1"/>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Status Approval"
-                    android:textSize="16sp"
-                    android:textColor="@color/colorBlack"
-                    />
-                <TextView
-                    android:layout_below="@+id/tvstatusapproval"
-                    android:id="@+id/tvstatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Belum Terapprove"
-                    />
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textColor="#90000000"
+                    android:textSize="16dp"
+                    android:layout_marginRight="20dp"
+                    android:textStyle="bold"/>
 
-            </RelativeLayout>
-        </RelativeLayout>
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/rv_data_surat_aslab">
+
+            </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
 
     </LinearLayout>
 

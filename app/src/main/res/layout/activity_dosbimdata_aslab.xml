@@ -10,6 +10,8 @@
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
     tools:context=".activity.dosbim.DOSBIMDataAslab"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_data_aslab_dosbim"
     >
 
     <LinearLayout
@@ -17,18 +19,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="DATA ASLAB"
-            app:titleMarginStart="143dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+        <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorOrange"-->
+        <!--app:title="DATA ASLAB"-->
+        <!--app:titleMarginStart="143dp"-->
+        <!--android:textAlignment="center"-->
+        <!--app:titleTextColor="@color/colorbgBlue"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--android:elevation="4dp"/>-->
 
         <LinearLayout
             android:layout_marginTop="80dp"
@@ -41,13 +43,13 @@
             android:background="@color/colorAbuAbu"
             android:orientation="vertical"
             >
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
+                    android:layout_marginLeft="20dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Data Asisten Laboratorium"
@@ -55,6 +57,7 @@
                     android:textColor="@color/colorbgBlue"
                     android:textSize="16dp"
                     android:textStyle="bold"
+                    android:layout_weight="9"
                     />
 
             </LinearLayout>
@@ -62,7 +65,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -74,8 +78,7 @@
                     android:textSize="16dp"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:layout_weight="1"
-                    />
+                    android:layout_weight="1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -87,8 +90,7 @@
                     android:textColor="#90000000"
                     android:textSize="16dp"
                     android:layout_marginRight="20dp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 

@@ -126,7 +126,7 @@ public class HomeMahasiswa extends AppCompatActivity
             Intent intent = new Intent(HomeMahasiswa.this, MHSTugasPraktikum.class);
             startActivity(intent);
 
-        } else if (id == R.id.nav_datasurat_kalab) {
+        } else if (id == R.id.nav_datasurat_mhs) {
             Intent intent = new Intent(HomeMahasiswa.this, MHSSuratMahasiswa.class);
             startActivity(intent);
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@color/colorAbuAbu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#62000000"
+            android:textSize="28px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/txt_nama_barang_invent_laboran"
+            android:layout_weight="1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#62000000"
+            android:textSize="28px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/txt_jumlah_barang_invent_laboran"
+            android:layout_weight="1"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#62000000"
+            android:textSize="28px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/txt_kondisi_barang_invent_laboran"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+</android.support.v7.widget.CardView>
