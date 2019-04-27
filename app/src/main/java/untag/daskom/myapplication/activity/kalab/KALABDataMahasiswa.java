@@ -165,8 +165,9 @@ public class KALABDataMahasiswa extends AppCompatActivity implements NavigationV
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_kalab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(KALABDataMahasiswa.this, KALABPengumuman.class);
+            intent.putExtra("nama",nama_kalab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_kalab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

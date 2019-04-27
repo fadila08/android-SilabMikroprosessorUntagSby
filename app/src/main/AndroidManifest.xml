@@ -92,10 +92,10 @@
         <activity android:name=".KALABMasukkanGaleri" />
         <activity android:name=".KALABHomeGaleri" />
         <activity android:name=".KALABMasukkanUnduhan" />
-        <activity android:name=".KALABHomeUnduhan" />
+        <activity android:name=".activity.kalab.KALABHomeUnduhan" />
         <activity android:name=".KALABDetilPengumuman" />
-        <activity android:name=".KALABMasukkanPengumuman" />
-        <activity android:name=".KALABPengumuman" />
+        <activity android:name=".activity.kalab.KALABMasukkanPengumuman" />
+        <activity android:name=".activity.kalab.KALABPengumuman" />
         <activity android:name=".KALABEditProfilKalab" />
         <activity android:name=".activity.kalab.KALABDataSurat" />
         <activity android:name=".KALABEditNilaiMahasiswa" />
