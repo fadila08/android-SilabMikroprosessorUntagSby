@@ -225,8 +225,9 @@ public class HomeKalab extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_kalab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeKalab.this, KALABHomeGaleri.class);
+            intent.putExtra("nama",nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_kalab) {
             new LogOut(HomeKalab.this);

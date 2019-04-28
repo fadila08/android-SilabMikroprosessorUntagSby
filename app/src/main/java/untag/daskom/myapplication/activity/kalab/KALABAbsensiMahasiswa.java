@@ -175,8 +175,9 @@ public class KALABAbsensiMahasiswa extends AppCompatActivity implements Navigati
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_kalab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(KALABAbsensiMahasiswa.this, KALABHomeGaleri.class);
+            intent.putExtra("nama",nama_kalab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_kalab) {
             new LogOut(KALABAbsensiMahasiswa.this);

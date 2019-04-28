@@ -191,8 +191,9 @@ public class KALABDataLaboran extends AppCompatActivity implements NavigationVie
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_kalab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(KALABDataLaboran.this, KALABHomeGaleri.class);
+            intent.putExtra("nama",nama_kalab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_kalab) {
             new LogOut(KALABDataLaboran.this);

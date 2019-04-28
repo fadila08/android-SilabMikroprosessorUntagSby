@@ -1,94 +1,67 @@
 package untag.daskom.myapplication.activity.kalab;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+import android.view.View;
 
-import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import untag.daskom.myapplication.KALABMasukkanGaleri;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
-import untag.daskom.myapplication.adapter.kalab.DataLaboranAdapter;
-import untag.daskom.myapplication.adapter.kalab.DataSuratAdapter;
-import untag.daskom.myapplication.model.DataUser;
-import untag.daskom.myapplication.model.DataUserList;
-import untag.daskom.myapplication.my_interface.GetUserDataService;
-import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
-import untag.daskom.myapplication.session.SessionManager;
 
-public class KALABDataSurat extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class KALABHomeGaleri extends AppCompatActivity
+    implements NavigationView.OnNavigationItemSelectedListener {
 
-    private DataSuratAdapter adapter;
-    private RecyclerView recyclerView;
-    SessionManager sessionManager;
+    FloatingActionButton fbTambahGaleri;
     String nama_kalab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_data_surat_kalab);
+        setContentView(R.layout.activity_main_galeri_kalab);
+
+        fbTambahGaleri = findViewById(R.id.fab_tambah_galeri_kalab);
 
         nama_kalab = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_surat_kalab);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galeri_kalab);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_surat_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_kalab);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_surat_kalab);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_galeri_kalab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
-        //untuk mengambil data session
-        sessionManager = new SessionManager(this);
-        String session = sessionManager.getSessionData().get("ID");
-
-        //mulai dari sini untuk menangkap data dari API dengan retrofit
-        /** Create handle for the RetrofitInstance interface*/
-        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
-
-        /** Call the method with parameter in the interface to get the notice data*/
-        Call<DataUserList> call = service.getLaboranDataKalab("Bearer "+session);
-
-        call.enqueue(new Callback<DataUserList>() {
+        fbTambahGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
-                generateDataUserList(response.body().getDataUserArrayList());
-            }
-
-            @Override
-            public void onFailure(Call<DataUserList> call, Throwable t) {
-                Toast.makeText(KALABDataSurat.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                Intent intent = new Intent(KALABHomeGaleri.this, KALABMasukkanGaleri.class);
+                startActivity(intent);
             }
         });
-        //sampai sini
-    }
 
+    }
 
     //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_surat_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_kalab);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -117,42 +90,42 @@ public class KALABDataSurat extends AppCompatActivity implements NavigationView.
 //            startActivity(intent);
 
         } else if (id == R.id.nav_home_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, HomeKalab.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, HomeKalab.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABDataLaboran.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABDataLaboran.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABDataAslab.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABDataAslab.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABDataDosbim.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABDataDosbim.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABDataMahasiswa.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABDataMahasiswa.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABNilaiMahasiswa.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABNilaiMahasiswa.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_absensi_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABAbsensiMahasiswa.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABAbsensiMahasiswa.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABDataSurat.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABDataSurat.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
@@ -165,40 +138,31 @@ public class KALABDataSurat extends AppCompatActivity implements NavigationView.
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABPengumuman.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABPengumuman.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABHomeUnduhan.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABHomeUnduhan.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_kalab) {
-            Intent intent = new Intent(KALABDataSurat.this, KALABHomeGaleri.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, KALABHomeGaleri.class);
             intent.putExtra("nama",nama_kalab);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_kalab) {
-            new LogOut(KALABDataSurat.this);
+            new LogOut(KALABHomeGaleri.this);
 
-            Intent intent = new Intent(KALABDataSurat.this, MainActivityLogin.class);
+            Intent intent = new Intent(KALABHomeGaleri.this, MainActivityLogin.class);
             startActivity(intent);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_surat_kalab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_kalab);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
 
-    //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
-    /** Method to generate List of notice using RecyclerView with custom adapter*/
-    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
-        recyclerView = findViewById(R.id.rv_data_surat_kalab);
-        adapter = new DataSuratAdapter(dataUserArrayList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataSurat.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
-    }
 }

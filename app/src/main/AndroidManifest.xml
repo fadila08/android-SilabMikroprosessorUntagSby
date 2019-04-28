@@ -70,7 +70,7 @@
         <activity android:name=".ASLABHomeUnduhan" />
         <activity android:name=".ASLABDetilPengumuman" />
         <activity android:name=".ASLABMasukkanPengumuman" />
-        <activity android:name=".ASLABPengumuman" />
+        <activity android:name=".activity.aslab.ASLABPengumuman" />
         <activity android:name=".ASLABHistory" />
         <activity android:name=".ASLABMasukkanSurat" />
         <activity android:name=".activity.aslab.ASLABDataSurat" />
@@ -90,7 +90,7 @@
         <activity android:name=".KALABStrukturOrganisasi" />
         <activity android:name=".KALABHomeProfil" />
         <activity android:name=".KALABMasukkanGaleri" />
-        <activity android:name=".KALABHomeGaleri" />
+        <activity android:name=".activity.kalab.KALABHomeGaleri" />
         <activity android:name=".KALABMasukkanUnduhan" />
         <activity android:name=".activity.kalab.KALABHomeUnduhan" />
         <activity android:name=".KALABDetilPengumuman" />

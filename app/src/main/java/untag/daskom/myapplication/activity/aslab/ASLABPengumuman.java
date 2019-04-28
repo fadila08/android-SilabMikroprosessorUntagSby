@@ -1,7 +1,9 @@
-package untag.daskom.myapplication;
+package untag.daskom.myapplication.activity.aslab;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import untag.daskom.myapplication.R;
 
 public class ASLABPengumuman extends AppCompatActivity {
 
