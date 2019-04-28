@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.activity.aslab;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import untag.daskom.myapplication.ASLABMasukkanSurat;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.aslab.ASLAB_DataSuratAdapter;
@@ -34,11 +37,14 @@ public class ASLABDataSurat extends AppCompatActivity implements NavigationView.
     private ASLAB_DataSuratAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    FloatingActionButton fbTambahSurat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_surat_aslab);
+
+        fbTambahSurat = findViewById(R.id.fab_tambah_data_surat_kalab);
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_surat_aslab);
@@ -78,6 +84,14 @@ public class ASLABDataSurat extends AppCompatActivity implements NavigationView.
             }
         });
         //sampai sini
+
+        fbTambahSurat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ASLABDataSurat.this, ASLABMasukkanSurat.class);
+                startActivity(intent);
+            }
+        });
     }
 
 
