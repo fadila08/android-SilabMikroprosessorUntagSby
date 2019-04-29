@@ -181,8 +181,9 @@ public class LABORANDataAslab extends AppCompatActivity implements NavigationVie
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(LABORANDataAslab.this, LABORANHomeGaleri.class);
+            intent.putExtra("nama",nama_laboran);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_laboran) {
             new LogOut(LABORANDataAslab.this);

@@ -13,45 +13,45 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import untag.daskom.myapplication.LABORANMasukkanPengumuman;
+import untag.daskom.myapplication.LABORANMasukkanGaleri;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.session.LogOut;
 
-public class LABORANPengumuman extends AppCompatActivity
+public class LABORANHomeGaleri extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton fbTambahPengumuman;
+    FloatingActionButton fbTambahGaleri;
     String nama_laboran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_pengumuman_laboran);
+        setContentView(R.layout.activity_main_galeri_laboran);
 
-        fbTambahPengumuman = findViewById(R.id.fab_tambah_pengumuman_laboran);
+        fbTambahGaleri = findViewById(R.id.fab_tambah_galeri_laboran);
 
         nama_laboran = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_pengumuman_laboran);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galeri_laboran);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_laboran);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_pengumuman_laboran);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_galeri_laboran);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
-        fbTambahPengumuman.setOnClickListener(new View.OnClickListener() {
+        fbTambahGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LABORANPengumuman.this, LABORANMasukkanPengumuman.class);
+                Intent intent = new Intent(LABORANHomeGaleri.this, LABORANMasukkanGaleri.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class LABORANPengumuman extends AppCompatActivity
     //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_laboran);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -88,32 +88,32 @@ public class LABORANPengumuman extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_home_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, HomeLaboran.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, HomeLaboran.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalmhs_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANDataMahasiswa.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANDataMahasiswa.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANDataDosbim.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANDataDosbim.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANDataAslab.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANDataAslab.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANNilaiMahasiswa.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANNilaiMahasiswa.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_inventaris_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANInventaris.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANInventaris.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
@@ -126,32 +126,31 @@ public class LABORANPengumuman extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANPengumuman.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANPengumuman.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANHomeUnduhan.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANHomeUnduhan.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_laboran) {
-            Intent intent = new Intent(LABORANPengumuman.this, LABORANHomeGaleri.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANHomeGaleri.class);
             intent.putExtra("nama",nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_laboran) {
-            new LogOut(LABORANPengumuman.this);
+            new LogOut(LABORANHomeGaleri.this);
 
-            Intent intent = new Intent(LABORANPengumuman.this, MainActivityLogin.class);
+            Intent intent = new Intent(LABORANHomeGaleri.this, MainActivityLogin.class);
             startActivity(intent);
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_laboran);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
 
 }
