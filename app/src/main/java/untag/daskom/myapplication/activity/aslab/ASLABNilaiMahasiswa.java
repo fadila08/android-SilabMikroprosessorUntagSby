@@ -34,11 +34,14 @@ public class ASLABNilaiMahasiswa extends AppCompatActivity implements Navigation
     private ASLAB_DataNilaiMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    String nama_aslab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_nilai_mahasiswa_aslab);
+
+        nama_aslab = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_nilai_mahasiswa_aslab);
@@ -114,34 +117,42 @@ public class ASLABNilaiMahasiswa extends AppCompatActivity implements Navigation
 
         }else if (id == R.id.nav_home_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, HomeAslab.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABDataMahasiswa.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABDataDosbim.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABDataLaboran.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_tugasmhs_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABTugasMahasiswa.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABNilaiMahasiswa.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABAbsensiMahasiswa.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_aslab) {
             Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABDataSurat.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_aslab) {
@@ -153,8 +164,9 @@ public class ASLABNilaiMahasiswa extends AppCompatActivity implements Navigation
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_aslab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABPengumuman.class);
+            intent.putExtra("nama",nama_aslab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_aslab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

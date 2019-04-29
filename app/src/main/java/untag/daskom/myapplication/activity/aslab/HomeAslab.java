@@ -74,6 +74,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatamhsaslab = new Intent(HomeAslab.this, ASLABDataMahasiswa.class);
+                btdatamhsaslab.putExtra("nama", nama);
                 startActivity(btdatamhsaslab);
             }
         });
@@ -82,6 +83,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatadosbimaslab = new Intent(HomeAslab.this, ASLABDataDosbim.class);
+                btdatadosbimaslab.putExtra("nama", nama);
                 startActivity(btdatadosbimaslab);
             }
         });
@@ -90,6 +92,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatalaboranaslab = new Intent(HomeAslab.this, ASLABDataLaboran.class);
+                btdatalaboranaslab.putExtra("nama", nama);
                 startActivity(btdatalaboranaslab);
             }
         });
@@ -98,6 +101,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent bttugasmhsaslab = new Intent(HomeAslab.this, ASLABTugasMahasiswa.class);
+                bttugasmhsaslab.putExtra("nama", nama);
                 startActivity(bttugasmhsaslab);
             }
         });
@@ -106,6 +110,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btnilaimhsaslab = new Intent(HomeAslab.this, ASLABNilaiMahasiswa.class);
+                btnilaimhsaslab.putExtra("nama", nama);
                 startActivity(btnilaimhsaslab);
             }
         });
@@ -114,6 +119,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btabsmhsaslab = new Intent(HomeAslab.this, ASLABAbsensiMahasiswa.class);
+                btabsmhsaslab.putExtra("nama", nama);
                 startActivity(btabsmhsaslab);
             }
         });
@@ -122,6 +128,7 @@ public class HomeAslab extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatasurataslab = new Intent(HomeAslab.this, ASLABDataSurat.class);
+                btdatasurataslab.putExtra("nama", nama);
                 startActivity(btdatasurataslab);
             }
         });
@@ -160,34 +167,42 @@ public class HomeAslab extends AppCompatActivity
 
         } else if (id == R.id.nav_home_aslab) {
             Intent intent = new Intent(HomeAslab.this, HomeAslab.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABDataMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABDataDosbim.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABDataLaboran.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_tugasmhs_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABTugasMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABNilaiMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABAbsensiMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_aslab) {
             Intent intent = new Intent(HomeAslab.this, ASLABDataSurat.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_aslab) {
@@ -199,8 +214,9 @@ public class HomeAslab extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_aslab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeAslab.this, ASLABPengumuman.class);
+            intent.putExtra("nama",nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_aslab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
