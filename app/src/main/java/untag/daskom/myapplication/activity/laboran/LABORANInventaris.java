@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.activity.laboran;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -37,19 +38,20 @@ public class LABORANInventaris extends AppCompatActivity implements NavigationVi
     private InventarisAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
-    TextView tambahInv, downloadInv;
+    TextView downloadInv;
     String nama_laboran;
+    FloatingActionButton fbTambahInventaris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_inventaris_laborat_laboran);
 
-//        nama_laboran = getIntent().getStringExtra("nama");
+        nama_laboran = getIntent().getStringExtra("nama");
 
         //pendefinisian tambah data laboran
-        tambahInv = (TextView) findViewById(R.id.tambahdatainventaris);
         downloadInv = (TextView) findViewById(R.id.printinventaris);
+        fbTambahInventaris = findViewById(R.id.fab_tambah_inventaris_laborat_laboran);
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_inventaris_laborat_laboran);
@@ -95,16 +97,13 @@ public class LABORANInventaris extends AppCompatActivity implements NavigationVi
         //sampai sini
 
         //ke halaman tambah data laboran
-        tambahInv.setOnClickListener(new View.OnClickListener() {
+        fbTambahInventaris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(LABORANInventaris.this, LABORANMasukkanInventarisLab.class);
                 startActivity(intent);
             }
         });
-
-
-
     }
 
     //untuk layout drawer
@@ -136,26 +135,32 @@ public class LABORANInventaris extends AppCompatActivity implements NavigationVi
         if (id == R.id.nav_home_laboran) {
             // Handle the camera action
             Intent intent = new Intent(LABORANInventaris.this, HomeLaboran.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalmhs_laboran) {
             Intent intent = new Intent(LABORANInventaris.this, LABORANDataMahasiswa.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_laboran) {
             Intent intent = new Intent(LABORANInventaris.this, LABORANDataDosbim.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_laboran) {
             Intent intent = new Intent(LABORANInventaris.this, LABORANDataAslab.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_laboran) {
             Intent intent = new Intent(LABORANInventaris.this, LABORANNilaiMahasiswa.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_inventaris_laboran) {
             Intent intent = new Intent(LABORANInventaris.this, LABORANInventaris.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_laboran) {

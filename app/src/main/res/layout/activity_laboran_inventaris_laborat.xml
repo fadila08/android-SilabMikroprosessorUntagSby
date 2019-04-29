@@ -19,77 +19,44 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@color/colorOrange"-->
-            <!--app:title="DATA NILAI MAHASISWA"-->
-            <!--app:titleMarginStart="93dp"-->
-            <!--android:textAlignment="center"-->
-            <!--app:titleTextColor="@color/colorbgBlue"-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--android:elevation="4dp"/>-->
-
         <LinearLayout
-            android:layout_marginTop="30dp"
-            android:layout_gravity="center"
-            android:gravity="fill_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginVertical="25dp"
+            android:layout_marginHorizontal="25dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@color/colorAbuAbu"
             android:orientation="vertical"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="right">
+                android:layout_gravity="right"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tambahdatainventaris"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="+"
-                    android:fontFamily="@font/nunitosans_bold"
-                    android:textColor="@color/colorbgBlue"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginRight="10px"
-                    />
-
-                <TextView
+                    android:drawableLeft="@drawable/imageprint"
+                    android:textSize="30dp"
                     android:id="@+id/printinventaris"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawableRight="@drawable/imageprint"
-                    android:textColor="@color/colorbgBlue"
-                    android:layout_marginRight="10px"
-                    android:layout_marginLeft="10px"
                     />
-
-
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:text="Nama Barang"
                     android:fontFamily="@font/nunitosans_bold"
-                    android:textSize="16dp"
                     android:textColor="#90000000"
+                    android:textSize="16dp"
                     android:textAlignment="center"
                     android:textStyle="bold"
-                    android:layout_weight="1"
-                    />
+                    android:layout_weight="1"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,8 +67,8 @@
                     android:fontFamily="@font/nunitosans_bold"
                     android:textColor="#90000000"
                     android:textSize="16dp"
-                    android:textStyle="bold"
-                    />
+                    android:layout_marginRight="20dp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -117,21 +84,29 @@
 
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/rv_inventaris">
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="492dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/rv_inventaris">
+                </android.support.v7.widget.RecyclerView>
 
-            </android.support.v7.widget.RecyclerView>
-
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_tambah_inventaris_laborat_laboran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:backgroundTint="@color/colorOrange"
+                    android:src="@drawable/plus2" />
+            </RelativeLayout>
         </LinearLayout>
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

@@ -147,26 +147,32 @@ public class HomeLaboran extends AppCompatActivity
 
         } else if (id == R.id.nav_home_laboran) {
             Intent intent = new Intent(HomeLaboran.this, HomeLaboran.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalmhs_laboran) {
             Intent intent = new Intent(HomeLaboran.this, LABORANDataMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_laboran) {
             Intent intent = new Intent(HomeLaboran.this, LABORANDataDosbim.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_laboran) {
             Intent intent = new Intent(HomeLaboran.this, LABORANDataAslab.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_laboran) {
             Intent intent = new Intent(HomeLaboran.this, LABORANNilaiMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_inventaris_laboran) {
             Intent intent = new Intent(HomeLaboran.this, LABORANInventaris.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_laboran) {

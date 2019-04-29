@@ -34,11 +34,14 @@ public class LABORANDataMahasiswa extends AppCompatActivity implements Navigatio
     private LABORAN_DataMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    String nama_laboran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_mahasiswa_laboran);
+
+        nama_laboran = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_mahasiswa_laboran);
@@ -113,26 +116,32 @@ public class LABORANDataMahasiswa extends AppCompatActivity implements Navigatio
 
         } else if (id == R.id.nav_home_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, HomeLaboran.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalmhs_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, LABORANDataMahasiswa.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, LABORANDataDosbim.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, LABORANDataAslab.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, LABORANNilaiMahasiswa.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_inventaris_laboran) {
             Intent intent = new Intent(LABORANDataMahasiswa.this, LABORANInventaris.class);
+            intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_laboran) {
