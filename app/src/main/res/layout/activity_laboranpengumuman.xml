@@ -9,69 +9,33 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".LABORANPengumuman"
-    >
+    tools:context=".activity.laboran.LABORANPengumuman"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_pengumuman_laboran">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginVertical="25dp"
+        android:layout_marginHorizontal="25dp">
 
-        <android.support.v7.widget.Toolbar
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_pengumuman_laboran"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="PENGUMUMAN"
-            app:titleMarginStart="133dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
 
-        <LinearLayout
-            android:layout_marginVertical="25dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <Button
-                android:id="@+id/bt1"
-                android:paddingVertical="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Rekrutmen Aslab Baru"
-                android:textAlignment="textStart"
-                android:drawableRight="@drawable/imageedit"
-                />
-            <Button
-                android:id="@+id/bt2"
-                android:layout_below="@+id/bt1"
-                android:paddingVertical="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Briefing Praktikum Mikroprosesor"
-                android:textAlignment="textStart"
-                android:drawableRight="@drawable/imageedit"
-                />
-            <Button
-                android:layout_marginHorizontal="155dp"
-                android:gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/tombolplus"
-                android:text="+"
-                android:textSize="30sp"
-                android:textColor="@color/colorWhite"
-                />
-        </LinearLayout>
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-    </LinearLayout>
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab_tambah_pengumuman_laboran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/rv_pengumuman_laboran"
+            android:layout_alignBottom="@+id/rv_pengumuman_laboran"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:backgroundTint="@color/colorOrange"
+            android:src="@drawable/plus2" />
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

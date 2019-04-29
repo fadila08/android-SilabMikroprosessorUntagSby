@@ -48,7 +48,7 @@
         <activity android:name=".LABORANHomeUnduhan" />
         <activity android:name=".LABORANDetilPengumuman" />
         <activity android:name=".LABORANMasukkanPengumuman" />
-        <activity android:name=".LABORANPengumuman" />
+        <activity android:name=".activity.laboran.LABORANPengumuman" />
         <activity android:name=".LABORANHistory" />
         <activity android:name=".LABORANEditProfilLaboran" />
         <activity android:name=".activity.laboran.LABORANMasukkanInventarisLab" />

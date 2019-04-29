@@ -151,8 +151,9 @@ public class LABORANNilaiMahasiswa extends AppCompatActivity implements Navigati
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(LABORANNilaiMahasiswa.this, LABORANPengumuman.class);
+            intent.putExtra("nama", nama_laboran);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_laboran) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

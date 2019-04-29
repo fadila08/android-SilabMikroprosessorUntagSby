@@ -149,8 +149,9 @@ public class LABORANDataDosbim extends AppCompatActivity implements NavigationVi
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(LABORANDataDosbim.this, LABORANPengumuman.class);
+            intent.putExtra("nama", nama_laboran);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_laboran) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

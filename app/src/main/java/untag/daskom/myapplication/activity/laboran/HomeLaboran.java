@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.activity.aslab.HomeAslab;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
 
@@ -184,8 +185,9 @@ public class HomeLaboran extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeLaboran.this, LABORANPengumuman.class);
+            intent.putExtra("nama", nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_laboran) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
