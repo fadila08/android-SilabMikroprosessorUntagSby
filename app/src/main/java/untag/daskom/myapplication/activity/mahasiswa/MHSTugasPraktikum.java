@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.activity.mahasiswa;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -12,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import untag.daskom.myapplication.MHSMasukkanTugasMahasiswa;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.mahasiswa.MHS_TugasPraktikumAdapter;
@@ -34,11 +37,17 @@ public class MHSTugasPraktikum extends AppCompatActivity implements NavigationVi
     private MHS_TugasPraktikumAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    String nama_mhs;
+    FloatingActionButton fbTambahTugas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_tugas_praktikum_mhs);
+
+        fbTambahTugas = findViewById(R.id.fab_tambah_tugas_praktikum_mhs);
+
+        nama_mhs = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_tugas_praktikum_mhs);
@@ -79,6 +88,14 @@ public class MHSTugasPraktikum extends AppCompatActivity implements NavigationVi
         });
         //sampai sini
 
+        fbTambahTugas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MHSTugasPraktikum.this, MHSMasukkanTugasMahasiswa.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     //untuk layout drawer
@@ -110,14 +127,17 @@ public class MHSTugasPraktikum extends AppCompatActivity implements NavigationVi
         if (id == R.id.nav_home_mhs) {
             // Handle the camera action
             Intent intent = new Intent(MHSTugasPraktikum.this, HomeMahasiswa.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         }else if (id == R.id.nav_tugasmhs_mhs) {
             Intent intent = new Intent(MHSTugasPraktikum.this, MHSTugasPraktikum.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_mhs) {
             Intent intent = new Intent(MHSTugasPraktikum.this, MHSSuratMahasiswa.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_mhs) {

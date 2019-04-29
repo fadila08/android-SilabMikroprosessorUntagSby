@@ -33,11 +33,14 @@ public class MHSSuratMahasiswa extends AppCompatActivity implements NavigationVi
     private MHS_SuratMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
+    String nama_mhs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_surat_mhs);
+
+        nama_mhs = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_surat_mhs);
@@ -109,14 +112,17 @@ public class MHSSuratMahasiswa extends AppCompatActivity implements NavigationVi
         if (id == R.id.nav_home_mhs) {
             // Handle the camera action
             Intent intent = new Intent(MHSSuratMahasiswa.this, HomeMahasiswa.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         }else if (id == R.id.nav_tugasmhs_mhs) {
             Intent intent = new Intent(MHSSuratMahasiswa.this, MHSTugasPraktikum.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_mhs) {
             Intent intent = new Intent(MHSSuratMahasiswa.this, MHSSuratMahasiswa.class);
+            intent.putExtra("nama", nama_mhs);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_mhs) {

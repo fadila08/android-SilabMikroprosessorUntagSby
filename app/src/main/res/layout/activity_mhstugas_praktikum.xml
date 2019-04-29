@@ -19,11 +19,9 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:gravity="fill_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginHorizontal="25dp"
+            android:layout_marginVertical="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAbuAbu"
@@ -43,26 +41,34 @@
                     android:textColor="@color/colorbgBlue"
                     android:textSize="16dp"
                     android:textStyle="bold"
-                    android:layout_weight="9"
-                    />
-
+                    android:layout_weight="9" />
             </LinearLayout>
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_marginTop="15dp"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/rv_tugas_praktikum_mhs">
-            </android.support.v7.widget.RecyclerView>
+                android:layout_height="match_parent">
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="532dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:id="@+id/rv_tugas_praktikum_mhs">
+                </android.support.v7.widget.RecyclerView>
+
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/fab_tambah_tugas_praktikum_mhs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:backgroundTint="@color/colorOrange"
+                    android:src="@drawable/plus2" />
+            </RelativeLayout>
 
         </LinearLayout>
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -71,7 +77,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_mhs"
-        app:menu="@menu/dawer_menu_mhs"
-        />
+        app:menu="@menu/dawer_menu_mhs" />
 
 </android.support.v4.widget.DrawerLayout>

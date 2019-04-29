@@ -70,6 +70,7 @@ public class HomeMahasiswa extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent bttugaspraktikum = new Intent(HomeMahasiswa.this, MHSTugasPraktikum.class);
+                bttugaspraktikum.putExtra("nama", nama);
                 startActivity(bttugaspraktikum);
             }
         });
@@ -78,6 +79,7 @@ public class HomeMahasiswa extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatasuratmhs = new Intent(HomeMahasiswa.this, MHSSuratMahasiswa.class);
+                btdatasuratmhs.putExtra("nama", nama);
                 startActivity(btdatasuratmhs);
             }
         });
@@ -120,14 +122,17 @@ public class HomeMahasiswa extends AppCompatActivity
 
         if (id == R.id.nav_home_mhs) {
             Intent intent = new Intent(HomeMahasiswa.this, HomeMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_tugasmhs_mhs) {
             Intent intent = new Intent(HomeMahasiswa.this, MHSTugasPraktikum.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_mhs) {
             Intent intent = new Intent(HomeMahasiswa.this, MHSSuratMahasiswa.class);
+            intent.putExtra("nama", nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_mhs) {
