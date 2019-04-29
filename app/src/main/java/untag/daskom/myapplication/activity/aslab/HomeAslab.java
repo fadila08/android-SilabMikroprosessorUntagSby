@@ -219,8 +219,9 @@ public class HomeAslab extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_aslab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeAslab.this, ASLABHomeUnduhan.class);
+            intent.putExtra("nama",nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_galeri_aslab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

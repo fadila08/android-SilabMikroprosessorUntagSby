@@ -169,8 +169,9 @@ public class ASLABAbsensiMahasiswa extends AppCompatActivity implements Navigati
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_aslab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(ASLABAbsensiMahasiswa.this, ASLABHomeUnduhan.class);
+            intent.putExtra("nama", nama_aslab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_galeri_aslab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
