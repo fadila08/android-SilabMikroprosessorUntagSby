@@ -14,45 +14,44 @@ import android.view.MenuItem;
 import android.view.View;
 
 import untag.daskom.myapplication.ASLABMasukkanGaleri;
-import untag.daskom.myapplication.ASLABMasukkanUnduhan;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.session.LogOut;
 
-public class ASLABHomeUnduhan extends AppCompatActivity
+public class ASLABHomeGaleri extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton fbTambahUnduhan;
+    FloatingActionButton fbTambahGaleri;
     String nama_aslab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_unduhan_aslab);
+        setContentView(R.layout.activity_main_galeri_aslab);
 
-        fbTambahUnduhan = findViewById(R.id.fab_tambah_unduhan_aslab);
+        fbTambahGaleri = findViewById(R.id.fab_tambah_galeri_aslab);
 
         nama_aslab = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_unduhan_aslab);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galeri_aslab);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_aslab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_aslab);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_unduhan_aslab);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_galeri_aslab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
-        fbTambahUnduhan.setOnClickListener(new View.OnClickListener() {
+        fbTambahGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABMasukkanUnduhan.class);
+                Intent intent = new Intent(ASLABHomeGaleri.this, ASLABMasukkanGaleri.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +60,7 @@ public class ASLABHomeUnduhan extends AppCompatActivity
     //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_aslab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_aslab);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -90,42 +89,42 @@ public class ASLABHomeUnduhan extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_home_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, HomeAslab.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, HomeAslab.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABDataMahasiswa.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABDataMahasiswa.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABDataDosbim.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABDataDosbim.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABDataLaboran.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABDataLaboran.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_tugasmhs_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABTugasMahasiswa.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABTugasMahasiswa.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABNilaiMahasiswa.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABNilaiMahasiswa.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABAbsensiMahasiswa.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABAbsensiMahasiswa.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_datasurat_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABDataSurat.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABDataSurat.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
@@ -138,30 +137,33 @@ public class ASLABHomeUnduhan extends AppCompatActivity
 //            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABPengumuman.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABPengumuman.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABHomeUnduhan.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABHomeUnduhan.class);
             intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_aslab) {
-            Intent intent = new Intent(ASLABHomeUnduhan.this, ASLABHomeGaleri.class);
-            intent.putExtra("nama", nama_aslab);
+            Intent intent = new Intent(ASLABHomeGaleri.this, ASLABHomeGaleri.class);
+            intent.putExtra("nama",nama_aslab);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_aslab) {
-            new LogOut(ASLABHomeUnduhan.this);
+            new LogOut(ASLABHomeGaleri.this);
 
-            Intent intent = new Intent(ASLABHomeUnduhan.this, MainActivityLogin.class);
+            Intent intent = new Intent(ASLABHomeGaleri.this, MainActivityLogin.class);
             startActivity(intent);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_aslab);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_galeri_aslab);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
 
 }
