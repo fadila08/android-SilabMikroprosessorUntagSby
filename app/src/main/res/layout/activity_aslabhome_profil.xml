@@ -9,65 +9,252 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".ASLABHomeProfil">
+    tools:showIn="@layout/app_bar_profil_aslab"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="PROFIL"
-            app:titleMarginStart="173dp"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+        <!--<android.support.v7.widget.Toolbar-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorOrange"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+        <!--android:elevation="4dp">-->
 
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="PROFIL"-->
+        <!--android:textColor="@color/colorbgBlue"-->
+        <!--android:fontFamily="@font/roboto_medium"-->
+        <!--android:textSize="8pt"-->
+        <!--android:id="@+id/txtToolbar"-->
+        <!--android:gravity="center_horizontal"/>-->
 
-        <Button
-            android:layout_marginTop="50dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
-            android:text="RV1"
-            />
+        <!--</android.support.v7.widget.Toolbar>-->
 
-        <Button
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
-            android:text="RV2"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
-            android:text="RV3"
-            />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginEnd="35dp"
-            android:text="RV4"
-            />
+                <Button
+                    android:id="@+id/btprofillaborat_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorTulisanUniv"
+                    android:drawableRight="@drawable/down"
+                    android:onClick="PROFILLABORAT"
+                    android:paddingVertical="15dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
+                    android:text="PROFIL LABORATORIUM"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp" />
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/ELprofillaborat_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/btprofillaborat_aslab"
+                    android:background="@color/colorRealWhite"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ivprofillaborat_aslab"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="1dp"
+                                android:maxWidth="8px"
+                                android:maxHeight="8px"
+                                android:src="@drawable/logo" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_light"
+                                android:layout_below="@+id/ivprofillaborat_aslab"
+                                android:text="Android library for creating an expandable and collapsible to full screen view inside a viewgroup composition. Expandable Layout provides an easy way to create a view called header with an expandable view. Views are external layout to allow a maximum of customization."
+                                android:textAlignment="center" />
+                        </LinearLayout>
+                    </ScrollView>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/btkepalalaborat_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ELprofillaborat_aslab"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorTulisanUniv"
+                    android:drawableRight="@drawable/down"
+                    android:onClick="PROFILKALABORAT"
+                    android:paddingVertical="15dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="10dp"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
+                    android:text="PROFIL KEPALA LABORATORIUM"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/ELprofilkepalalaborat_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/btkepalalaborat_aslab"
+                    android:background="@color/colorRealWhite"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/RV_kalab_aslab"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                            </android.support.v7.widget.RecyclerView>
+                        </LinearLayout>
+                    </ScrollView>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/btprofillaboran_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ELprofilkepalalaborat_aslab"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorTulisanUniv"
+                    android:drawableRight="@drawable/down"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textColor="@color/colorbgBlue"
+                    android:onClick="PROFILLABORAN"
+                    android:paddingVertical="15dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="10dp"
+                    android:text="PROFIL LABORAN"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/ELprofillaboran_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/btprofillaboran_aslab"
+                    android:background="@color/colorRealWhite"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/RV_laboran_aslab"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp">
+
+                            </android.support.v7.widget.RecyclerView>
+
+                        </LinearLayout>
+                    </ScrollView>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+                <Button
+                    android:id="@+id/btprofilaslab_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ELprofillaboran_aslab"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/colorbgBlue"
+                    android:fontFamily="@font/roboto_medium"
+                    android:background="@color/colorTulisanUniv"
+                    android:drawableRight="@drawable/down"
+                    android:onClick="PROFILASLAB"
+                    android:paddingVertical="15dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="10dp"
+                    android:text="PROFIL ASISTEN LABORATORIUM"
+                    android:textAlignment="viewStart"
+                    android:textSize="14sp" />
+
+                <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+                    android:id="@+id/ELprofilaslab_aslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:layout_below="@+id/btprofilaslab_aslab"
+                    android:background="@color/colorRealWhite"
+                    android:padding="16dp"
+                    app:ael_duration="400"
+                    app:ael_expanded="false"
+                    app:ael_orientation="vertical">
+
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <android.support.v7.widget.RecyclerView
+                                android:id="@+id/RV_aslab_aslab"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="5dp"></android.support.v7.widget.RecyclerView>
+                        </LinearLayout>
+                    </ScrollView>
+                </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+            </RelativeLayout>
+        </ScrollView>
     </LinearLayout>
-
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"

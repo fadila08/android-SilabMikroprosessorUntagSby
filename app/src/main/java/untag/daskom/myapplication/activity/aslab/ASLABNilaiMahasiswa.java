@@ -156,8 +156,9 @@ public class ASLABNilaiMahasiswa extends AppCompatActivity implements Navigation
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_aslab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(ASLABNilaiMahasiswa.this, ASLABHomeProfil.class);
+            intent.putExtra("nama",nama_aslab);
+            startActivity(intent);
 
         } else if (id == R.id.nav_struktur_aslab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
