@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.activity.noAuth.MainActivityProfil;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
 
@@ -207,8 +208,9 @@ public class HomeKalab extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_kalab) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeKalab.this, KALABHomeProfil.class);
+            intent.putExtra("nama", nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_struktur_kalab) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
