@@ -41,7 +41,7 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_laboran_dosbim);
 
-//        nama_dosbim = getIntent().getStringExtra("nama");
+        nama_dosbim = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_dosbim);
@@ -112,31 +112,38 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
         if (id == R.id.nav_home_dosbim) {
             // Handle the camera action
             Intent intent = new Intent(DOSBIMDataLaboran.this, HomeDosbim.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_dosbim) {
             Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataMahasiswa.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_dosbim) {
             Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataLaboran.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_dosbim) {
             Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataAslab.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_dosbim) {
             Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMNilaiMahasiswa.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_dosbim) {
             Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMAbsensiMahasiswa.class);
+            intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_dosbim) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMHomeProfil.class);
+            intent.putExtra("nama", nama_dosbim);
+            startActivity(intent);
 
         } else if (id == R.id.nav_struktur_dosbim) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

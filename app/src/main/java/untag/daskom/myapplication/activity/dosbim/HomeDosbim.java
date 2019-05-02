@@ -72,6 +72,7 @@ public class HomeDosbim extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatamhsdosbim = new Intent(HomeDosbim.this, DOSBIMDataMahasiswa.class);
+                btdatamhsdosbim.putExtra("nama", nama);
                 startActivity(btdatamhsdosbim);
             }
         });
@@ -80,6 +81,7 @@ public class HomeDosbim extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdatalaborandosbim = new Intent(HomeDosbim.this, DOSBIMDataLaboran.class);
+                btdatalaborandosbim.putExtra("nama",nama);
                 startActivity(btdatalaborandosbim);
             }
         });
@@ -88,6 +90,7 @@ public class HomeDosbim extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btdataaslabdosbim = new Intent(HomeDosbim.this, DOSBIMDataAslab.class);
+                btdataaslabdosbim.putExtra("nama",nama);
                 startActivity(btdataaslabdosbim);
             }
         });
@@ -96,6 +99,7 @@ public class HomeDosbim extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btnilaimhsdosbim = new Intent(HomeDosbim.this, DOSBIMNilaiMahasiswa.class);
+                btnilaimhsdosbim.putExtra("nama",nama);
                 startActivity(btnilaimhsdosbim);
             }
         });
@@ -104,6 +108,7 @@ public class HomeDosbim extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent btabsmhsdosbim = new Intent(HomeDosbim.this, DOSBIMAbsensiMahasiswa.class);
+                btabsmhsdosbim.putExtra("nama",nama);
                 startActivity(btabsmhsdosbim);
             }
         });
@@ -138,31 +143,38 @@ public class HomeDosbim extends AppCompatActivity
 
         if (id == R.id.nav_home_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, HomeDosbim.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, DOSBIMDataMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, DOSBIMDataLaboran.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, DOSBIMDataAslab.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, DOSBIMNilaiMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_dosbim) {
             Intent intent = new Intent(HomeDosbim.this, DOSBIMAbsensiMahasiswa.class);
+            intent.putExtra("nama",nama);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_dosbim) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeDosbim.this, DOSBIMHomeProfil.class);
+            intent.putExtra("nama",nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_struktur_dosbim) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
