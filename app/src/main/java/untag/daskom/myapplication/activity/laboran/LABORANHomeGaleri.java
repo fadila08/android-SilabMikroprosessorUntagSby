@@ -118,8 +118,9 @@ public class LABORANHomeGaleri extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(LABORANHomeGaleri.this, LABORANHomeProfil.class);
+            intent.putExtra("nama",nama_laboran);
+            startActivity(intent);
 
         } else if (id == R.id.nav_struktur_laboran) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
