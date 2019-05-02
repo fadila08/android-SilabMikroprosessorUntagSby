@@ -47,7 +47,7 @@ public class MHSHomeProfil extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_profil_mhs);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_profil_laboran);
+        Toolbar toolbar = findViewById(R.id.toolbar_profil_mhs);
         setSupportActionBar(toolbar);
 
         nama_mhs = getIntent().getStringExtra("nama");
