@@ -40,7 +40,7 @@
         <activity android:name=".activity.dosbim.DOSBIMDataAslab" />
         <activity android:name=".activity.dosbim.DOSBIMDataMahasiswa" />
         <activity android:name=".activity.dosbim.HomeDosbim" />
-        <activity android:name=".LABORANStrukturOrganisasi" />
+        <activity android:name=".activity.laboran.LABORANStrukturOrganisasi" />
         <activity android:name=".activity.laboran.LABORANHomeProfil" />
         <activity android:name=".activity.laboran.LABORANHomeGaleri" />
         <activity android:name=".LABORANMasukkanGaleri" />

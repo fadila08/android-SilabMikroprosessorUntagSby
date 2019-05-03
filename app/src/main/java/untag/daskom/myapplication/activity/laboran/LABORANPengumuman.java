@@ -123,8 +123,9 @@ public class LABORANPengumuman extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_struktur_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(LABORANPengumuman.this, LABORANStrukturOrganisasi.class);
+            intent.putExtra("nama", nama_laboran);
+            startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
             Intent intent = new Intent(LABORANPengumuman.this, LABORANPengumuman.class);

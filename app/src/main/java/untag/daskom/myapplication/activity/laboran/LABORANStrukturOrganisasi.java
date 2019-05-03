@@ -1,7 +1,6 @@
 package untag.daskom.myapplication.activity.laboran;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,56 +10,41 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
-import untag.daskom.myapplication.LABORANMasukkanUnduhan;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.session.LogOut;
 
-public class LABORANHomeUnduhan extends AppCompatActivity
+public class LABORANStrukturOrganisasi extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
-    FloatingActionButton fbTambahUnduhan;
     String nama_laboran;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_unduhan_laboran);
-
-        fbTambahUnduhan = findViewById(R.id.fab_tambah_unduhan_laboran);
+        setContentView(R.layout.activity_main_struktur_laboran);
 
         nama_laboran = getIntent().getStringExtra("nama");
 
-        //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_unduhan_laboran);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_struktur_laboran);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_struktur_laboran);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_unduhan_laboran);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_struktur_laboran);
         navigationView.setNavigationItemSelectedListener(this);
-        //sampai sini
 
-        fbTambahUnduhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANMasukkanUnduhan.class);
-                startActivity(intent);
-            }
-        });
     }
 
-    //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_struktur_laboran);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -68,7 +52,6 @@ public class LABORANHomeUnduhan extends AppCompatActivity
         }
     }
 
-    //untuk layout drawer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -83,77 +66,74 @@ public class LABORANHomeUnduhan extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_history_laboran) {
-//            Intent intent = new Intent(MainActivityStruktur.this, HomeScreen.class);
-//            startActivity(intent);
-
-        } else if (id == R.id.nav_home_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, HomeLaboran.class);
+        if (id == R.id.nav_home_laboran) {
+            // Handle the camera action
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, HomeLaboran.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalmhs_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANDataMahasiswa.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANDataMahasiswa.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_datadosbim_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANDataDosbim.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANDataDosbim.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANDataAslab.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANDataAslab.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANNilaiMahasiswa.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANNilaiMahasiswa.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_inventaris_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANInventaris.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANInventaris.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANHomeProfil.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANHomeProfil.class);
             intent.putExtra("nama",nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_struktur_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANStrukturOrganisasi.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANStrukturOrganisasi.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANPengumuman.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANPengumuman.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANHomeUnduhan.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANHomeUnduhan.class);
             intent.putExtra("nama", nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_laboran) {
-            Intent intent = new Intent(LABORANHomeUnduhan.this, LABORANHomeGaleri.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, LABORANHomeGaleri.class);
             intent.putExtra("nama",nama_laboran);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_laboran) {
-            new LogOut(LABORANHomeUnduhan.this);
+            new LogOut(LABORANStrukturOrganisasi.this);
 
-            Intent intent = new Intent(LABORANHomeUnduhan.this, MainActivityLogin.class);
+            Intent intent = new Intent(LABORANStrukturOrganisasi.this, MainActivityLogin.class);
             startActivity(intent);
-
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_laboran);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_struktur_laboran);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 
 }
