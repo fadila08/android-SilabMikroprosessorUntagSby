@@ -87,7 +87,7 @@
         <activity android:name=".ASLABEditProfilAslab" />
         <activity android:name=".activity.aslab.HomeAslab" />
         <activity android:name=".activity.kalab.KALABAbsensiMahasiswa" />
-        <activity android:name=".KALABStrukturOrganisasi" />
+        <activity android:name=".activity.kalab.KALABStrukturOrganisasi" />
         <activity android:name=".activity.kalab.KALABHomeProfil" />
         <activity android:name=".KALABMasukkanGaleri" />
         <activity android:name=".activity.kalab.KALABHomeGaleri" />
