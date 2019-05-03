@@ -19,7 +19,7 @@
         <activity android:name=".MHSHomeUnduhan" />
         <activity android:name=".MHSDetilPengumuman" />
         <activity android:name=".MHSPengumuman" />
-        <activity android:name=".MHSStrukturOrganisasi" />
+        <activity android:name=".activity.mahasiswa.MHSStrukturOrganisasi" />
         <activity android:name=".activity.mahasiswa.MHSHomeProfil" />
         <activity android:name=".activity.mahasiswa.MHSSuratMahasiswa" />
         <activity android:name=".MHSEditProfilMahasiswa" />
