@@ -9,7 +9,9 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".DOSBIMStrukturOrganisasi"
+    tools:context=".activity.dosbim.DOSBIMStrukturOrganisasi"
+    tools:showIn="@layout/app_bar_struktur_organisasi_dosbim"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
     <LinearLayout
@@ -17,26 +19,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="STRUKTUR ORGANISASI"
-            app:titleMarginStart="93dp"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Struktur Organisasi Lab Mikroprosessor\nUntag Surabaya"
             android:textAlignment="center"
+            android:fontFamily="@font/nunito_black"
             android:textColor="@color/colorOrange"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
             android:textSize="17sp"
             />
 
@@ -47,7 +37,7 @@
             android:layout_marginTop="25dp"
             android:layout_marginEnd="15dp"
             android:layout_gravity="center"
-            android:src="@drawable/strukturorg" />
+            android:src="@drawable/struktur_organisasi" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -63,4 +53,6 @@
         app:headerLayout="@layout/nav_header_dosbim"
         app:menu="@menu/dawer_menu_dosbim"
         />
+
+
 </android.support.v4.widget.DrawerLayout>

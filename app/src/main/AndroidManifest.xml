@@ -30,7 +30,7 @@
         <activity android:name=".DOSBIMHomeUnduhan" />
         <activity android:name=".DOSBIMDetilPengumuman" />
         <activity android:name=".DOSBIMPengumuman" />
-        <activity android:name=".DOSBIMStrukturOrganisasi" />
+        <activity android:name=".activity.dosbim.DOSBIMStrukturOrganisasi" />
         <activity android:name=".activity.dosbim.DOSBIMHomeProfil" />
         <activity android:name=".activity.dosbim.DOSBIMAbsensiMahasiswa" />
         <activity android:name=".DOSBIMEditNilaiMahasiswa" />
