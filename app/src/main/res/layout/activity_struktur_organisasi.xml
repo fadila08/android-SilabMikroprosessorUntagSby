@@ -19,27 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@color/colorOrange"-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--android:elevation="4dp">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="STRUKTUR ORGANISASI"-->
-                <!--android:textColor="@color/colorbgBlue"-->
-                <!--android:fontFamily="@font/roboto_medium"-->
-                <!--android:textSize="8pt"-->
-                <!--android:id="@+id/txtToolbar"-->
-                <!--android:gravity="center_horizontal"/>-->
-
-        <!--</android.support.v7.widget.Toolbar>-->
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,22 +27,20 @@
             android:fontFamily="@font/nunito_black"
             android:textColor="@color/colorOrange"
             android:layout_marginTop="20dp"
-            android:textSize="17sp"
+            android:textSize="14sp"
             />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="446dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="15dp"
-            android:layout_gravity="center"
-            android:src="@drawable/struktur_organisasi" />
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="55dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/struktur_organisasi" />
+
+        </RelativeLayout>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -73,6 +50,5 @@
         android:layout_gravity="start"
         app:menu="@menu/dawer_menu"
         />
-
 
 </android.support.v4.widget.DrawerLayout>

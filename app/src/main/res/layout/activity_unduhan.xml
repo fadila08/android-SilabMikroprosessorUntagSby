@@ -17,41 +17,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@color/colorOrange"-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--android:elevation="4dp">-->
-
-            <!--<TextView-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="UNDUHAN"-->
-                <!--android:textColor="@color/colorbgBlue"-->
-                <!--android:fontFamily="@font/roboto_medium"-->
-                <!--android:textSize="8pt"-->
-                <!--android:id="@+id/txtToolbar"-->
-                <!--android:gravity="center_horizontal"/>-->
-
-        <!--</android.support.v7.widget.Toolbar>-->
-
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:hint="Cari Disini"
-            android:drawablePadding="-32dp"
+            android:textColor="@color/colorRealWhite"
             android:textAlignment="center"
             android:background="@drawable/customedittext"
             android:textColorHint="@color/colorWhite"
             android:drawableLeft="@drawable/imagesearch"
             android:paddingStart="10dp"
             android:layout_marginTop="7dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginHorizontal="15dp"
             />
 
         <LinearLayout
