@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
-    tools:context=".DOSBIMDetilPengumuman"
+    tools:context=".activity.dosbim.DOSBIMDetilPengumuman"
     >
 
     <LinearLayout
@@ -21,37 +21,77 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorOrange"
-            app:title="PENGUMUMAN"
-            app:titleMarginStart="133dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
             android:id="@+id/toolbar"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
+            android:elevation="4dp">
 
-        <LinearLayout
-            android:layout_marginVertical="25dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
             <TextView
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Detail\nPengumuman"
-                android:textColor="@color/colorOrange"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                />
-        </LinearLayout>
+                android:text="PENGUMUMAN"
+                android:textColor="@color/colorbgBlue"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="8pt"
+                android:id="@+id/txtToolbar"
+                android:gravity="center_horizontal"/>
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorOrange"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textSize="35px"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:id="@+id/txt_judul_pengumuman_dosbim"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textSize="20px"
+            android:id="@+id/txt_created_at_pengumuman_dosbim"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/colorRealWhite"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:fontFamily="@font/nunitosans_regular"
+            android:textSize="20px"
+            android:id="@+id/txt_isi_pengumuman_dosbim"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#EA6954"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:fontFamily="@font/nunitosans_regular"
+            android:textSize="20px"
+            android:clickable="true"
+            android:linksClickable="true"
+            android:id="@+id/txt_file_lampiran_dosbim" />
+
+
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -62,5 +102,6 @@
         app:headerLayout="@layout/nav_header_dosbim"
         app:menu="@menu/dawer_menu_dosbim"
         />
+
 
 </android.support.v4.widget.DrawerLayout>

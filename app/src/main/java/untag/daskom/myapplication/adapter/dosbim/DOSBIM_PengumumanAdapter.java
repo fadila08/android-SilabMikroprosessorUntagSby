@@ -1,5 +1,6 @@
 package untag.daskom.myapplication.adapter.dosbim;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.aslab.ASLABDetilPengumuman;
+import untag.daskom.myapplication.activity.dosbim.DOSBIMDetilPengumuman;
 import untag.daskom.myapplication.model.PengumumanModel;
 
 public class DOSBIM_PengumumanAdapter extends RecyclerView.Adapter<DOSBIM_PengumumanAdapter.DOSBIM_PengumumanViewHolder> {
@@ -54,6 +57,17 @@ public class DOSBIM_PengumumanAdapter extends RecyclerView.Adapter<DOSBIM_Pengum
             txtCreatedAt = itemView.findViewById(R.id.txt_created_at_p_dosbim);
             txtBatasTanggalBerlaku = itemView.findViewById(R.id.txt_batas_tanggal_berlaku_p_dosbim);
             txtId = itemView.findViewById(R.id.txt_id_p_dosbim);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(v.getContext(), DOSBIMDetilPengumuman.class);
+//                    int i = position;
+                    intent.putExtra("id",txtId.getText().toString());
+                    v.getContext().startActivity(intent);
+
+                }
+            });
 
 
         }
