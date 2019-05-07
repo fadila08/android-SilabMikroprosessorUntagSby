@@ -1,7 +1,6 @@
 package untag.daskom.myapplication.adapter.kalab;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import untag.daskom.myapplication.KALABDetilPengumuman;
+import untag.daskom.myapplication.activity.kalab.KALABDetilPengumuman;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.PengumumanModel;
 
