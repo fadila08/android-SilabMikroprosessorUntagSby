@@ -26,7 +26,7 @@
         <activity android:name=".activity.noAuth.pengumuman_detail" />
         <activity android:name=".MHSHomeGaleri" />
         <activity android:name=".MHSHomeUnduhan" />
-        <activity android:name=".MHSDetilPengumuman" />
+        <activity android:name=".activity.mahasiswa.MHSDetilPengumuman" />
         <activity android:name=".activity.mahasiswa.MHSPengumuman" />
         <activity android:name=".activity.mahasiswa.MHSStrukturOrganisasi" />
         <activity android:name=".activity.mahasiswa.MHSHomeProfil" />
