@@ -77,7 +77,7 @@
         <activity android:name=".activity.aslab.ASLABHomeGaleri" />
         <activity android:name=".ASLABMasukkanUnduhan" />
         <activity android:name=".activity.aslab.ASLABHomeUnduhan" />
-        <activity android:name=".ASLABDetilPengumuman" />
+        <activity android:name=".activity.aslab.ASLABDetilPengumuman" />
         <activity android:name=".ASLABMasukkanPengumuman" />
         <activity android:name=".activity.aslab.ASLABPengumuman" />
         <activity android:name=".ASLABHistory" />

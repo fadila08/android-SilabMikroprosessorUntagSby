@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
+import untag.daskom.myapplication.activity.aslab.ASLABDetilPengumuman;
 import untag.daskom.myapplication.activity.aslab.ASLABPengumuman;
 import untag.daskom.myapplication.activity.noAuth.pengumuman_detail;
 import untag.daskom.myapplication.adapter.PengumumanAdapter;
@@ -61,7 +62,7 @@ public class ASLAB_PengumumanAdapter extends RecyclerView.Adapter<ASLAB_Pengumum
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), ASLABPengumuman.class);
+                    Intent intent = new Intent(v.getContext(), ASLABDetilPengumuman.class);
 //                    int i = position;
                     intent.putExtra("id",txtId.getText().toString());
                     v.getContext().startActivity(intent);
