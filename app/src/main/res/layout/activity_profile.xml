@@ -53,23 +53,22 @@
                     android:id="@+id/btprofillaborat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
                     android:background="@color/colorTulisanUniv"
                     android:drawableRight="@drawable/down"
                     android:onClick="PROFILLABORAT"
-                    android:paddingVertical="15dp"
+                    android:paddingVertical="7dp"
                     android:paddingLeft="25dp"
-                    android:paddingRight="10dp"
+                    android:paddingRight="12dp"
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/colorbgBlue"
                     android:text="PROFIL LABORATORIUM"
                     android:textAlignment="viewStart"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
                     android:id="@+id/ELprofillaborat"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="250dp"
                     android:layout_below="@+id/btprofillaborat"
                     android:background="@color/colorRealWhite"
                     android:padding="16dp"
@@ -116,19 +115,19 @@
                     android:background="@color/colorTulisanUniv"
                     android:drawableRight="@drawable/down"
                     android:onClick="PROFILKALABORAT"
-                    android:paddingVertical="15dp"
+                    android:paddingVertical="7dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/colorbgBlue"
                     android:text="PROFIL KEPALA LABORATORIUM"
                     android:textAlignment="viewStart"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
                     android:id="@+id/ELprofilkepalalaborat"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="250dp"
                     android:layout_below="@+id/btkepalalaborat"
                     android:background="@color/colorRealWhite"
                     android:padding="16dp"
@@ -167,17 +166,17 @@
                     android:fontFamily="@font/roboto_medium"
                     android:textColor="@color/colorbgBlue"
                     android:onClick="PROFILLABORAN"
-                    android:paddingVertical="15dp"
+                    android:paddingVertical="7dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"
                     android:text="PROFIL LABORAN"
                     android:textAlignment="viewStart"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
                     android:id="@+id/ELprofillaboran"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="250dp"
                     android:layout_below="@+id/btprofillaboran"
                     android:background="@color/colorRealWhite"
                     android:padding="16dp"
@@ -217,17 +216,17 @@
                     android:background="@color/colorTulisanUniv"
                     android:drawableRight="@drawable/down"
                     android:onClick="PROFILASLAB"
-                    android:paddingVertical="15dp"
+                    android:paddingVertical="7dp"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"
                     android:text="PROFIL ASISTEN LABORATORIUM"
                     android:textAlignment="viewStart"
-                    android:textSize="14sp" />
+                    android:textSize="12sp" />
 
                 <com.github.aakira.expandablelayout.ExpandableRelativeLayout
                     android:id="@+id/ELprofilaslab"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp"
+                    android:layout_height="250dp"
                     android:layout_below="@+id/btprofilaslab"
                     android:background="@color/colorRealWhite"
                     android:padding="16dp"

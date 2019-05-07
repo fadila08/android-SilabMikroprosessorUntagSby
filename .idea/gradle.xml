@@ -6,7 +6,11 @@
         <compositeConfiguration>
           <compositeBuild compositeDefinitionSource="SCRIPT" />
         </compositeConfiguration>
+<<<<<<< HEAD
         <option name="distributionType" value="LOCAL" />
+=======
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+>>>>>>> 01a494292f717e10715affec6963329bcd5b3431
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-5.1.1" />
         <option name="modules">
