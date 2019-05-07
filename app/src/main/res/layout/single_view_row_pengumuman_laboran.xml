@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardCornerRadius="6dp"
+    card_view:cardElevation="3dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardBackgroundColor="@color/colorWhite"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:textSize="2px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:id="@+id/txt_id_p_laboran"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorbgBlue"
+            android:textSize="24px"
+            android:padding="3dp"
+            android:fontFamily="@font/roboto_regular"
+            android:textStyle="bold"
+            android:id="@+id/txt_judul_p_laboran"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#62000000"
+                android:textSize="20px"
+                android:padding="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Diupload pada"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#62000000"
+                android:textSize="20px"
+                android:padding="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/txt_created_at_p_laboran"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#62000000"
+                android:textSize="20px"
+                android:padding="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Berlaku sampai"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#62000000"
+                android:textSize="20px"
+                android:padding="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:id="@+id/txt_batas_tanggal_berlaku_p_laboran"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

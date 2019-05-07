@@ -150,8 +150,9 @@ public class HomeMahasiswa extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_mhs) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(HomeMahasiswa.this, MHSPengumuman.class);
+            intent.putExtra("nama", nama);
+            startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_mhs) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

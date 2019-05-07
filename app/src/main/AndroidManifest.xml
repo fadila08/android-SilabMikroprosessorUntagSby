@@ -18,7 +18,7 @@
         <activity android:name=".MHSHomeGaleri" />
         <activity android:name=".MHSHomeUnduhan" />
         <activity android:name=".MHSDetilPengumuman" />
-        <activity android:name=".MHSPengumuman" />
+        <activity android:name=".activity.mahasiswa.MHSPengumuman" />
         <activity android:name=".activity.mahasiswa.MHSStrukturOrganisasi" />
         <activity android:name=".activity.mahasiswa.MHSHomeProfil" />
         <activity android:name=".activity.mahasiswa.MHSSuratMahasiswa" />
@@ -29,7 +29,7 @@
         <activity android:name=".DOSBIMHomeGaleri" />
         <activity android:name=".DOSBIMHomeUnduhan" />
         <activity android:name=".DOSBIMDetilPengumuman" />
-        <activity android:name=".DOSBIMPengumuman" />
+        <activity android:name=".activity.dosbim.DOSBIMPengumuman" />
         <activity android:name=".activity.dosbim.DOSBIMStrukturOrganisasi" />
         <activity android:name=".activity.dosbim.DOSBIMHomeProfil" />
         <activity android:name=".activity.dosbim.DOSBIMAbsensiMahasiswa" />

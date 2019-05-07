@@ -1,6 +1,7 @@
 package untag.daskom.myapplication.activity.dosbim;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -10,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -21,40 +23,41 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
-import untag.daskom.myapplication.adapter.dosbim.DosbimDataLaboranAdapter;
-import untag.daskom.myapplication.model.DataUser;
-import untag.daskom.myapplication.model.DataUserList;
-import untag.daskom.myapplication.my_interface.GetUserDataService;
+import untag.daskom.myapplication.adapter.dosbim.DOSBIM_PengumumanAdapter;
+import untag.daskom.myapplication.model.PengumumanList;
+import untag.daskom.myapplication.model.PengumumanModel;
+import untag.daskom.myapplication.my_interface.PengumumanDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
 
-public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class DOSBIMPengumuman extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
-    private DosbimDataLaboranAdapter adapter;
+    private DOSBIM_PengumumanAdapter adapter;
     private RecyclerView recyclerView;
-    SessionManager sessionManager;
     String nama_dosbim;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_data_laboran_dosbim);
+        setContentView(R.layout.activity_main_pengumuman_dosbim);
 
         nama_dosbim = getIntent().getStringExtra("nama");
 
         //mulai dari sini untuk layout drawer
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_laboran_dosbim);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_pengumuman_dosbim);
         setSupportActionBar(toolbar);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_dosbim);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_dosbim);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this,drawer,toolbar,R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_data_laboran_dosbim);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_pengumuman_dosbim);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
@@ -62,31 +65,32 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
         sessionManager = new SessionManager(this);
         String session = sessionManager.getSessionData().get("ID");
 
-        //mulai dari sini untuk menangkap data dari API dengan retrofit
         /** Create handle for the RetrofitInstance interface*/
-        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+        PengumumanDataService service = RetrofitInstance.getRetrofitInstance().create(PengumumanDataService.class);
 
         /** Call the method with parameter in the interface to get the notice data*/
-        Call<DataUserList> call = service.getLaboranDataDosbim("Bearer "+session);
+        Call<PengumumanList> call = service.getPengumumanAuth("Bearer "+session);
 
-        call.enqueue(new Callback<DataUserList>() {
+        /**Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<PengumumanList>() {
             @Override
-            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
-                generateDataUserList(response.body().getDataUserArrayList());
+            public void onResponse(Call<PengumumanList> call, Response<PengumumanList> response) {
+                generatePengumumanList((response.body().getPengumumanArrayList()));
             }
 
             @Override
-            public void onFailure(Call<DataUserList> call, Throwable t) {
-                Toast.makeText(DOSBIMDataLaboran.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onFailure(Call<PengumumanList> call, Throwable t) {
+                Toast.makeText(DOSBIMPengumuman.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        //sampai sini
     }
 
     //untuk layout drawer
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_dosbim);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_dosbim);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -98,7 +102,7 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main_kalab, menu);
+        getMenuInflater().inflate(R.menu.main_dosbim, menu);
         return true;
     }
 
@@ -111,47 +115,47 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
 
         if (id == R.id.nav_home_dosbim) {
             // Handle the camera action
-            Intent intent = new Intent(DOSBIMDataLaboran.this, HomeDosbim.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, HomeDosbim.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataMahasiswa.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMDataMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataLaboran.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMDataLaboran.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMDataAslab.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMDataAslab.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMNilaiMahasiswa.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMNilaiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMAbsensiMahasiswa.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMAbsensiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMHomeProfil.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMHomeProfil.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_struktur_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMStrukturOrganisasi.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMStrukturOrganisasi.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_dosbim) {
-            Intent intent = new Intent(DOSBIMDataLaboran.this, DOSBIMPengumuman.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, DOSBIMPengumuman.class);
             intent.putExtra("nama", nama_dosbim);
             startActivity(intent);
 
@@ -164,26 +168,31 @@ public class DOSBIMDataLaboran extends AppCompatActivity implements NavigationVi
 //            startActivity(intent);
 
         } else if (id == R.id.nav_logout_dosbim) {
-            new LogOut(DOSBIMDataLaboran.this);
+            new LogOut(DOSBIMPengumuman.this);
 
-            Intent intent = new Intent(DOSBIMDataLaboran.this, MainActivityLogin.class);
+            Intent intent = new Intent(DOSBIMPengumuman.this, MainActivityLogin.class);
             startActivity(intent);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_data_laboran_dosbim);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_pengumuman_dosbim);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
-
-    //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
     /** Method to generate List of notice using RecyclerView with custom adapter*/
-    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
-        recyclerView = findViewById(R.id.rv_data_laboran_dosbim);
-        adapter = new DosbimDataLaboranAdapter(dataUserArrayList, DOSBIMDataLaboran.this);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DOSBIMDataLaboran.this);
+    private void generatePengumumanList(ArrayList<PengumumanModel> pengumumanArrayList) {
+
+        recyclerView = findViewById(R.id.rv_pengumuman_dosbim);
+
+        adapter = new DOSBIM_PengumumanAdapter(pengumumanArrayList);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DOSBIMPengumuman.this);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
     }
+
+
 
 }

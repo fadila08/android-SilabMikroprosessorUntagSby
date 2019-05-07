@@ -8,21 +8,41 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.ASLABMasukkanPengumuman;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.activity.noAuth.MainActivityPengumuman;
+import untag.daskom.myapplication.adapter.PengumumanAdapter;
+import untag.daskom.myapplication.adapter.aslab.ASLAB_PengumumanAdapter;
+import untag.daskom.myapplication.model.PengumumanList;
+import untag.daskom.myapplication.model.PengumumanModel;
+import untag.daskom.myapplication.my_interface.PengumumanDataService;
+import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class ASLABPengumuman extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ASLAB_PengumumanAdapter adapter;
+    private RecyclerView recyclerView;
     FloatingActionButton fbTambahPengumuman;
     String nama_aslab;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +67,33 @@ public class ASLABPengumuman extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_pengumuman_aslab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
+
+        //untuk mengambil data session
+        sessionManager = new SessionManager(this);
+        String session = sessionManager.getSessionData().get("ID");
+
+        /** Create handle for the RetrofitInstance interface*/
+        PengumumanDataService service = RetrofitInstance.getRetrofitInstance().create(PengumumanDataService.class);
+
+        /** Call the method with parameter in the interface to get the notice data*/
+        Call<PengumumanList> call = service.getPengumumanAuth("Bearer "+session);
+
+        /**Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<PengumumanList>() {
+            @Override
+            public void onResponse(Call<PengumumanList> call, Response<PengumumanList> response) {
+                generatePengumumanList((response.body().getPengumumanArrayList()));
+            }
+
+            @Override
+            public void onFailure(Call<PengumumanList> call, Throwable t) {
+                Toast.makeText(ASLABPengumuman.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
 
         fbTambahPengumuman.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -163,5 +210,20 @@ public class ASLABPengumuman extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /** Method to generate List of notice using RecyclerView with custom adapter*/
+    private void generatePengumumanList(ArrayList<PengumumanModel> pengumumanArrayList) {
+
+        recyclerView = findViewById(R.id.rv_pengumuman_aslab);
+
+        adapter = new ASLAB_PengumumanAdapter(pengumumanArrayList);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ASLABPengumuman.this);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+    }
+
 
 }
