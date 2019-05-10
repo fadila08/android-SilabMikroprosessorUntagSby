@@ -22,11 +22,8 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import untag.daskom.myapplication.ASLABMasukkanPengumuman;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
-import untag.daskom.myapplication.activity.noAuth.MainActivityPengumuman;
-import untag.daskom.myapplication.adapter.PengumumanAdapter;
 import untag.daskom.myapplication.adapter.aslab.ASLAB_PengumumanAdapter;
 import untag.daskom.myapplication.model.PengumumanList;
 import untag.daskom.myapplication.model.PengumumanModel;
@@ -216,7 +213,7 @@ public class ASLABPengumuman extends AppCompatActivity
 
         recyclerView = findViewById(R.id.rv_pengumuman_aslab);
 
-        adapter = new ASLAB_PengumumanAdapter(pengumumanArrayList);
+        adapter = new ASLAB_PengumumanAdapter(pengumumanArrayList,ASLABPengumuman.this);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ASLABPengumuman.this);
 
