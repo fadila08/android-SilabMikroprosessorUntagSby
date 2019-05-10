@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity.aslab.ASLABEditPengumuman"></activity>
+        <activity android:name=".activity.kalab.KALABEditPengumuman"></activity>
+        <activity android:name=".activity.aslab.ASLABEditPengumuman" />
         <activity android:name=".activity.aslab.PopupAslabDataLaboran" />
         <activity android:name=".activity.noAuth.pengumuman_detail" />
         <activity android:name=".MHSHomeGaleri" />

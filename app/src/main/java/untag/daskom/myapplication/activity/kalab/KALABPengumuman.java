@@ -213,7 +213,7 @@ public class KALABPengumuman extends AppCompatActivity
 
         recyclerView = findViewById(R.id.rv_pengumuman_kalab);
 
-        adapter = new KALAB_PengumumanAdapter(pengumumanArrayList);
+        adapter = new KALAB_PengumumanAdapter(pengumumanArrayList,KALABPengumuman.this);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABPengumuman.this);
 

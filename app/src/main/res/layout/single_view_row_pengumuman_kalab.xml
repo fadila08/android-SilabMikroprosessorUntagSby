@@ -26,39 +26,33 @@
             android:fontFamily="@font/roboto_regular"
             android:id="@+id/txt_id_p_kalab"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorbgBlue"
-            android:textSize="24px"
-            android:padding="3dp"
-            android:fontFamily="@font/roboto_regular"
-            android:textStyle="bold"
-            android:id="@+id/txt_judul_p_kalab"/>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#62000000"
-                android:textSize="20px"
+                android:textColor="@color/colorbgBlue"
+                android:textSize="24px"
                 android:padding="3dp"
                 android:fontFamily="@font/roboto_regular"
-                android:text="Diupload pada"/>
+                android:textStyle="bold"
+                android:id="@+id/txt_judul_p_kalab"
+                android:layout_weight="1"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#62000000"
-                android:textSize="20px"
-                android:padding="3dp"
-                android:fontFamily="@font/roboto_regular"
-                android:id="@+id/txt_created_at_p_kalab"
-                />
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@android:drawable/ic_menu_edit"
+                android:id="@+id/bt_edit_pengumuman_kalab"/>
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:src="@android:drawable/ic_menu_delete"
+                android:id="@+id/bt_hapus_pengumuman_kalab" />
 
 
         </LinearLayout>
@@ -68,25 +62,68 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#62000000"
+                    android:textSize="20px"
+                    android:padding="3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Diupload pada"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#62000000"
+                    android:textSize="20px"
+                    android:padding="3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:id="@+id/txt_created_at_p_kalab"
+                    />
+
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#62000000"
-                android:textSize="20px"
-                android:padding="3dp"
-                android:fontFamily="@font/roboto_regular"
-                android:text="Berlaku sampai"/>
+                android:text=" | "
+                android:textStyle="bold"/>
 
-
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#62000000"
-                android:textSize="20px"
-                android:padding="3dp"
-                android:fontFamily="@font/roboto_regular"
-                android:id="@+id/txt_batas_tanggal_berlaku_p_kalab"
-                />
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#62000000"
+                    android:textSize="20px"
+                    android:padding="3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Berlaku sampai"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#62000000"
+                    android:textSize="20px"
+                    android:padding="3dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:id="@+id/txt_batas_tanggal_berlaku_p_kalab"
+                    />
+
+            </LinearLayout>
+
 
         </LinearLayout>
 
