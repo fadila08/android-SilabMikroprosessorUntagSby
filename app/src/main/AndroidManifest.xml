@@ -21,7 +21,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity.kalab.KALABEditPengumuman"></activity>
+        <activity android:name=".activity.laboran.LABORANEditPengumuman"></activity>
+        <activity android:name=".activity.kalab.KALABEditPengumuman" />
         <activity android:name=".activity.aslab.ASLABEditPengumuman" />
         <activity android:name=".activity.aslab.PopupAslabDataLaboran" />
         <activity android:name=".activity.noAuth.pengumuman_detail" />
@@ -57,7 +58,7 @@
         <activity android:name=".LABORANMasukkanUnduhan" />
         <activity android:name=".activity.laboran.LABORANHomeUnduhan" />
         <activity android:name=".activity.laboran.LABORANDetilPengumuman" />
-        <activity android:name=".LABORANMasukkanPengumuman" />
+        <activity android:name=".activity.laboran.LABORANMasukkanPengumuman" />
         <activity android:name=".activity.laboran.LABORANPengumuman" />
         <activity android:name=".LABORANHistory" />
         <activity android:name=".LABORANEditProfilLaboran" />

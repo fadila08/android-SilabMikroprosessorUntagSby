@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import untag.daskom.myapplication.LABORANMasukkanPengumuman;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.laboran.LABORAN_PengumumanAdapter;
@@ -204,7 +203,7 @@ public class LABORANPengumuman extends AppCompatActivity
 
         recyclerView = findViewById(R.id.rv_pengumuman_laboran);
 
-        adapter = new LABORAN_PengumumanAdapter(pengumumanArrayList);
+        adapter = new LABORAN_PengumumanAdapter(pengumumanArrayList,LABORANPengumuman.this);
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(LABORANPengumuman.this);
 
