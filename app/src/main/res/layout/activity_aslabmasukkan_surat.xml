@@ -91,7 +91,7 @@
             <TextView
                 android:layout_gravity="center"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Upload File"
@@ -99,23 +99,26 @@
                 android:textColor="@color/colorbgBlue"
                 />
             <Button
+                android:id="@+id/btn_aslab_pilihfileupload"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pilih File"
                 android:background="@color/colorOrange"
-                android:layout_marginHorizontal="130dp"
                 />
             <TextView
+                android:id="@+id/txt_pathfile"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Judul File Akan Ditampilkan Disini"
+                android:text="Judul File"
                 android:textSize="18dp"
                 android:textColor="@color/colorbgBlue"
                 />
             <Button
+                android:layout_marginHorizontal="30dp"
                 android:background="@color/colorOrange"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
@@ -127,10 +130,6 @@
                 />
 
         </LinearLayout>
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
