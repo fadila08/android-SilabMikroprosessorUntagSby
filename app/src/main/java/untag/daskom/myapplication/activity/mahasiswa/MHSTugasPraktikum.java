@@ -160,8 +160,9 @@ public class MHSTugasPraktikum extends AppCompatActivity implements NavigationVi
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_mhs) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MHSTugasPraktikum.this, MHSHomeUnduhan.class);
+            intent.putExtra("nama", nama_mhs);
+            startActivity(intent);
 
         } else if (id == R.id.nav_galeri_mhs) {
 //            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);

@@ -27,7 +27,7 @@
         <activity android:name=".activity.aslab.PopupAslabDataLaboran" />
         <activity android:name=".activity.noAuth.pengumuman_detail" />
         <activity android:name=".MHSHomeGaleri" />
-        <activity android:name=".MHSHomeUnduhan" />
+        <activity android:name=".activity.mahasiswa.MHSHomeUnduhan" />
         <activity android:name=".activity.mahasiswa.MHSDetilPengumuman" />
         <activity android:name=".activity.mahasiswa.MHSPengumuman" />
         <activity android:name=".activity.mahasiswa.MHSStrukturOrganisasi" />
@@ -38,7 +38,7 @@
         <activity android:name=".activity.mahasiswa.MHSTugasPraktikum" />
         <activity android:name=".activity.mahasiswa.HomeMahasiswa" />
         <activity android:name=".DOSBIMHomeGaleri" />
-        <activity android:name=".DOSBIMHomeUnduhan" />
+        <activity android:name=".activity.dosbim.DOSBIMHomeUnduhan" />
         <activity android:name=".activity.dosbim.DOSBIMDetilPengumuman" />
         <activity android:name=".activity.dosbim.DOSBIMPengumuman" />
         <activity android:name=".activity.dosbim.DOSBIMStrukturOrganisasi" />

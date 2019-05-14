@@ -1,5 +1,6 @@
-package untag.daskom.myapplication.adapter;
+package untag.daskom.myapplication.adapter.mahasiswa;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,24 +14,26 @@ import java.util.ArrayList;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.UnduhanModel;
 
-public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanViewHolder> {
+public class MHS_UnduhanAdapter extends RecyclerView.Adapter<MHS_UnduhanAdapter.MHS_UnduhanViewHolder> {
 
     private ArrayList<UnduhanModel> unduhanList;
     String id;
+    Context context;
 
-    public UnduhanAdapter(ArrayList<UnduhanModel> unduhanList) {
+    public MHS_UnduhanAdapter(ArrayList<UnduhanModel> unduhanList, Context context) {
         this.unduhanList = unduhanList;
+        this.context = context;
     }
 
     @Override
-    public UnduhanViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MHS_UnduhanViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.single_view_row_unduhan,parent,false);
-        return new UnduhanViewHolder(view);
+        return new MHS_UnduhanViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(UnduhanViewHolder holder, int position) {
+    public void onBindViewHolder(MHS_UnduhanViewHolder holder, int position) {
         holder.txtJudul.setText(unduhanList.get(position).getJudul());
         holder.txtCreatedAt.setText(unduhanList.get(position).getCreated_at());
         holder.txtKeterangan.setText(unduhanList.get(position).getKeterangan());
@@ -39,12 +42,6 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
         id = unduhanList.get(position).getId();
         holder.txtId.setText(id);
 
-//        holder.btnUnduh.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                //link ke api download
-//            }
-//        });
     }
 
     @Override
@@ -52,13 +49,14 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
         return unduhanList.size();
     }
 
-    class UnduhanViewHolder extends RecyclerView.ViewHolder{
+    class MHS_UnduhanViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtJudul, txtCreatedAt, txtKeterangan, txtId, txtBatasBerlaku;
         Button btnUnduh;
 
-        UnduhanViewHolder(View itemView) {
+        public MHS_UnduhanViewHolder(View itemView) {
             super(itemView);
+
             txtJudul = itemView.findViewById(R.id.txt_judul_unduhan);
             txtCreatedAt = itemView.findViewById(R.id.txt_created_at_unduhan);
             txtKeterangan = itemView.findViewById(R.id.txt_keterangan_unduhan);
@@ -69,10 +67,10 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
             btnUnduh.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //unduh
+                    //unduh disini
                 }
             });
-        }
 
+        }
     }
 }
