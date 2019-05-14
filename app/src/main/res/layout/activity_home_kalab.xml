@@ -18,185 +18,274 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@color/colorOrange"-->
-            <!--app:title="SILAB MIKROPROSESSOR"-->
-            <!--app:titleMarginStart="93dp"-->
-            <!--android:textAlignment="center"-->
-            <!--app:titleTextColor="@color/colorbgBlue"-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--android:elevation="4dp"/>-->
-
-        <RelativeLayout
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
+            android:layout_height="wrap_content"
             android:background="@color/colorOrange"
             >
 
             <ImageView
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="30dp"
                 android:id="@+id/ivdosen"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/avatar"
                 />
 
-            <TextView
-                android:layout_marginStart="25dp"
-                android:layout_toRightOf="@+id/ivdosen"
-                android:id="@+id/tvslamatdatangdosen"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Selamat Datang"
-                android:fontFamily="@font/nunitosans_bold"
-                android:layout_marginTop="30dp"
-                android:textStyle="bold"
-                android:textSize="27sp"
-                android:textColor="@color/colorTulisanUniv"
-                />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_marginStart="25dp"
-                android:layout_toRightOf="@+id/ivdosen"
-                android:layout_below="@+id/tvslamatdatangdosen"
-                android:id="@+id/tvnamakalab"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/nunitosans_bold"
-                android:text="Nama Kalab"
-                android:textStyle="bold"
-                android:textSize="17sp"
-                android:textColor="@color/colorbgBlue"
-                />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tvslamatdatangdosen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Selamat Datang"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorTulisanUniv"
+                    />
 
-        <RelativeLayout
+                <TextView
+                    android:id="@+id/tvnamakalab"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/nunitosans_bold"
+                    android:text="Nama Kalab"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorbgBlue"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<RelativeLayout-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--&gt;-->
+            <!--<Button-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:id="@+id/btdatalaborankalab"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagestrukturorg"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Data\nLaboran"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+            <!--<Button-->
+                <!--android:layout_marginStart="25dp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_toRightOf="@+id/btdatalaborankalab"-->
+                <!--android:id="@+id/btdataaslabkalab"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagestrukturorg"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Data\nAslab"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+            <!--<Button-->
+                <!--android:layout_marginStart="25dp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_toRightOf="@+id/btdataaslabkalab"-->
+                <!--android:id="@+id/btdatadosbimkalab"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagestrukturorg"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Data\nDosbim"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+            <!--<Button-->
+                <!--android:layout_marginTop="25dp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_below="@+id/btdatalaborankalab"-->
+                <!--android:id="@+id/btdatamhskalab"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagestrukturorg"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Data\nMahasiswa"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+            <!--<Button-->
+                <!--android:layout_marginTop="25dp"-->
+                <!--android:layout_marginStart="25dp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_toRightOf="@+id/btdatamhskalab"-->
+                <!--android:layout_below="@+id/btdataaslabkalab"-->
+                <!--android:id="@+id/btnilaimhskalab"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagenilai"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Nilai\nMahasiswa"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btabsmhskalab"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_below="@+id/btdatadosbimkalab"-->
+                <!--android:layout_marginStart="25dp"-->
+                <!--android:layout_marginLeft="23dp"-->
+                <!--android:layout_marginTop="24dp"-->
+                <!--android:layout_toRightOf="@+id/btnilaimhskalab"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:drawableTop="@drawable/imageabsensi"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:text="Absensi\nMahasiswa"-->
+                <!--android:textSize="12sp" />-->
+            <!--<Button-->
+                <!--android:layout_marginTop="25dp"-->
+                <!--android:gravity="center_horizontal"-->
+                <!--android:layout_below="@+id/btdatamhskalab"-->
+                <!--android:id="@+id/btdatasurat"-->
+                <!--android:paddingTop="20dp"-->
+                <!--android:drawableTop="@drawable/imagemail"-->
+                <!--android:background="@drawable/bgputihwaemail"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:text="Data\nSurat"-->
+                <!--android:fontFamily="@font/nunito_extrabold"-->
+                <!--android:textSize="12sp"-->
+                <!--/>-->
+        <!--</RelativeLayout>-->
+        <LinearLayout
             android:layout_gravity="center"
-            android:layout_width="350dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="70dp"
-            >
-            <Button
-                android:gravity="center_horizontal"
-                android:id="@+id/btdatalaborankalab"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagestrukturorg"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Data\nLaboran"
-                android:textSize="12sp"
-                />
-            <Button
-                android:layout_marginStart="25dp"
-                android:gravity="center_horizontal"
-                android:layout_toRightOf="@+id/btdatalaborankalab"
-                android:id="@+id/btdataaslabkalab"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagestrukturorg"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Data\nAslab"
-                android:textSize="12sp"
-                />
-            <Button
-                android:layout_marginStart="25dp"
-                android:gravity="center_horizontal"
-                android:layout_toRightOf="@+id/btdataaslabkalab"
-                android:id="@+id/btdatadosbimkalab"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagestrukturorg"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Data\nDosbim"
-                android:textSize="12sp"
-                />
-            <Button
-                android:layout_marginTop="25dp"
-                android:gravity="center_horizontal"
-                android:layout_below="@+id/btdatalaborankalab"
-                android:id="@+id/btdatamhskalab"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagestrukturorg"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Data\nMahasiswa"
-                android:textSize="12sp"
-                />
-            <Button
-                android:layout_marginTop="25dp"
-                android:layout_marginStart="25dp"
-                android:gravity="center_horizontal"
-                android:layout_toRightOf="@+id/btdatamhskalab"
-                android:layout_below="@+id/btdataaslabkalab"
-                android:id="@+id/btnilaimhskalab"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagenilai"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Nilai\nMahasiswa"
-                android:textSize="12sp"
-                />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/btabsmhskalab"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@+id/btdatadosbimkalab"
-                android:layout_marginStart="25dp"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="24dp"
-                android:layout_toRightOf="@+id/btnilaimhskalab"
-                android:background="@drawable/bgputihwaemail"
-                android:drawableTop="@drawable/imageabsensi"
-                android:gravity="center_horizontal"
-                android:paddingTop="20dp"
-                android:fontFamily="@font/nunito_extrabold"
-                android:text="Absensi\nMahasiswa"
-                android:textSize="12sp" />
-            <Button
-                android:layout_marginTop="25dp"
-                android:gravity="center_horizontal"
-                android:layout_below="@+id/btdatamhskalab"
-                android:id="@+id/btdatasurat"
-                android:paddingTop="20dp"
-                android:drawableTop="@drawable/imagemail"
-                android:background="@drawable/bgputihwaemail"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:text="Data\nSurat"
-                android:fontFamily="@font/nunito_extrabold"
-                android:textSize="12sp"
-                />
-        </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <Button
+                    android:id="@+id/btdatalaborankalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagestrukturorg"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Data\nLaboran"
+                    android:textSize="10sp" />
 
+                <Button
+                    android:id="@+id/btdataaslabkalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_toRightOf="@+id/btdatalaborankalab"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagestrukturorg"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Data\nAslab"
+                    android:textSize="10sp" />
 
-        <android.support.v7.widget.LinearLayoutCompat
-            android:layout_marginTop="6dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                <Button
+                    android:id="@+id/btdatadosbimkalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_toRightOf="@+id/btdataaslabkalab"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagestrukturorg"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Data\nDosbim"
+                    android:textSize="10sp" />
+            </RelativeLayout>
 
-        </android.support.v7.widget.LinearLayoutCompat>
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+                <Button
+                    android:id="@+id/btdatamhskalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagestrukturorg"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Data\nMahasiswa"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btnilaimhskalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_toRightOf="@+id/btdatamhskalab"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagenilai"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Nilai\nMahasiswa"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/btabsmhskalab"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginLeft="23dp"
+                    android:layout_toRightOf="@+id/btnilaimhskalab"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imageabsensi"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="10dp"
+                    android:text="Absensi\nMahasiswa"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btdatasurat"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:background="@drawable/bgputihwaemail"
+                    android:drawableTop="@drawable/imagemail"
+                    android:fontFamily="@font/nunito_extrabold"
+                    android:paddingTop="10dp"
+                    android:text="Data\nSurat"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView
@@ -207,5 +296,4 @@
         app:headerLayout="@layout/nav_header_kalab"
         app:menu="@menu/dawer_menu_kalab"
         />
-
 </android.support.v4.widget.DrawerLayout>
