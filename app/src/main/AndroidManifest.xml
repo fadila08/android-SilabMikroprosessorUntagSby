@@ -104,7 +104,7 @@
         <activity android:name=".activity.kalab.KALABHomeProfil" />
         <activity android:name=".KALABMasukkanGaleri" />
         <activity android:name=".activity.kalab.KALABHomeGaleri" />
-        <activity android:name=".KALABMasukkanUnduhan" />
+        <activity android:name=".activity.kalab.KALABMasukkanUnduhan" />
         <activity android:name=".activity.kalab.KALABHomeUnduhan" />
         <activity android:name=".activity.kalab.KALABDetilPengumuman" />
         <activity android:name=".activity.kalab.KALABMasukkanPengumuman" />

@@ -22,7 +22,6 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import untag.daskom.myapplication.KALABMasukkanUnduhan;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.kalab.KALAB_UnduhanAdapter;

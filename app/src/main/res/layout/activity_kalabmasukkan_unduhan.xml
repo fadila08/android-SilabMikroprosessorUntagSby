@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".KALABMasukkanUnduhan"
+    tools:context=".activity.kalab.KALABMasukkanPengumuman"
     >
 
     <LinearLayout
@@ -52,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
+                android:id="@+id/add_judul_unduhan_kalab"
                 />
             <TextView
                 android:textStyle="bold"
@@ -69,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
+                android:id="@+id/add_ket_unduhan_kalab"
                 />
 
             <TextView
@@ -87,7 +89,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
+                android:id="@+id/add_tgl_berlaku_unduhan_kalab"
                 />
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="format : yyyy-mm-dd"
+                android:textSize="10dp"
+                android:textColor="@color/colorbgBlue"
+                />
+
             <TextView
                 android:layout_gravity="center"
                 android:textStyle="bold"
@@ -105,6 +117,7 @@
                 android:text="Pilih File"
                 android:background="@color/colorOrange"
                 android:layout_marginHorizontal="130dp"
+                android:id="@+id/btn_pilih_file_unduhan_kalab"
                 />
             <TextView
                 android:layout_gravity="center"
@@ -114,6 +127,7 @@
                 android:text="Judul File Akan Ditampilkan Disini"
                 android:textSize="18dp"
                 android:textColor="@color/colorbgBlue"
+                android:id="@+id/txt_nama_file_unduhan_kalab"
                 />
             <Button
                 android:background="@color/colorOrange"
@@ -124,6 +138,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="30dp"
+                android:id="@+id/bt_simpan_pengumuman_kalab"
                 />
 
         </LinearLayout>
