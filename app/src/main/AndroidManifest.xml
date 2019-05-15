@@ -40,7 +40,7 @@
         <activity android:name=".MHSMasukkanTugasMahasiswa" />
         <activity android:name=".activity.mahasiswa.MHSTugasPraktikum" />
         <activity android:name=".activity.mahasiswa.HomeMahasiswa" />
-        <activity android:name=".DOSBIMHomeGaleri" />
+        <activity android:name=".activity.dosbim.DOSBIMHomeGaleri" />
         <activity android:name=".activity.dosbim.DOSBIMHomeUnduhan" />
         <activity android:name=".activity.dosbim.DOSBIMDetilPengumuman" />
         <activity android:name=".activity.dosbim.DOSBIMPengumuman" />

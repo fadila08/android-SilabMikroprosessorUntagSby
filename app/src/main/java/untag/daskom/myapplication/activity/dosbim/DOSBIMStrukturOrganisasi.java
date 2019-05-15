@@ -118,8 +118,9 @@ public class DOSBIMStrukturOrganisasi extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_dosbim) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(DOSBIMStrukturOrganisasi.this, DOSBIMHomeGaleri.class);
+            intent.putExtra("nama", nama_dosbim);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_dosbim) {
             new LogOut(DOSBIMStrukturOrganisasi.this);
