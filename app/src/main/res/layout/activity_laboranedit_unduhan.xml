@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".activity.laboran.LABORANMasukkanPengumuman"
+    tools:context=".activity.laboran.LABORANEditUnduhan"
     >
 
     <LinearLayout
@@ -37,6 +37,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Edit Unduhan"
+                android:textStyle="bold"
+                android:textColor="@color/colorbgBlue"
+                android:textSize="18dp"
+                android:textAlignment="center"
+                android:layout_marginBottom="20dp"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
-                android:id="@+id/add_judul_unduhan_laboran"
+                android:id="@+id/edit_judul_unduhan_laboran"
                 />
             <TextView
                 android:textStyle="bold"
@@ -70,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
-                android:id="@+id/add_ket_unduhan_laboran"
+                android:id="@+id/edit_ket_unduhan_laboran"
                 />
 
             <TextView
@@ -89,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
-                android:id="@+id/add_tgl_berlaku_unduhan_laboran"
+                android:id="@+id/edit_tgl_berlaku_unduhan_laboran"
                 />
             <TextView
                 android:layout_marginTop="5dp"
@@ -117,7 +128,7 @@
                 android:text="Pilih File"
                 android:background="@color/colorOrange"
                 android:layout_marginHorizontal="130dp"
-                android:id="@+id/btn_pilih_file_unduhan_laboran"
+                android:id="@+id/btn_edit_file_unduhan_laboran"
                 />
             <TextView
                 android:layout_gravity="center"
@@ -127,7 +138,7 @@
                 android:text="Judul File Akan Ditampilkan Disini"
                 android:textSize="18dp"
                 android:textColor="@color/colorbgBlue"
-                android:id="@+id/txt_nama_file_unduhan_laboran"
+                android:id="@+id/txt_edit_nama_file_unduhan_laboran"
                 />
             <Button
                 android:background="@color/colorOrange"
@@ -138,7 +149,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="30dp"
-                android:id="@+id/bt_simpan_pengumuman_laboran"
+                android:id="@+id/bt_simpan_edit_pengumuman_laboran"
                 />
 
         </LinearLayout>
