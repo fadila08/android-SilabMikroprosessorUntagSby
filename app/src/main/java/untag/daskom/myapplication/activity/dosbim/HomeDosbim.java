@@ -33,7 +33,7 @@ public class HomeDosbim extends AppCompatActivity
         setContentView(R.layout.activity_main_home_dosbim);
 
         //mendefinisikan text view dan button yang digunakan
-        tvNama = (TextView)findViewById(R.id.tvnamadosbim);
+        tvNama = (TextView)findViewById(R.id.tvnamadosbimheader);
 //        tvNamaDrawer = (TextView) findViewById(R.id.tv_namaKalab);
 
         btdatamhsdosbim = (Button)findViewById(R.id.btdatamhsdosbim);
