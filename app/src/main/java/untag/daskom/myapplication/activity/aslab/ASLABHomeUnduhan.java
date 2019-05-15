@@ -8,20 +8,36 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import untag.daskom.myapplication.ASLABMasukkanGaleri;
-import untag.daskom.myapplication.ASLABMasukkanUnduhan;
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.adapter.aslab.ASLAB_UnduhanAdapter;
+import untag.daskom.myapplication.model.UnduhanList;
+import untag.daskom.myapplication.model.UnduhanModel;
+import untag.daskom.myapplication.my_interface.UnduhanDataService;
+import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class ASLABHomeUnduhan extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+    private ASLAB_UnduhanAdapter adapter;
+    private RecyclerView recyclerView;
+    SessionManager sessionManager;
     FloatingActionButton fbTambahUnduhan;
     String nama_aslab;
 
@@ -48,6 +64,31 @@ public class ASLABHomeUnduhan extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_unduhan_aslab);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
+
+        //untuk mengambil data session
+        sessionManager = new SessionManager(this);
+        String session = sessionManager.getSessionData().get("ID");
+
+        /** Create handle for the RetrofitInstance interface*/
+        UnduhanDataService service = RetrofitInstance.getRetrofitInstance().create(UnduhanDataService.class);
+
+        /** Call the method with parameter in the interface to get the notice data*/
+        Call<UnduhanList> call = service.getUnduhan();
+
+        /**Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<UnduhanList>() {
+            @Override
+            public void onResponse(Call<UnduhanList> call, Response<UnduhanList> response) {
+                generateUnduhanList((response.body().getUnduhanArrayList()));
+            }
+
+            @Override
+            public void onFailure(Call<UnduhanList> call, Throwable t) {
+                Toast.makeText(ASLABHomeUnduhan.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         fbTambahUnduhan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,6 +205,17 @@ public class ASLABHomeUnduhan extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_unduhan_aslab);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    /** Method to generate List of notice using RecyclerView with custom adapter*/
+    private void generateUnduhanList(ArrayList<UnduhanModel> unduhanArrayList) {
+        recyclerView = findViewById(R.id.rv_unduhan_aslab);
+
+        adapter = new ASLAB_UnduhanAdapter(unduhanArrayList,ASLABHomeUnduhan.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ASLABHomeUnduhan.this);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 
 }

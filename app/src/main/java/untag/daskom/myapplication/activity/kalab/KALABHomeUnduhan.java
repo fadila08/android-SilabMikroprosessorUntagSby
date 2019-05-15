@@ -8,21 +8,39 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.KALABMasukkanUnduhan;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.adapter.kalab.KALAB_UnduhanAdapter;
+import untag.daskom.myapplication.model.UnduhanList;
+import untag.daskom.myapplication.model.UnduhanModel;
+import untag.daskom.myapplication.my_interface.UnduhanDataService;
+import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class KALABHomeUnduhan extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private KALAB_UnduhanAdapter adapter;
+    private RecyclerView recyclerView;
     FloatingActionButton fbTambahUnduhan;
     String nama_kalab;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +66,9 @@ public class KALABHomeUnduhan extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
 
+        sessionManager = new SessionManager(this);
+        final String session = sessionManager.getSessionData().get("ID");
+
         fbTambahUnduhan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +76,28 @@ public class KALABHomeUnduhan extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        /** Create handle for the RetrofitInstance interface*/
+        UnduhanDataService service = RetrofitInstance.getRetrofitInstance().create(UnduhanDataService.class);
+
+        /** Call the method with parameter in the interface to get the notice data*/
+        Call<UnduhanList> call = service.getUnduhan();
+
+        /**Log the URL called*/
+        Log.wtf("URL Called", call.request().url() + "");
+
+        call.enqueue(new Callback<UnduhanList>() {
+            @Override
+            public void onResponse(Call<UnduhanList> call, Response<UnduhanList> response) {
+                generateUnduhanList((response.body().getUnduhanArrayList()));
+            }
+
+            @Override
+            public void onFailure(Call<UnduhanList> call, Throwable t) {
+                Toast.makeText(KALABHomeUnduhan.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     //untuk layout drawer
@@ -164,6 +207,18 @@ public class KALABHomeUnduhan extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    /** Method to generate List of notice using RecyclerView with custom adapter*/
+    private void generateUnduhanList(ArrayList<UnduhanModel> unduhanArrayList) {
+        recyclerView = findViewById(R.id.rv_unduhan_kalab);
+
+        adapter = new KALAB_UnduhanAdapter(unduhanArrayList,KALABHomeUnduhan.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABHomeUnduhan.this);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+    }
+
 
 
 }
