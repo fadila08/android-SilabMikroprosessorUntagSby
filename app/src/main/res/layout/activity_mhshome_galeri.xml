@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,36 +8,45 @@
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
-    android:background="@color/colorTulisanUniv"
-    tools:context=".MHSHomeGaleri"
+    android:background="@color/colorbgBlue"
+    tools:showIn="@layout/app_bar_galeri_mhs"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/colorOrange"
-            app:title="GALERI"
-            app:titleMarginStart="173dp"
-            android:textAlignment="center"
-            app:titleTextColor="@color/colorbgBlue"
-            android:id="@+id/toolbar"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:elevation="4dp"/>
 
-        <LinearLayout
-            android:layout_marginVertical="25dp"
-            android:layout_marginHorizontal="25dp"
-            android:layout_gravity="center"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_marginVertical="15dp"
+            android:layout_marginHorizontal="15dp">
 
-        </LinearLayout>
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:rowCount="3"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvgaleri_mhs"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+            </GridLayout>
+        </ScrollView>
+
         <FrameLayout
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
@@ -53,4 +62,4 @@
         app:menu="@menu/dawer_menu_mhs"
         />
 
-</android.support.v4.widget.DrawerLayout>
+</LinearLayout>
