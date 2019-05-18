@@ -113,9 +113,9 @@ public class KALAB_GaleriAdapter extends RecyclerView.Adapter<KALAB_GaleriAdapte
 
         KALAB_GaleriViewHolder(View itemView) {
             super(itemView);
-            txtId = itemView.findViewById(R.id.txt_id_gambar);
-            txtJudul = itemView.findViewById(R.id.txt_judul_gambar);
-            gambar = itemView.findViewById(R.id.gambar);
+            txtId = itemView.findViewById(R.id.txt_id_gambar_auth);
+            txtJudul = itemView.findViewById(R.id.txt_judul_gambar_auth);
+            gambar = itemView.findViewById(R.id.gambar_auth);
             hapus = itemView.findViewById(R.id.delete_gbr);
 
             sessionManager = new SessionManager(context);

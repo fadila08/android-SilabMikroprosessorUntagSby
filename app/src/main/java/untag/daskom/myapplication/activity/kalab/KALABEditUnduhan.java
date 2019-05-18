@@ -53,7 +53,7 @@ public class KALABEditUnduhan extends AppCompatActivity {
         call.enqueue(new Callback<UnduhanDetailList>() {
             @Override
             public void onResponse(Call<UnduhanDetailList> call, Response<UnduhanDetailList> response) {
-                Log.d("rspon", response.body().toString());
+//                Log.d("rspon", response.body().toString());
                 DataUnduhanDetailList dataUnduhanDetailList = response.body().getData();
 
                 //isi variabelnya
