@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorTulisanUniv"
-    tools:context=".LABORANMasukkanGaleri"
+    tools:context=".activity.laboran.LABORANMasukkanGaleri"
     >
 
     <LinearLayout
@@ -52,6 +52,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
+                android:id="@+id/add_judul_gambar_laboran"
                 />
 
             <TextView
@@ -71,6 +72,7 @@
                 android:text="Pilih File"
                 android:background="@color/colorOrange"
                 android:layout_marginHorizontal="130dp"
+                android:id="@+id/bt_upload_gbr_laboran"
                 />
             <TextView
                 android:layout_gravity="center"
@@ -80,6 +82,7 @@
                 android:text="Judul File Akan Ditampilkan Disini"
                 android:textSize="18dp"
                 android:textColor="@color/colorbgBlue"
+                android:id="@+id/txt_gambar_laboran"
                 />
             <Button
                 android:background="@color/colorOrange"
@@ -90,6 +93,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_marginTop="30dp"
+                android:id="@+id/simpan_gambar_laboran"
                 />
 
         </LinearLayout>

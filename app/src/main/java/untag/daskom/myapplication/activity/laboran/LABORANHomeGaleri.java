@@ -8,19 +8,36 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
-import untag.daskom.myapplication.LABORANMasukkanGaleri;
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
+import untag.daskom.myapplication.adapter.laboran.LABORAN_GaleriAdapter;
+import untag.daskom.myapplication.model.GaleriList;
+import untag.daskom.myapplication.model.GaleriModel;
+import untag.daskom.myapplication.my_interface.GaleriDataService;
+import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class LABORANHomeGaleri extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener {
 
+    private LABORAN_GaleriAdapter adapter;
+    private RecyclerView recyclerView;
+    SessionManager sessionManager;
     FloatingActionButton fbTambahGaleri;
     String nama_laboran;
 
@@ -47,6 +64,32 @@ public class LABORANHomeGaleri extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_galeri_laboran);
         navigationView.setNavigationItemSelectedListener(this);
         //sampai sini
+
+        //untuk mengambil data session
+        sessionManager = new SessionManager(this);
+        String session = sessionManager.getSessionData().get("ID");
+
+        /** Create handle for the RetrofitInstance interface*/
+        GaleriDataService service = RetrofitInstance.getRetrofitInstance().create(GaleriDataService.class);
+
+        /** Call the method with parameter in the interface to get the notice data*/
+        Call<GaleriList> call = service.getGaleri();
+
+        /**Log the URL called*/
+        Log.wtf("URL Called", call.request().url()+"");
+
+        call.enqueue(new Callback<GaleriList>() {
+            @Override
+            public void onResponse(Call<GaleriList> call, Response<GaleriList> response) {
+                generateGaleriList((response.body().getGaleriArrayList()));
+            }
+
+            @Override
+            public void onFailure(Call<GaleriList> call, Throwable t) {
+                Toast.makeText(LABORANHomeGaleri.this,"Something went wrong....Error ,essage : "+t.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         fbTambahGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,5 +197,17 @@ public class LABORANHomeGaleri extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void generateGaleriList(ArrayList<GaleriModel> galeriArrayList) {
+        recyclerView = findViewById(R.id.rv_galeri_laboran);
+        recyclerView.setHasFixedSize(true);
+
+        adapter = new LABORAN_GaleriAdapter(galeriArrayList,LABORANHomeGaleri.this);
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(LABORANHomeGaleri.this,2);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+    }
+
 
 }

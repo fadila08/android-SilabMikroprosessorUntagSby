@@ -57,7 +57,7 @@
         <activity android:name=".activity.laboran.LABORANStrukturOrganisasi" />
         <activity android:name=".activity.laboran.LABORANHomeProfil" />
         <activity android:name=".activity.laboran.LABORANHomeGaleri" />
-        <activity android:name=".LABORANMasukkanGaleri" />
+        <activity android:name=".activity.laboran.LABORANMasukkanGaleri" />
         <activity android:name=".activity.laboran.LABORANMasukkanUnduhan" />
         <activity android:name=".activity.laboran.LABORANHomeUnduhan" />
         <activity android:name=".activity.laboran.LABORANDetilPengumuman" />
