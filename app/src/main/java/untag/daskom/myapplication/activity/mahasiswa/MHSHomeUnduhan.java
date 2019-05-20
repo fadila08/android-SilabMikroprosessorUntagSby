@@ -151,8 +151,9 @@ public class MHSHomeUnduhan extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_mhs) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MHSHomeUnduhan.this, MHSHomeGaleri.class);
+            intent.putExtra("nama",nama_mhs);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_mhs) {
             new LogOut(MHSHomeUnduhan.this);

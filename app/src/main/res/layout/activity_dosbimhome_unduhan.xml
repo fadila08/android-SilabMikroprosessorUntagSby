@@ -9,6 +9,7 @@
     android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     android:background="@color/colorbgBlue"
+    tools:context=".activity.dosbim.DOSBIMHomeUnduhan"
     tools:showIn="@layout/app_bar_unduhan_dosbim"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     >

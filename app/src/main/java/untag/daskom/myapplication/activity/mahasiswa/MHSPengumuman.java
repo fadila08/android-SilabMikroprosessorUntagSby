@@ -154,8 +154,9 @@ public class MHSPengumuman extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_mhs) {
-//            Intent intent = new Intent(MainActivityStruktur.this, MainActivityGaleri.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MHSPengumuman.this, MHSHomeGaleri.class);
+            intent.putExtra("nama",nama_mhs);
+            startActivity(intent);
 
         } else if (id == R.id.nav_logout_mhs) {
             new LogOut(MHSPengumuman.this);

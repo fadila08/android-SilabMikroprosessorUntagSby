@@ -28,8 +28,7 @@
                 android:textColor="@color/colorbgBlue"
                 android:fontFamily="@font/roboto_medium"
                 android:textSize="8pt"
-                android:id="@+id/txtToolbar_unduhan_dosbim"
-                android:gravity="center_horizontal"/>
+                android:id="@+id/txtToolbar_unduhan_dosbim" />
 
         </android.support.v7.widget.Toolbar>
 

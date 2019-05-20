@@ -21,6 +21,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_dosbim"
-        app:menu="@menu/dawer_menu_dosbim" />
+        app:menu="@menu/dawer_menu_dosbim">
+
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
