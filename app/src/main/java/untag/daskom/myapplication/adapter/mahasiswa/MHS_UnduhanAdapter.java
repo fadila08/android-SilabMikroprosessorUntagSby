@@ -54,7 +54,7 @@ public class MHS_UnduhanAdapter extends RecyclerView.Adapter<MHS_UnduhanAdapter.
         TextView txtJudul, txtCreatedAt, txtKeterangan, txtId, txtBatasBerlaku;
         Button btnUnduh;
 
-        public MHS_UnduhanViewHolder(View itemView) {
+        MHS_UnduhanViewHolder(View itemView) {
             super(itemView);
 
             txtJudul = itemView.findViewById(R.id.txt_judul_unduhan);
