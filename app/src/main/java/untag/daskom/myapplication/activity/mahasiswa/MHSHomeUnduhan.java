@@ -41,7 +41,7 @@ public class MHSHomeUnduhan extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mainunduhan_dosbim);
+        setContentView(R.layout.activity_main_unduhan_mhs);
 
         nama_mhs = getIntent().getStringExtra("nama");
 

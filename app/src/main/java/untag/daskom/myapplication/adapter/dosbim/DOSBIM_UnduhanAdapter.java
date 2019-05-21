@@ -13,12 +13,14 @@ import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.UnduhanModel;
+import untag.daskom.myapplication.session.SessionManager;
 
 public class DOSBIM_UnduhanAdapter extends RecyclerView.Adapter<DOSBIM_UnduhanAdapter.DOSBIM_UnduhanViewHolder> {
 
     private ArrayList<UnduhanModel> unduhanList;
     String id;
     Context context;
+    SessionManager sessionManager;
 
     public DOSBIM_UnduhanAdapter(ArrayList<UnduhanModel> unduhanList, Context context) {
         this.unduhanList = unduhanList;
@@ -69,6 +71,9 @@ public class DOSBIM_UnduhanAdapter extends RecyclerView.Adapter<DOSBIM_UnduhanAd
             txtBatasBerlaku = itemView.findViewById(R.id.txt_batas_tanggal_berlaku_unduhan);
             txtId = itemView.findViewById(R.id.txt_id_unduhan);
             btnUnduh = itemView.findViewById(R.id.btn_unduhan);
+
+            sessionManager = new SessionManager(context);
+            final String session = sessionManager.getSessionData().get("ID");
 
             btnUnduh.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -26,7 +26,7 @@ public interface UnduhanDataService {
 //                                     @Field("file") Byte file,  // ini nanti ganti format file
                                        @Field("batas_tanggal_berlaku") String batas_tanggal_berlaku);
 
-    @GET("api/unduhan/read/{id}") //belom ada
+    @GET("api/unduhan/read/{id}")
     Call<UnduhanDetailList> getUnduhanDetail(@Path("id") String id);
 
 

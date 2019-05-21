@@ -59,7 +59,7 @@
             <EditText
                 android:textAlignment="textStart"
                 android:paddingVertical="10dp"
-                android:textColor="@color/colorRealWhite"
+                android:textColor="@color/colorBlack"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/colorRealWhite"
