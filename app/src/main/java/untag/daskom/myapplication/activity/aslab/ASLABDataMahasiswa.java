@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,9 +23,11 @@ import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.aslab.ASLAB_DataMahasiswaAdapter;
+import untag.daskom.myapplication.model.DataMahasiswa;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
+import untag.daskom.myapplication.my_interface.MahasiswaDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
@@ -64,19 +67,19 @@ public class ASLABDataMahasiswa extends AppCompatActivity implements NavigationV
 
         //mulai dari sini untuk menangkap data dari API dengan retrofit
         /** Create handle for the RetrofitInstance interface*/
-        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+        MahasiswaDataService service = RetrofitInstance.getRetrofitInstance().create(MahasiswaDataService.class);
 
         /** Call the method with parameter in the interface to get the notice data*/
-        Call<DataUserList> call = service.getLaboranDataKalab("Bearer "+session);
+        Call<List<DataMahasiswa>> call = service.getMhs("Bearer "+session);
 
-        call.enqueue(new Callback<DataUserList>() {
+        call.enqueue(new Callback<List<DataMahasiswa>>() {
             @Override
-            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
-                generateDataUserList(response.body().getDataUserArrayList());
+            public void onResponse(Call<List<DataMahasiswa>> call, Response<List<DataMahasiswa>> response) {
+                generateDataUserList(response.body());
             }
 
             @Override
-            public void onFailure(Call<DataUserList> call, Throwable t) {
+            public void onFailure(Call<List<DataMahasiswa>> call, Throwable t) {
                 Toast.makeText(ASLABDataMahasiswa.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -195,9 +198,9 @@ public class ASLABDataMahasiswa extends AppCompatActivity implements NavigationV
 
     //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
     /** Method to generate List of notice using RecyclerView with custom adapter*/
-    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
+    private void generateDataUserList(List<DataMahasiswa> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_mahasiswa_aslab);
-        adapter = new ASLAB_DataMahasiswaAdapter(dataUserArrayList);
+        adapter = new ASLAB_DataMahasiswaAdapter(dataUserArrayList,this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ASLABDataMahasiswa.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

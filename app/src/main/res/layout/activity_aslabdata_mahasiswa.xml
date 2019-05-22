@@ -19,19 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="@color/colorOrange"-->
-        <!--app:title="DATA MAHASISWA"-->
-        <!--app:titleMarginStart="113dp"-->
-        <!--android:textAlignment="center"-->
-        <!--app:titleTextColor="@color/colorbgBlue"-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-        <!--android:elevation="4dp"/>-->
-
         <RelativeLayout
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
@@ -41,80 +28,59 @@
             android:background="@color/colorTulisanUniv"
             android:paddingBottom="10dp">
 
-            <TextView
-                android:id="@+id/tvpraktikum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Praktikum"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/daftar_praktikum"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvpraktikum"
-                android:id="@+id/spinpraktikum"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
-            <TextView
-                android:layout_below="@+id/spinpraktikum"
-                android:id="@+id/tvtahunajaran"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tahun Ajaran"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/tahun_ajaran"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvtahunajaran"
-                android:id="@+id/spintahunajaran"
+                android:orientation="horizontal"
+                android:id="@+id/LayoutOneAslab">
+
+                <Spinner
+                    android:entries="@array/daftar_praktikum"
+                    android:layout_marginStart="35dp"
+                    android:id="@+id/spinpraktikumaslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+                <Spinner
+                    android:entries="@array/kelas"
+                    android:layout_marginEnd="35dp"
+                    android:id="@+id/spinkelasaslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
-            <TextView
-                android:layout_below="@+id/spintahunajaran"
-                android:id="@+id/tvkelas"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Kelas"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/kelas"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvkelas"
-                android:id="@+id/spinkelas"
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
-            <TextView
-                android:layout_below="@+id/spinkelas"
-                android:id="@+id/tvsemester"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Semester"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/semester"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvsemester"
-                android:id="@+id/spinsemester"
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
+                android:id="@+id/LayoutTwoAslab"
+                android:orientation="horizontal"
+                android:layout_below="@id/LayoutOneAslab">
+
+                <Spinner
+                    android:entries="@array/tahun_ajaran"
+                    android:layout_marginStart="35dp"
+                    android:id="@+id/spintahunajaranaslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+
+                <Spinner
+                    android:entries="@array/semester"
+                    android:layout_marginEnd="35dp"
+                    android:id="@+id/spinsemesteraslab"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+
+            </LinearLayout>
 
             <Button
-                android:layout_below="@+id/spinsemester"
+                android:layout_below="@+id/LayoutTwoAslab"
                 android:layout_marginStart="35dp"
                 android:layout_marginEnd="35dp"
                 android:layout_width="match_parent"
@@ -122,6 +88,7 @@
                 android:text="Tampilkan"
                 android:layout_marginTop="25dp"
                 android:background="@color/colorOrange"
+                android:id="@+id/set_filter_mhs_aslab"
                 />
         </RelativeLayout>
 
@@ -156,27 +123,29 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableRight="@drawable/imageupload"
-                    android:textSize="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"
-                    />
+                    android:drawableRight="@drawable/file_upload"
+                    android:textSize="30dp"
+                    android:id="@+id/upload_mhs_aslab"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableRight="@drawable/imageprint"
-                    android:textSize="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"
-                    />
+                    android:drawableRight="@drawable/file_download"
+                    android:textSize="30dp"
+                    android:id="@+id/download_mhs_aslab"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/imageplus"
-                    android:textSize="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"
-                    />
+                    android:drawableLeft="@drawable/add"
+                    android:textSize="30dp"
+                    android:id="@+id/add_mhs_aslab"/>
             </LinearLayout>
 
             <LinearLayout
