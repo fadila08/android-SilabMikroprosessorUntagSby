@@ -34,5 +34,14 @@
             android:id="@+id/txt_nomor_induk_mahasiswa_laboran"
             android:layout_weight="1"
             />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_id_mahasiswa_laboran"
+            android:textSize="1dp"
+            android:textColor="@color/colorAbuAbu"
+            />
+
     </LinearLayout>
 </android.support.v7.widget.CardView>
