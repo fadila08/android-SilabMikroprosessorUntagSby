@@ -85,13 +85,8 @@
             android:textSize="20px"
             android:clickable="true"
             android:linksClickable="true"
-            android:id="@+id/txt_file_lampiran" />
+            android:id="@+id/txt_unduh_file_lampiran" />
 
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

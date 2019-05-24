@@ -34,7 +34,7 @@ public class pengumuman_detail extends AppCompatActivity {
         txtJudul = findViewById(R.id.txt_judul_pengumuman);
         txtCreatedat = findViewById(R.id.txt_created_at_pengumuman);
         txtIsi = findViewById(R.id.txt_isi_pengumuman);
-        txtFileLampiran = findViewById(R.id.txt_file_lampiran);
+        txtFileLampiran = findViewById(R.id.txt_unduh_file_lampiran);
 
         id = getIntent().getStringExtra("id");
         Log.d("id", id);

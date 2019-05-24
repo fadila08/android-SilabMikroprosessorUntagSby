@@ -29,6 +29,8 @@
             android:id="@+id/delete_gbr"/>
 
         <ImageView
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
             android:id="@+id/gambar_auth"
             android:layout_width="100dp"
             android:layout_height="100dp"/>

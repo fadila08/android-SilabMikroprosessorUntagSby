@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,11 +36,20 @@ public class MainActivityGaleri extends AppCompatActivity
 
     private GaleriAdapter adapter;
     private RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstance) {
         super.onCreate(savedInstance);
         setContentView(R.layout.activity_main_galeri);
+
+//        Random random   =   new Random();
+//
+//        final String[] images   =   new String[10];
+//
+//        for(int i=0; i<images.length;i++)
+//            images[i]   =   "http://picsum.photos/600?image="+random.nextInt(1000+1);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_galeri);
         setSupportActionBar(toolbar);
 
@@ -137,13 +147,14 @@ public class MainActivityGaleri extends AppCompatActivity
 
     private void generateGaleriList(ArrayList<GaleriModel> galeriArrayList) {
         recyclerView = findViewById(R.id.rvgaleri);
+        layoutManager   =   new GridLayoutManager(this,2);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(layoutManager);
 
         adapter = new GaleriAdapter(galeriArrayList,MainActivityGaleri.this);
-        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(MainActivityGaleri.this,2);
+        //RecyclerView.LayoutManager layoutManager = new GridLayoutManager(MainActivityGaleri.this,2);
 
-        recyclerView.setLayoutManager(layoutManager);
+        //recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
-
 }
