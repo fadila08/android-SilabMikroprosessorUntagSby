@@ -2,6 +2,8 @@ package untag.daskom.myapplication.adapter.kalab;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -134,7 +136,12 @@ public class DataMahasiswaAdapter extends RecyclerView.Adapter<DataMahasiswaAdap
                             //hapus
                         }
                     });
+                popupDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                popupDialog.show();
                 }
+
+
+
             });
         }
     }
