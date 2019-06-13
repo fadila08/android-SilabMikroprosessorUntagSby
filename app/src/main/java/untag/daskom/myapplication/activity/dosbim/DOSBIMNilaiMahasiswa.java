@@ -34,7 +34,7 @@ public class DOSBIMNilaiMahasiswa extends AppCompatActivity implements Navigatio
     private DOSBIM_NilaiMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
-    String nama_dosbim;
+    String nama_dosbim, id_dosbim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class DOSBIMNilaiMahasiswa extends AppCompatActivity implements Navigatio
         setContentView(R.layout.activity_main_nilai_mahasiswa_dosbim);
 
         nama_dosbim = getIntent().getStringExtra("nama");
+        id_dosbim = getIntent().getStringExtra("id");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_nilai_mahasiswa_dosbim);
@@ -114,56 +115,67 @@ public class DOSBIMNilaiMahasiswa extends AppCompatActivity implements Navigatio
             // Handle the camera action
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, HomeDosbim.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMDataMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMDataLaboran.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMDataAslab.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMNilaiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMAbsensiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMHomeProfil.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_struktur_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMStrukturOrganisasi.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMPengumuman.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMHomeUnduhan.class);
             intent.putExtra("nama",nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_dosbim) {
             Intent intent = new Intent(DOSBIMNilaiMahasiswa.this, DOSBIMHomeGaleri.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_dosbim) {

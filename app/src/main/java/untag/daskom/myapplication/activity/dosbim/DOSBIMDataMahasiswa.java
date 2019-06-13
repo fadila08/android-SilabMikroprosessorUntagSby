@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -22,9 +23,11 @@ import retrofit2.Response;
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.dosbim.DOSBIM_DataMahasiswaAdapter;
+import untag.daskom.myapplication.model.DataMahasiswa;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserList;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
+import untag.daskom.myapplication.my_interface.MahasiswaDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
 import untag.daskom.myapplication.session.SessionManager;
@@ -34,7 +37,7 @@ public class DOSBIMDataMahasiswa extends AppCompatActivity implements Navigation
     private DOSBIM_DataMahasiswaAdapter adapter;
     private RecyclerView recyclerView;
     SessionManager sessionManager;
-    String nama_dosbim;
+    String nama_dosbim, id_dosbim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class DOSBIMDataMahasiswa extends AppCompatActivity implements Navigation
         setContentView(R.layout.activity_main_data_mahasiswa_dosbim);
 
         nama_dosbim = getIntent().getStringExtra("nama");
+        id_dosbim = getIntent().getStringExtra("id");
 
         //mulai dari sini untuk layout drawer
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_data_mahasiswa_dosbim);
@@ -64,19 +68,19 @@ public class DOSBIMDataMahasiswa extends AppCompatActivity implements Navigation
 
         //mulai dari sini untuk menangkap data dari API dengan retrofit
         /** Create handle for the RetrofitInstance interface*/
-        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+        MahasiswaDataService service = RetrofitInstance.getRetrofitInstance().create(MahasiswaDataService.class);
 
         /** Call the method with parameter in the interface to get the notice data*/
-        Call<DataUserList> call = service.getLaboranDataKalab("Bearer "+session);
+        Call<List<DataMahasiswa>> call = service.getMhsDosbim("Bearer "+session,id_dosbim);
 
-        call.enqueue(new Callback<DataUserList>() {
+        call.enqueue(new Callback<List<DataMahasiswa>>() {
             @Override
-            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
-                generateDataUserList(response.body().getDataUserArrayList());
+            public void onResponse(Call<List<DataMahasiswa>> call, Response<List<DataMahasiswa>> response) {
+                generateDataUserList(response.body());
             }
 
             @Override
-            public void onFailure(Call<DataUserList> call, Throwable t) {
+            public void onFailure(Call<List<DataMahasiswa>> call, Throwable t) {
                 Toast.makeText(DOSBIMDataMahasiswa.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -114,56 +118,67 @@ public class DOSBIMDataMahasiswa extends AppCompatActivity implements Navigation
             // Handle the camera action
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, HomeDosbim.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datamhs_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMDataMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_datalaboran_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMDataLaboran.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_dataaslab_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMDataAslab.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_nilaimhs_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMNilaiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_absprt_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMAbsensiMahasiswa.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_profil_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMHomeProfil.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_struktur_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMStrukturOrganisasi.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_pengumuman_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMPengumuman.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_unduhan_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMHomeUnduhan.class);
             intent.putExtra("nama",nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_galeri_dosbim) {
             Intent intent = new Intent(DOSBIMDataMahasiswa.this, DOSBIMHomeGaleri.class);
             intent.putExtra("nama", nama_dosbim);
+            intent.putExtra("id",id_dosbim);
             startActivity(intent);
 
         } else if (id == R.id.nav_logout_dosbim) {
@@ -181,9 +196,9 @@ public class DOSBIMDataMahasiswa extends AppCompatActivity implements Navigation
 
     //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
     /** Method to generate List of notice using RecyclerView with custom adapter*/
-    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
+    private void generateDataUserList(List<DataMahasiswa> dataUserArrayList) {
         recyclerView = findViewById(R.id.rv_data_mahasiswa_dosbim);
-        adapter = new DOSBIM_DataMahasiswaAdapter(dataUserArrayList);
+        adapter = new DOSBIM_DataMahasiswaAdapter(dataUserArrayList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(DOSBIMDataMahasiswa.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

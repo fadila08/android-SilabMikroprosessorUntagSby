@@ -17,4 +17,6 @@ public interface MahasiswaDataService {
     @GET("api/mahasiswa/{id}")
     Call<DataMahasiswaDetail> getMhsDetail(@Header("Authorization") String auth, @Path("id") String id);
 
+    @GET("api/mahasiswa/dosbim/{idDosbim}")
+    Call<List<DataMahasiswa>> getMhsDosbim(@Header("Authorization") String auth, @Path("idDosbim") String idDosbim);
 }

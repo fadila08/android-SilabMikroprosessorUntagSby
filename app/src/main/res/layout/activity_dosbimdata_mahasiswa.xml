@@ -19,19 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="@color/colorOrange"-->
-        <!--app:title="DATA MAHASISWA"-->
-        <!--app:titleMarginStart="113dp"-->
-        <!--android:textAlignment="center"-->
-        <!--app:titleTextColor="@color/colorbgBlue"-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-        <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-        <!--android:elevation="4dp"/>-->
-
         <LinearLayout
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
@@ -63,7 +50,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/imageprint"
+                    android:drawableLeft="@drawable/ic_file_download_black_24dp"
                     android:textSize="30dp"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"

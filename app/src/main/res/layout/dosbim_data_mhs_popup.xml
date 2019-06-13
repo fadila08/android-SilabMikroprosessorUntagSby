@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="270dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#FAFAFA"
+    android:padding="5dp"
+    android:layout_gravity="center">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Nama          "
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_nama_mhs_on_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="NBI              "
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_nbi_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Praktikum"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_praktikum_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Tahun Pelajaran"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_thnPel_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Semester"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_sem_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Kelas"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_kelas_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="3"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Nomor Whatsapp"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_no_wa_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="4"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50px"
+            android:text="Alamat Email"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50px"
+            android:text=""
+            android:id="@+id/txt_detail_email_mhs_dosbim"
+            android:textSize="14sp"
+            android:fontFamily="@font/nunitosans_bold"
+            android:textColor="#000000"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_detail_id_mhs_dosbim"
+        android:textSize="1pt"
+        android:textColor="#FAFAFA"/>
+
+
+</LinearLayout>
