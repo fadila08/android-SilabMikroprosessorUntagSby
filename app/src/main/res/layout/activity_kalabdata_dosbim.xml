@@ -19,19 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<android.support.v7.widget.Toolbar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="?attr/actionBarSize"-->
-            <!--android:background="@color/colorOrange"-->
-            <!--app:title="DATA DOSBIM"-->
-            <!--app:titleMarginStart="133dp"-->
-            <!--android:textAlignment="center"-->
-            <!--app:titleTextColor="@color/colorbgBlue"-->
-            <!--android:id="@+id/toolbar"-->
-            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
-            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-            <!--android:elevation="4dp"/>-->
-
         <RelativeLayout
             android:layout_marginTop="40dp"
             android:layout_gravity="center"
@@ -41,62 +28,57 @@
             android:background="@color/colorTulisanUniv"
             android:paddingBottom="30dp">
 
-            <TextView
-                android:id="@+id/tvpraktikum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Praktikum"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/daftar_praktikum"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvpraktikum"
-                android:id="@+id/spinpraktikum"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
-            <TextView
-                android:layout_below="@+id/spinpraktikum"
-                android:id="@+id/tvtahunajaran"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tahun Ajaran"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/tahun_ajaran"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvtahunajaran"
-                android:id="@+id/spintahunajaran"
+                android:orientation="horizontal"
+                android:id="@+id/LayoutOneKalab_dosbim">
+
+                <Spinner
+                    android:layout_marginStart="35dp"
+                    android:id="@+id/spPraktikumKalab_dosbim"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+                <Spinner
+                    android:entries="@array/kelas"
+                    android:layout_marginEnd="35dp"
+                    android:id="@+id/spKelasKalab_dosbim"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
-            <TextView
-                android:layout_below="@+id/spintahunajaran"
-                android:id="@+id/tvsemester"
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Semester"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="35dp"
-                />
-            <Spinner
-                android:entries="@array/semester"
-                android:layout_marginStart="35dp"
-                android:layout_marginEnd="35dp"
-                android:layout_below="@+id/tvsemester"
-                android:id="@+id/spinsemester"
-                android:layout_width="match_parent"
-                android:layout_height="30dp">
-            </Spinner>
+                android:id="@+id/LayoutTwoKalab_dosbim"
+                android:orientation="horizontal"
+                android:layout_below="@id/LayoutOneKalab_dosbim">
+
+                <Spinner
+                    android:entries="@array/tahun_ajaran"
+                    android:layout_marginStart="35dp"
+                    android:id="@+id/spTPKalab_dosbim"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+                <Spinner
+                    android:entries="@array/semester"
+                    android:layout_marginEnd="35dp"
+                    android:id="@+id/spSemesterKalab_dosbim"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight="1">
+                </Spinner>
+
+            </LinearLayout>
 
             <Button
-                android:layout_below="@+id/spinsemester"
+                android:layout_below="@+id/LayoutTwoKalab_dosbim"
                 android:layout_marginStart="35dp"
                 android:layout_marginEnd="35dp"
                 android:layout_width="match_parent"

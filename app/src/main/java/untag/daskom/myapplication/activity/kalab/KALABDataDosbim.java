@@ -10,8 +10,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Filter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,8 +29,11 @@ import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.activity.MainActivityLogin;
 import untag.daskom.myapplication.adapter.kalab.DataDosbimAdapter;
 import untag.daskom.myapplication.adapter.kalab.DataLaboranAdapter;
+import untag.daskom.myapplication.model.DataPraktikumList;
 import untag.daskom.myapplication.model.DataUser;
 import untag.daskom.myapplication.model.DataUserList;
+import untag.daskom.myapplication.model.PraktikumList;
+import untag.daskom.myapplication.my_interface.FilterDataService;
 import untag.daskom.myapplication.my_interface.GetUserDataService;
 import untag.daskom.myapplication.network.RetrofitInstance;
 import untag.daskom.myapplication.session.LogOut;
@@ -37,10 +46,27 @@ public class KALABDataDosbim extends AppCompatActivity implements NavigationView
     SessionManager sessionManager;
     String nama_kalab;
 
+    private Spinner spPraktikum;
+    private Spinner spSemester;
+    private Spinner spKelas;
+    private Spinner spTahunPel;
+
+    private String[] Praktikum;
+    private String[] Semester = {
+            "Semua Semester",
+            "Genap",
+            "Ganjil",
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_data_dosbim_kalab);
+
+        spPraktikum = findViewById(R.id.spPraktikumKalab_dosbim);
+        spSemester = findViewById(R.id.spSemesterKalab_dosbim);
+        spKelas = findViewById(R.id.spKelasKalab_dosbim);
+        spTahunPel = findViewById(R.id.spTPKalab_dosbim);
 
         nama_kalab = getIntent().getStringExtra("nama");
 
@@ -63,27 +89,65 @@ public class KALABDataDosbim extends AppCompatActivity implements NavigationView
         sessionManager = new SessionManager(this);
         String session = sessionManager.getSessionData().get("ID");
 
-        //mulai dari sini untuk menangkap data dari API dengan retrofit
-        /** Create handle for the RetrofitInstance interface*/
-        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+        //untuk inisialisasi isi spinner semester
+        final ArrayAdapter<String> adapterSpSemester = new ArrayAdapter<>(this,android.R.layout.simple_spinner_item, Semester);
 
-        /** Call the method with parameter in the interface to get the notice data*/
-        Call<DataUserList> call = service.getLaboranDataKalab("Bearer "+session);
+        //set isi ke Spinner Semester
+        spSemester.setAdapter(adapterSpSemester);
 
-        call.enqueue(new Callback<DataUserList>() {
+        //set ketika item spinner semester dipilih
+        spSemester.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
-                generateDataUserList(response.body().getDataUserArrayList());
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //aksi ketika item semester dipilih
             }
 
             @Override
-            public void onFailure(Call<DataUserList> call, Throwable t) {
-                Toast.makeText(KALABDataDosbim.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
-        //sampai sini
-    }
 
+        //get Praktikum
+        FilterDataService servicePraktikum = RetrofitInstance.getRetrofitInstance().create(FilterDataService.class);
+
+        Call<PraktikumList> callPraktikum = servicePraktikum.getPraktikum("Bearer "+session);
+
+        callPraktikum.enqueue(new Callback<PraktikumList>() {
+            @Override
+            public void onResponse(Call<PraktikumList> call, Response<PraktikumList> response) {
+                Log.d("respon", ""+response.body().getDataPraktikumArrayList().get(0).getNama_praktikum());
+               generateDataPraktikumList(response.body().getDataPraktikumArrayList());
+//                Praktikum = response.body().getDataPraktikumArrayList().toArray(Praktikum);
+//                Toast.makeText(KALABDataDosbim.this,"DATA "+Praktikum,Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<PraktikumList> call, Throwable t) {
+                Toast.makeText(KALABDataDosbim.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+//        //mulai dari sini untuk menangkap data dari API dengan retrofit
+//        /** Create handle for the RetrofitInstance interface*/
+//        GetUserDataService service = RetrofitInstance.getRetrofitInstance().create(GetUserDataService.class);
+//
+//        /** Call the method with parameter in the interface to get the notice data*/
+//        Call<DataUserList> call = service.getLaboranDataKalab("Bearer "+session);
+//
+//        call.enqueue(new Callback<DataUserList>() {
+//            @Override
+//            public void onResponse(Call<DataUserList> call, Response<DataUserList> response) {
+//                generateDataUserList(response.body().getDataUserArrayList());
+//            }
+//
+//            @Override
+//            public void onFailure(Call<DataUserList> call, Throwable t) {
+//                Toast.makeText(KALABDataDosbim.this, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//        //sampai sini
+    }
 
     //untuk layout drawer
     @Override
@@ -194,13 +258,20 @@ public class KALABDataDosbim extends AppCompatActivity implements NavigationView
     }
 
 
-    //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
-    /** Method to generate List of notice using RecyclerView with custom adapter*/
-    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
-        recyclerView = findViewById(R.id.rv_data_dosbim_kalab);
-        adapter = new DataDosbimAdapter(dataUserArrayList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataDosbim.this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+//    //untuk set data dari API yang sudah diambil tadi ke dalam recycler view data laboran(kalab)
+//    /** Method to generate List of notice using RecyclerView with custom adapter*/
+//    private void generateDataUserList(ArrayList<DataUser> dataUserArrayList) {
+//        recyclerView = findViewById(R.id.rv_data_dosbim_kalab);
+//        adapter = new DataDosbimAdapter(dataUserArrayList);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(KALABDataDosbim.this);
+//        recyclerView.setLayoutManager(layoutManager);
+//        recyclerView.setAdapter(adapter);
+//    }
+
+    private void generateDataPraktikumList(ArrayList<DataPraktikumList> dataPraktikumArrayList) {
+//        dataPraktikumArrayList.toArray(Praktikum);
+//        Log.d("praktikum", "isi: "+Praktikum);
+
     }
+
 }
