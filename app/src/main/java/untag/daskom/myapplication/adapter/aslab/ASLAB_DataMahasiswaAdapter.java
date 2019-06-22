@@ -63,7 +63,7 @@ public class ASLAB_DataMahasiswaAdapter extends RecyclerView.Adapter<ASLAB_DataM
     class DataMahasiswaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNama, txtNomorInduk, txtId, txtPopupId, txtPopupNama, txtPopupNInduk, txtPopupPraktikum, txtPopupSemester, txtPopupThnPel, txtPopupKelas, txtPopupEmail, txtPopupWa;
-        Button btEdit, btDelete;
+        Button btDelete;
 
         DataMahasiswaViewHolder(View itemView) {
             super(itemView);
@@ -90,7 +90,6 @@ public class ASLAB_DataMahasiswaAdapter extends RecyclerView.Adapter<ASLAB_DataM
                     txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_mhs_aslab);
                     txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_mhs_aslab);
                     txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_mhs_aslab);
-                    btEdit = popupDialog.findViewById(R.id.btn_edit_data_mhs_aslab);
                     btDelete = popupDialog.findViewById(R.id.btn_delete_data_mhs_aslab);
 
                     sessionManager = new SessionManager(context);
@@ -120,14 +119,6 @@ public class ASLAB_DataMahasiswaAdapter extends RecyclerView.Adapter<ASLAB_DataM
                         public void onFailure(Call<DataMahasiswaDetail> call, Throwable t) {
                             Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
-                    });
-
-                    //aksi btn edit
-                    btEdit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            //edit
                         }
                     });
 

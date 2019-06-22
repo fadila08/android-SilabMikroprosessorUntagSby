@@ -62,7 +62,7 @@ public class DataMahasiswaAdapter extends RecyclerView.Adapter<DataMahasiswaAdap
     class DataMahasiswaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNama, txtNomorInduk, txtId, txtPopupId, txtPopupNama, txtPopupNInduk, txtPopupPraktikum, txtPopupThnPel, txtPopupKelas, txtPopupSemester, txtPopupWa, txtPopupEmail;
-        Button btEdit, btDelete;
+        Button btDelete;
 
         DataMahasiswaViewHolder(View itemView) {
             super(itemView);
@@ -89,7 +89,6 @@ public class DataMahasiswaAdapter extends RecyclerView.Adapter<DataMahasiswaAdap
                 txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_mhs_kalab);
                 txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_mhs_kalab);
                 txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_mhs_kalab);
-                btEdit = popupDialog.findViewById(R.id.btn_edit_data_mhs_kalab);
                 btDelete = popupDialog.findViewById(R.id.btn_delete_data_mhs_kalab);
 
                 sessionManager = new SessionManager(context);
@@ -118,14 +117,6 @@ public class DataMahasiswaAdapter extends RecyclerView.Adapter<DataMahasiswaAdap
                         public void onFailure(Call<DataMahasiswaDetail> call, Throwable t) {
                             Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
-                    });
-
-                    //aksi btn edit
-                    btEdit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            //edit
                         }
                     });
 

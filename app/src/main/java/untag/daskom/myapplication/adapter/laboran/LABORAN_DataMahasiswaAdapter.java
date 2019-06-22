@@ -61,7 +61,6 @@ public class LABORAN_DataMahasiswaAdapter extends RecyclerView.Adapter<LABORAN_D
     class DataMahasiswaViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtNama, txtNomorInduk, txtId, txtPopupId, txtPopupNama, txtPopupNBI, txtPopupSemester, txtPopupThPel, txtPopupPraktikum, txtPopupKelas, txtPopupEmail, txtPopupWa;
-        Button btnEdit;
 
         DataMahasiswaViewHolder(View itemView) {
             super(itemView);
@@ -88,7 +87,6 @@ public class LABORAN_DataMahasiswaAdapter extends RecyclerView.Adapter<LABORAN_D
                     txtPopupEmail = popupDialog.findViewById(R.id.txt_detail_email_mhs_laboran);
                     txtPopupWa = popupDialog.findViewById(R.id.txt_detail_no_wa_mhs_laboran);
                     txtPopupId = popupDialog.findViewById(R.id.txt_detail_id_mhs_laboran);
-                    btnEdit = popupDialog.findViewById(R.id.btn_edit_data_mhs_laboran);
 
                     sessionManager = new SessionManager(context);
                     final String session = sessionManager.getSessionData().get("ID");
@@ -117,14 +115,6 @@ public class LABORAN_DataMahasiswaAdapter extends RecyclerView.Adapter<LABORAN_D
                         public void onFailure(Call<DataMahasiswaDetail> call, Throwable t) {
                             Toast.makeText(context, "Something went wrong....Error message: " + t.getMessage(), Toast.LENGTH_SHORT).show();
 
-                        }
-                    });
-
-                    //aksi btn edit
-                    btnEdit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            //edit
                         }
                     });
 
