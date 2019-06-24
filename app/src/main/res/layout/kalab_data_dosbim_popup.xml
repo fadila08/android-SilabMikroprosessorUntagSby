@@ -21,12 +21,6 @@
                 android:background="@drawable/edit_icon"
                 android:id="@+id/btn_edit_data_dosbim_kalab" />
 
-            <Button
-                android:layout_width="50px"
-                android:layout_height="60px"
-                android:background="@drawable/delete_icon"
-                android:id="@+id/btn_delete_data_dosbim_kalab"/>
-
         </LinearLayout>
 
         <LinearLayout
