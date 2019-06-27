@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import org.w3c.dom.Text;
 
 import java.io.File;
@@ -57,17 +59,19 @@ public class GaleriAdapter extends RecyclerView.Adapter<GaleriAdapter.GaleriView
 
         imageString = galeriList.get(position).getGambar();
 
-        Log.wtf("imageString", imageString);
+        Glide.with(context).load("http://silab.agus-hermanto.com/uploads/"+imageString).into(holder.gambar);
 
-        String object;
+//        Log.wtf("imageString", imageString);
+//
+//        String object;
 
 //        if(object.has("profile_image")) {
             // imageView should be declared in layout xml file with id `imageView`
 //            ImageView imageView = (ImageView) context.findViewById(R.id.imageView);
-            com.squareup.picasso.Picasso.with(context).
-                    load("http://silab.agus-hermanto.com/api/datagaleri/"+imageString).
-                    placeholder(R.mipmap.ic_launcher).
-                    into(holder.gambar);
+//            com.squareup.picasso.Picasso.with(context).
+//                    load("http://silab.agus-hermanto.com/api/datagaleri/"+imageString).
+//                    placeholder(R.mipmap.ic_launcher).
+//                    into(holder.gambar);
 //        }
 
 

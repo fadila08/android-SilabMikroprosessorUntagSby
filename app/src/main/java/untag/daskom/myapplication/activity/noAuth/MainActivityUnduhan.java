@@ -138,7 +138,7 @@ public class MainActivityUnduhan extends AppCompatActivity
     private void generateUnduhanList(ArrayList<UnduhanModel> unduhanArrayList) {
         recyclerView = findViewById(R.id.rvunduhan);
 
-        adapter = new UnduhanAdapter(unduhanArrayList);
+        adapter = new UnduhanAdapter(unduhanArrayList, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivityUnduhan.this);
 
         recyclerView.setLayoutManager(layoutManager);

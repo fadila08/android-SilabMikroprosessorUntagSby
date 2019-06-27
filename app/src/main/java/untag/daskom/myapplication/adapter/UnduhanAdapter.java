@@ -1,5 +1,9 @@
 package untag.daskom.myapplication.adapter;
 
+import android.app.DownloadManager;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,18 +12,24 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 import untag.daskom.myapplication.R;
 import untag.daskom.myapplication.model.UnduhanModel;
 
+import static android.content.Context.DOWNLOAD_SERVICE;
+
 public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanViewHolder> {
 
     private ArrayList<UnduhanModel> unduhanList;
     String id;
+    String UnduhanString;
+    Context context;
 
-    public UnduhanAdapter(ArrayList<UnduhanModel> unduhanList) {
+    public UnduhanAdapter(ArrayList<UnduhanModel> unduhanList, Context context) {
         this.unduhanList = unduhanList;
+        this.context = context;
     }
 
     @Override
@@ -38,6 +48,33 @@ public class UnduhanAdapter extends RecyclerView.Adapter<UnduhanAdapter.UnduhanV
 
         id = unduhanList.get(position).getId();
         holder.txtId.setText(id);
+
+        UnduhanString = unduhanList.get(position).getFile();
+
+        holder.btnUnduh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                DownloadManager.Request r = new DownloadManager.Request(Uri.parse("http://silab.agus-hermanto.com/uploads/"+UnduhanString));
+
+// This put the download in the same Download dir the browser uses
+                r.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, "fileName");
+
+// When downloading music and videos they will be listed in the player
+// (Seems to be available since Honeycomb only)
+                r.allowScanningByMediaScanner();
+
+// Notify user when download is completed
+// (Seems to be available since Honeycomb only)
+                r.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+
+// Start download
+                DownloadManager dm = (DownloadManager) context.getSystemService(DOWNLOAD_SERVICE);
+                dm.enqueue(r);
+            }
+        });
+
 
 //        holder.btnUnduh.setOnClickListener(new View.OnClickListener() {
 //            @Override
